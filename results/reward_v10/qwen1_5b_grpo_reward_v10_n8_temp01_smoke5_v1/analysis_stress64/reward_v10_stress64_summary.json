@@ -1,0 +1,261 @@
+{
+  "reward_version": 10,
+  "stress_horizon": 64,
+  "epoch_progress": 0.5,
+  "validation": {
+    "0": {
+      "score": 0.36200000000000004,
+      "exec": 0.42,
+      "sql": 0.62,
+      "final": 0.625,
+      "tools": 1.0,
+      "protocol": 0.995,
+      "tool_error": 0.225,
+      "process": 0.0084
+    },
+    "5": {
+      "score": 0.38381,
+      "exec": 0.44,
+      "sql": 0.645,
+      "final": 0.65,
+      "tools": 1.0,
+      "protocol": 0.99,
+      "tool_error": 0.23,
+      "process": 0.00876
+    },
+    "8": {
+      "score": 0.37847499999999995,
+      "exec": 0.435,
+      "sql": 0.645,
+      "final": 0.65,
+      "tools": 1.0,
+      "protocol": 0.99,
+      "tool_error": 0.23,
+      "process": 0.0087
+    },
+    "12": {
+      "score": 0.378405,
+      "exec": 0.435,
+      "sql": 0.68,
+      "final": 0.69,
+      "tools": 1.0,
+      "protocol": 0.97,
+      "tool_error": 0.235,
+      "process": 0.00868
+    },
+    "16": {
+      "score": 0.39493,
+      "exec": 0.45,
+      "sql": 0.71,
+      "final": 0.715,
+      "tools": 1.0,
+      "protocol": 0.98,
+      "tool_error": 0.21,
+      "process": 0.00898
+    },
+    "20": {
+      "score": 0.37293,
+      "exec": 0.43,
+      "sql": 0.69,
+      "final": 0.705,
+      "tools": 1.0,
+      "protocol": 0.99,
+      "tool_error": 0.245,
+      "process": 0.008579999999999999
+    },
+    "24": {
+      "score": 0.389405,
+      "exec": 0.445,
+      "sql": 0.695,
+      "final": 0.715,
+      "tools": 1.0,
+      "protocol": 0.96,
+      "tool_error": 0.25,
+      "process": 0.00888
+    },
+    "28": {
+      "score": 0.41143,
+      "exec": 0.465,
+      "sql": 0.725,
+      "final": 0.76,
+      "tools": 1.0,
+      "protocol": 0.96,
+      "tool_error": 0.255,
+      "process": 0.00928
+    },
+    "32": {
+      "score": 0.42786,
+      "exec": 0.48,
+      "sql": 0.73,
+      "final": 0.765,
+      "tools": 1.0,
+      "protocol": 0.97,
+      "tool_error": 0.28,
+      "process": 0.00956
+    },
+    "36": {
+      "score": 0.42235999999999996,
+      "exec": 0.475,
+      "sql": 0.715,
+      "final": 0.76,
+      "tools": 1.0,
+      "protocol": 0.97,
+      "tool_error": 0.285,
+      "process": 0.009460000000000001
+    },
+    "40": {
+      "score": 0.36729,
+      "exec": 0.425,
+      "sql": 0.645,
+      "final": 0.69,
+      "tools": 1.0,
+      "protocol": 0.96,
+      "tool_error": 0.275,
+      "process": 0.00844
+    },
+    "44": {
+      "score": 0.41672,
+      "exec": 0.47,
+      "sql": 0.74,
+      "final": 0.82,
+      "tools": 1.0,
+      "protocol": 0.975,
+      "tool_error": 0.295,
+      "process": 0.00932
+    },
+    "48": {
+      "score": 0.42772,
+      "exec": 0.48,
+      "sql": 0.75,
+      "final": 0.845,
+      "tools": 1.0,
+      "protocol": 0.975,
+      "tool_error": 0.305,
+      "process": 0.00952
+    },
+    "52": {
+      "score": 0.42762500000000003,
+      "exec": 0.48,
+      "sql": 0.76,
+      "final": 0.86,
+      "tools": 1.0,
+      "protocol": 0.985,
+      "tool_error": 0.3,
+      "process": 0.009500000000000001
+    },
+    "56": {
+      "score": 0.416625,
+      "exec": 0.47,
+      "sql": 0.745,
+      "final": 0.86,
+      "tools": 1.0,
+      "protocol": 0.99,
+      "tool_error": 0.31,
+      "process": 0.009300000000000001
+    },
+    "60": {
+      "score": 0.41107999999999995,
+      "exec": 0.465,
+      "sql": 0.755,
+      "final": 0.88,
+      "tools": 1.0,
+      "protocol": 0.995,
+      "tool_error": 0.305,
+      "process": 0.00918
+    },
+    "64": {
+      "score": 0.41111,
+      "exec": 0.465,
+      "sql": 0.745,
+      "final": 0.89,
+      "tools": 1.0,
+      "protocol": 0.99,
+      "tool_error": 0.3,
+      "process": 0.00916
+    }
+  },
+  "training_blocks": [
+    {
+      "start": 33,
+      "end": 40,
+      "score": 0.007421874999999995,
+      "exec": 0.09765625,
+      "final": 0.1875,
+      "tools": 0.83203125,
+      "protocol": 0.83203125,
+      "information_group_rate": 0.375,
+      "all_wrong_group_rate": 0.625,
+      "all_wrong_nonuniform_count": 0,
+      "positive_incorrect_count": 0,
+      "wrong_process_nonzero_count": 0
+    },
+    {
+      "start": 41,
+      "end": 48,
+      "score": 0.071875,
+      "exec": 0.15625,
+      "final": 0.2578125,
+      "tools": 0.84375,
+      "protocol": 0.84375,
+      "information_group_rate": 0.4375,
+      "all_wrong_group_rate": 0.5625,
+      "all_wrong_nonuniform_count": 0,
+      "positive_incorrect_count": 0,
+      "wrong_process_nonzero_count": 0
+    },
+    {
+      "start": 49,
+      "end": 56,
+      "score": 0.17924218749999998,
+      "exec": 0.25390625,
+      "final": 0.35546875,
+      "tools": 0.87890625,
+      "protocol": 0.87890625,
+      "information_group_rate": 0.6875,
+      "all_wrong_group_rate": 0.3125,
+      "all_wrong_nonuniform_count": 0,
+      "positive_incorrect_count": 0,
+      "wrong_process_nonzero_count": 0
+    },
+    {
+      "start": 57,
+      "end": 64,
+      "score": 0.2265625,
+      "exec": 0.296875,
+      "final": 0.4609375,
+      "tools": 0.94921875,
+      "protocol": 0.94921875,
+      "information_group_rate": 0.6875,
+      "all_wrong_group_rate": 0.25,
+      "all_wrong_nonuniform_count": 0,
+      "positive_incorrect_count": 0,
+      "wrong_process_nonzero_count": 0
+    }
+  ],
+  "incorrect_scores": [
+    -0.1
+  ],
+  "adjacent_collapses": [],
+  "two_consecutive_low_information_blocks": false,
+  "checks": {
+    "incorrect_score_uniform": true,
+    "positive_incorrect_zero": true,
+    "wrong_process_nonzero_zero": true,
+    "all_wrong_nonuniform_zero": true,
+    "no_adjacent_behavioral_collapse": true,
+    "no_two_consecutive_low_info_blocks": true,
+    "step64_execution_stable": true,
+    "step64_protocol_stable": true,
+    "step64_tools_stable": true
+  },
+  "passed": true,
+  "stable_predeclared_candidates": [
+    32,
+    64
+  ],
+  "provisional_best_candidate": 32,
+  "next_action": "continue_stress_test_to_step128",
+  "selection417_used": false,
+  "bird_used": false,
+  "old_final_holdout_used": false
+}

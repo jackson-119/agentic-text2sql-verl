@@ -1,0 +1,66 @@
+{
+  "input_file": "/home/archlab/yb/verl/evaluation/text2sql_agent/heldout_reward_v5_selection_v1/reward_v5_step48/generated/0.jsonl",
+  "split_role": "model_selection_only",
+  "final_holdout_used": false,
+  "total": 417,
+  "status_counts": {
+    "correct": 160,
+    "executable_but_wrong": 182,
+    "final_sql_non_executable": 73,
+    "no_recognized_final_sql": 2
+  },
+  "status_rates": {
+    "correct": 0.38369304556354916,
+    "executable_but_wrong": 0.4364508393285372,
+    "final_sql_non_executable": 0.1750599520383693,
+    "no_recognized_final_sql": 0.004796163069544364
+  },
+  "executable_but_wrong_differences": {
+    "table_selection": 115,
+    "join_structure": 94,
+    "aggregation": 43,
+    "subquery_structure": 36,
+    "where_condition": 30,
+    "group_by": 28,
+    "column_value_or_operator_semantics": 25,
+    "set_operator": 14,
+    "distinct": 13,
+    "order_by": 11,
+    "having": 11,
+    "limit": 10
+  },
+  "tool_error_types": {
+    "unknown_column": 67,
+    "aggregation_error": 7,
+    "unknown_function": 1,
+    "syntax_error": 1
+  },
+  "extraction_methods": {
+    "final_sql": 415,
+    "direct_sql": 2
+  },
+  "recommended_sft_v4_priority": [
+    "table_selection",
+    "join_structure",
+    "unknown_column",
+    "aggregation",
+    "subquery_structure",
+    "where_condition",
+    "group_by",
+    "column_value_or_operator_semantics",
+    "set_operator",
+    "distinct",
+    "order_by",
+    "having",
+    "limit",
+    "aggregation_error",
+    "unknown_function",
+    "syntax_error"
+  ],
+  "methodology": {
+    "training_data_must_come_from": "Spider train only",
+    "model_selection_may_be_used_for": "error distribution and checkpoint selection",
+    "model_selection_must_not_be_used_for": "copying gold trajectories into training",
+    "existing_final_holdout_reuse": "forbidden"
+  }
+}

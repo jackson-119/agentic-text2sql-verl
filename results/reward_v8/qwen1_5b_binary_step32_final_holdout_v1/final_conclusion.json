@@ -1,0 +1,18 @@
+{
+  "selected_model": "/home/archlab/yb/models/text2sql_agent/qwen1_5b_grpo_binary_execution_temp01_step32_hf",
+  "early_stop_step": 32,
+  "temperature": 0.1,
+  "rollout_n": 8,
+  "reward": "binary execution correctness",
+  "final_execution_accuracy": 0.5539568345323741,
+  "sft_execution_accuracy": 0.4748201438848921,
+  "absolute_improvement": 0.07913669064748202,
+  "bootstrap_95ci": [
+    0.045563549160671464,
+    0.11270983213429256
+  ],
+  "mcnemar_pvalue": 8.699371704778969e-06,
+  "improvement_confirmed": true,
+  "project_status": "complete",
+  "further_tuning_forbidden": true
+}

@@ -1,0 +1,7 @@
+{
+  "reward_v6_status": "rejected",
+  "continue_reward_v6_training": false,
+  "selected_mainline_model": "/home/archlab/yb/models/text2sql_agent/spider_agent_grpo_reward_v5_step48_hf",
+  "reason": "Reward v6 significantly reduced execution accuracy while increasing executable-but-wrong SQL, indicating proxy objective overoptimization.",
+  "old_final_holdout_reuse_forbidden": true
+}

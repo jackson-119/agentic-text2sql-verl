@@ -1,0 +1,110 @@
+{
+  "0": {
+    "both_correct": 78,
+    "unexpanded_only": 6,
+    "expanded_only": 9,
+    "both_wrong": 107,
+    "expanded_minus_unexpanded": 0.015000000000000013,
+    "bootstrap_95_ci": [
+      -0.02,
+      0.055
+    ],
+    "mcnemar_exact_p": 0.60723876953125
+  },
+  "5": {
+    "both_correct": 82,
+    "unexpanded_only": 6,
+    "expanded_only": 9,
+    "both_wrong": 103,
+    "expanded_minus_unexpanded": 0.015000000000000013,
+    "bootstrap_95_ci": [
+      -0.025,
+      0.055
+    ],
+    "mcnemar_exact_p": 0.60723876953125
+  },
+  "8": {
+    "both_correct": 80,
+    "unexpanded_only": 7,
+    "expanded_only": 9,
+    "both_wrong": 104,
+    "expanded_minus_unexpanded": 0.010000000000000009,
+    "bootstrap_95_ci": [
+      -0.03,
+      0.05
+    ],
+    "mcnemar_exact_p": 0.803619384765625
+  },
+  "12": {
+    "both_correct": 85,
+    "unexpanded_only": 2,
+    "expanded_only": 11,
+    "both_wrong": 102,
+    "expanded_minus_unexpanded": 0.044999999999999984,
+    "bootstrap_95_ci": [
+      0.01,
+      0.08
+    ],
+    "mcnemar_exact_p": 0.0224609375
+  },
+  "16": {
+    "both_correct": 87,
+    "unexpanded_only": 3,
+    "expanded_only": 8,
+    "both_wrong": 102,
+    "expanded_minus_unexpanded": 0.024999999999999967,
+    "bootstrap_95_ci": [
+      -0.005,
+      0.06
+    ],
+    "mcnemar_exact_p": 0.2265625
+  },
+  "20": {
+    "both_correct": 84,
+    "unexpanded_only": 2,
+    "expanded_only": 11,
+    "both_wrong": 103,
+    "expanded_minus_unexpanded": 0.044999999999999984,
+    "bootstrap_95_ci": [
+      0.01,
+      0.08
+    ],
+    "mcnemar_exact_p": 0.0224609375
+  },
+  "24": {
+    "both_correct": 87,
+    "unexpanded_only": 2,
+    "expanded_only": 8,
+    "both_wrong": 103,
+    "expanded_minus_unexpanded": 0.02999999999999997,
+    "bootstrap_95_ci": [
+      0.0,
+      0.065
+    ],
+    "mcnemar_exact_p": 0.109375
+  },
+  "28": {
+    "both_correct": 89,
+    "unexpanded_only": 4,
+    "expanded_only": 6,
+    "both_wrong": 101,
+    "expanded_minus_unexpanded": 0.009999999999999953,
+    "bootstrap_95_ci": [
+      -0.02,
+      0.04
+    ],
+    "mcnemar_exact_p": 0.75390625
+  },
+  "32": {
+    "both_correct": 88,
+    "unexpanded_only": 8,
+    "expanded_only": 6,
+    "both_wrong": 98,
+    "expanded_minus_unexpanded": -0.010000000000000009,
+    "bootstrap_95_ci": [
+      -0.045,
+      0.025
+    ],
+    "mcnemar_exact_p": 0.79052734375
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "experiment": "qwen1.5b-protocol-v2-turn8-pilot200",
+  "sample_order_equal": true,
+  "models": {
+    "base_instruct": {
+      "n": 200,
+      "score_mean": 0.027299999999999994,
+      "execution_correct_count": 12,
+      "execution_correct_rate": 0.06,
+      "execution_correct_wilson_95": [
+        0.03465219425433187,
+        0.1019316929576627
+      ],
+      "sql_executable_rate": 0.07,
+      "answer_found_rate": 0.615,
+      "format_rate": 0.605,
+      "tool_called_rate": 0.0,
+      "multi_tool_rate": 0.0,
+      "list_tables_rate": 0.0,
+      "get_schema_rate": 0.0,
+      "execute_sql_rate": 0.0,
+      "tool_response_rate": 0.0,
+      "tool_error_rate": 0.0,
+      "malformed_rate": 0.0,
+      "recovery_success_rate": 0.0,
+      "ordered_chain_rate": 0.0,
+      "mean_tool_calls": 0.0,
+      "mean_output_chars": 322.62,
+      "call_distribution": {
+        "0": 200
+      },
+      "terminal_states": {
+        "recognized_final_sql": 123,
+        "no_tool_call": 77
+      }
+    },
+    "old_sft_bad_mask": {
+      "n": 200,
+      "score_mean": -0.001899999999999999,
+      "execution_correct_count": 2,
+      "execution_correct_rate": 0.01,
+      "execution_correct_wilson_95": [
+        0.0027466581335444384,
+        0.0357217617161768
+      ],
+      "sql_executable_rate": 0.02,
+      "answer_found_rate": 0.275,
+      "format_rate": 0.275,
+      "tool_called_rate": 0.0,
+      "multi_tool_rate": 0.0,
+      "list_tables_rate": 0.0,
+      "get_schema_rate": 0.0,
+      "execute_sql_rate": 0.0,
+      "tool_response_rate": 0.0,
+      "tool_error_rate": 0.0,
+      "malformed_rate": 0.0,
+      "recovery_success_rate": 0.0,
+      "ordered_chain_rate": 0.0,
+      "mean_tool_calls": 0.0,
+      "mean_output_chars": 131.475,
+      "call_distribution": {
+        "0": 200
+      },
+      "terminal_states": {
+        "no_tool_call": 145,
+        "recognized_final_sql": 55
+      }
+    },
+    "protocol_v2_maskfixed": {
+      "n": 200,
+      "score_mean": 0.486688650793651,
+      "execution_correct_count": 85,
+      "execution_correct_rate": 0.425,
+      "execution_correct_wilson_95": [
+        0.3585361254351385,
+        0.49429067352145145
+      ],
+      "sql_executable_rate": 0.64,
+      "answer_found_rate": 0.645,
+      "format_rate": 0.645,
+      "tool_called_rate": 1.0,
+      "multi_tool_rate": 1.0,
+      "list_tables_rate": 1.0,
+      "get_schema_rate": 1.0,
+      "execute_sql_rate": 0.995,
+      "tool_response_rate": 1.0,
+      "tool_error_rate": 0.225,
+      "malformed_rate": 0.0,
+      "recovery_success_rate": 0.045,
+      "ordered_chain_rate": 0.785,
+      "mean_tool_calls": 3.96,
+      "mean_output_chars": 1952.045,
+      "call_distribution": {
+        "3": 107,
+        "4": 37,
+        "5": 26,
+        "6": 20,
+        "7": 7,
+        "8": 3
+      },
+      "terminal_states": {
+        "recognized_final_sql": 129,
+        "successful_execute_without_final": 28,
+        "execute_called_without_success": 42,
+        "schema_only_without_execute": 1
+      }
+    }
+  },
+  "paired_tests": {
+    "base_to_new": {
+      "left": "base_instruct",
+      "right": "protocol_v2_maskfixed",
+      "both_correct": 10,
+      "left_only": 2,
+      "right_only": 75,
+      "both_wrong": 113,
+      "net_gain": 73,
+      "absolute_accuracy_change": 0.365,
+      "mcnemar_exact_p": 3.975760896174872e-20
+    },
+    "old_sft_to_new": {
+      "left": "old_sft_bad_mask",
+      "right": "protocol_v2_maskfixed",
+      "both_correct": 2,
+      "left_only": 0,
+      "right_only": 83,
+      "both_wrong": 115,
+      "net_gain": 83,
+      "absolute_accuracy_change": 0.415,
+      "mcnemar_exact_p": 2.0679515313825692e-25
+    }
+  },
+  "grpo_readiness": {
+    "ready_for_simple_execution_reward_grpo": true,
+    "rollout_n_recommendation": 8,
+    "estimated_all_wrong_group_rate": 0.011949308056793206,
+    "estimation_note": "Approximation only: assumes independent rollouts with the observed aggregate execution accuracy."
+  },
+  "final_holdout_used": false
+}

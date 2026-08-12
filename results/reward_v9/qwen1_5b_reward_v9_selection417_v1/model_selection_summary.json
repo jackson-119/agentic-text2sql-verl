@@ -1,0 +1,86 @@
+{
+  "dataset": "/home/archlab/yb/data/spider/processed/heldout_v1/model_selection_417.parquet",
+  "metrics": {
+    "reward_v8_step32_locked": {
+      "n": 417,
+      "execution_correct_rate": 0.5203836930455635,
+      "sql_executable_rate": 0.8105515587529976,
+      "answer_found_rate": 0.8585131894484412,
+      "format_rate": 0.8585131894484412,
+      "tool_called_rate": 1,
+      "protocol_valid_rate": 0.9832134292565947,
+      "tool_error_rate": 0.18944844124700239,
+      "tool_call_count_mean": 4.069544364508393
+    },
+    "reward_v9_step20": {
+      "n": 417,
+      "execution_correct_rate": 0.5107913669064749,
+      "sql_executable_rate": 0.8249400479616307,
+      "answer_found_rate": 0.9712230215827338,
+      "format_rate": 0.9712230215827338,
+      "tool_called_rate": 1,
+      "protocol_valid_rate": 0.9928057553956835,
+      "tool_error_rate": 0.18944844124700239,
+      "tool_call_count_mean": 4.091127098321343
+    },
+    "reward_v9_step24": {
+      "n": 417,
+      "execution_correct_rate": 0.4988009592326139,
+      "sql_executable_rate": 0.8105515587529976,
+      "answer_found_rate": 0.9688249400479616,
+      "format_rate": 0.9688249400479616,
+      "tool_called_rate": 1,
+      "protocol_valid_rate": 0.988009592326139,
+      "tool_error_rate": 0.2038369304556355,
+      "tool_call_count_mean": 4.155875299760192
+    }
+  },
+  "pairwise_tests": {
+    "reward_v8_step32_locked_to_reward_v9_step20": {
+      "both_correct": 193,
+      "left_only": 24,
+      "right_only": 20,
+      "both_wrong": 180,
+      "net_change": -4,
+      "absolute_change": -0.009592326139088728,
+      "p_value": 0.651587827208914
+    },
+    "reward_v8_step32_locked_to_reward_v9_step24": {
+      "both_correct": 188,
+      "left_only": 29,
+      "right_only": 20,
+      "both_wrong": 180,
+      "net_change": -9,
+      "absolute_change": -0.02158273381294964,
+      "p_value": 0.2528697301676033
+    },
+    "reward_v9_step20_to_reward_v9_step24": {
+      "both_correct": 206,
+      "left_only": 7,
+      "right_only": 2,
+      "both_wrong": 202,
+      "net_change": -5,
+      "absolute_change": -0.011990407673860911,
+      "p_value": 0.1796875
+    }
+  },
+  "decision": {
+    "selected_name": "reward_v8_step32_locked",
+    "selected_model": "/home/archlab/yb/models/text2sql_agent/qwen1_5b_grpo_binary_execution_temp01_step32_hf",
+    "reason": "Reward v9没有在固定Selection集上形成超过1个百分点的稳定优势，保留已经锁定并完成最终盲测的Reward v8 Step32",
+    "eligible_models": [
+      "reward_v8_step32_locked",
+      "reward_v9_step20",
+      "reward_v9_step24"
+    ],
+    "reward_v8_execution_accuracy": 0.5203836930455635,
+    "best_candidate": "reward_v8_step32_locked",
+    "best_candidate_execution_accuracy": 0.5203836930455635,
+    "old_final_holdout_must_not_be_reused": true,
+    "final_holdout_used_in_this_selection": false,
+    "next_action": "retain_reward_v8_and_finalize_analysis"
+  },
+  "excluded_checkpoint": "/home/archlab/yb/verl/checkpoints/text2sql_agent/qwen1_5b_grpo_reward_v9_std_smoke5_v1_retry1/global_step_32",
+  "excluded_reason": "protocol collapse: protocol_valid=0%, execution_correct=1.5%",
+  "final_holdout_used": false
+}

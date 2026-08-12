@@ -1,0 +1,225 @@
+{
+  "step_metrics": [
+    {
+      "step": 1,
+      "score": -0.065625,
+      "execution_correct_rate": 0.03125,
+      "tool_rate": 0.78125,
+      "protocol_rate": 0.78125,
+      "informative_group_rate": 0.25
+    },
+    {
+      "step": 2,
+      "score": -0.065625,
+      "execution_correct_rate": 0.03125,
+      "tool_rate": 0.84375,
+      "protocol_rate": 0.84375,
+      "informative_group_rate": 0.25
+    },
+    {
+      "step": 3,
+      "score": 0.003124999999999995,
+      "execution_correct_rate": 0.09375,
+      "tool_rate": 0.8125,
+      "protocol_rate": 0.8125,
+      "informative_group_rate": 0.5
+    },
+    {
+      "step": 4,
+      "score": -0.03125000000000001,
+      "execution_correct_rate": 0.0625,
+      "tool_rate": 0.8125,
+      "protocol_rate": 0.8125,
+      "informative_group_rate": 0.5
+    },
+    {
+      "step": 5,
+      "score": 0.10625,
+      "execution_correct_rate": 0.1875,
+      "tool_rate": 0.75,
+      "protocol_rate": 0.75,
+      "informative_group_rate": 0.5
+    },
+    {
+      "step": 6,
+      "score": 0.03749999999999999,
+      "execution_correct_rate": 0.125,
+      "tool_rate": 0.8125,
+      "protocol_rate": 0.8125,
+      "informative_group_rate": 0.5
+    },
+    {
+      "step": 7,
+      "score": 0.003124999999999995,
+      "execution_correct_rate": 0.09375,
+      "tool_rate": 0.84375,
+      "protocol_rate": 0.84375,
+      "informative_group_rate": 0.5
+    },
+    {
+      "step": 8,
+      "score": -0.03125000000000001,
+      "execution_correct_rate": 0.0625,
+      "tool_rate": 0.8125,
+      "protocol_rate": 0.8125,
+      "informative_group_rate": 0.5
+    },
+    {
+      "step": 9,
+      "score": -0.065625,
+      "execution_correct_rate": 0.03125,
+      "tool_rate": 0.84375,
+      "protocol_rate": 0.84375,
+      "informative_group_rate": 0.25
+    },
+    {
+      "step": 10,
+      "score": 0.10625,
+      "execution_correct_rate": 0.1875,
+      "tool_rate": 0.84375,
+      "protocol_rate": 0.84375,
+      "informative_group_rate": 0.5
+    },
+    {
+      "step": 11,
+      "score": 0.209375,
+      "execution_correct_rate": 0.28125,
+      "tool_rate": 0.8125,
+      "protocol_rate": 0.8125,
+      "informative_group_rate": 0.5
+    },
+    {
+      "step": 12,
+      "score": 0.175,
+      "execution_correct_rate": 0.25,
+      "tool_rate": 0.78125,
+      "protocol_rate": 0.75,
+      "informative_group_rate": 0.5
+    },
+    {
+      "step": 13,
+      "score": 0.209375,
+      "execution_correct_rate": 0.28125,
+      "tool_rate": 0.8125,
+      "protocol_rate": 0.8125,
+      "informative_group_rate": 0.5
+    },
+    {
+      "step": 14,
+      "score": 0.03749999999999999,
+      "execution_correct_rate": 0.125,
+      "tool_rate": 0.6875,
+      "protocol_rate": 0.6875,
+      "informative_group_rate": 0.5
+    },
+    {
+      "step": 15,
+      "score": -0.03125000000000001,
+      "execution_correct_rate": 0.0625,
+      "tool_rate": 0.9375,
+      "protocol_rate": 0.9375,
+      "informative_group_rate": 0.5
+    },
+    {
+      "step": 16,
+      "score": 0.03749999999999999,
+      "execution_correct_rate": 0.125,
+      "tool_rate": 0.84375,
+      "protocol_rate": 0.84375,
+      "informative_group_rate": 0.5
+    }
+  ],
+  "validation": [
+    {
+      "step": 0,
+      "n": 200,
+      "score": 0.3785,
+      "execution_correct_rate": 0.435,
+      "sql_executable_rate": 0.645,
+      "answer_found_rate": 0.645,
+      "tool_rate": 1.0,
+      "protocol_rate": 0.98,
+      "tool_error_rate": 0.185,
+      "mean_tool_calls": 4.03
+    },
+    {
+      "step": 5,
+      "n": 200,
+      "score": 0.4005,
+      "execution_correct_rate": 0.455,
+      "sql_executable_rate": 0.66,
+      "answer_found_rate": 0.66,
+      "tool_rate": 1.0,
+      "protocol_rate": 0.975,
+      "tool_error_rate": 0.19,
+      "mean_tool_calls": 4.15
+    },
+    {
+      "step": 8,
+      "n": 200,
+      "score": 0.3895,
+      "execution_correct_rate": 0.445,
+      "sql_executable_rate": 0.67,
+      "answer_found_rate": 0.67,
+      "tool_rate": 1.0,
+      "protocol_rate": 0.97,
+      "tool_error_rate": 0.205,
+      "mean_tool_calls": 4.225
+    },
+    {
+      "step": 12,
+      "n": 200,
+      "score": 0.42786,
+      "execution_correct_rate": 0.48,
+      "sql_executable_rate": 0.725,
+      "answer_found_rate": 0.725,
+      "tool_rate": 1.0,
+      "protocol_rate": 0.92,
+      "tool_error_rate": 0.19,
+      "mean_tool_calls": 4.335
+    },
+    {
+      "step": 16,
+      "n": 200,
+      "score": 0.42242999999999997,
+      "execution_correct_rate": 0.475,
+      "sql_executable_rate": 0.725,
+      "answer_found_rate": 0.73,
+      "tool_rate": 1.0,
+      "protocol_rate": 0.91,
+      "tool_error_rate": 0.205,
+      "mean_tool_calls": 4.295
+    }
+  ],
+  "group_quality": {
+    "group_count": 64,
+    "overall_informative_rate": 0.453125,
+    "step6_to_16_informative_rate": 0.4772727272727273
+  },
+  "wrong_scores": [
+    -0.1
+  ],
+  "wrong_process_nonzero": 0,
+  "stable_steps": [
+    0,
+    5,
+    8
+  ],
+  "pilot_best_step": 5,
+  "adjacent_collapse": [],
+  "checks": {
+    "all_steps_complete": true,
+    "incorrect_score_uniform": true,
+    "wrong_process_bonus_zero": true,
+    "late_information_ok": true,
+    "step16_execution_stable": true,
+    "step16_protocol_stable": false,
+    "step16_tools_stable": true,
+    "no_adjacent_collapse": true
+  },
+  "passed": false,
+  "next_action": "stop_and_analyze",
+  "selection417_used": false,
+  "bird_used": false,
+  "old_final_holdout_used": false
+}

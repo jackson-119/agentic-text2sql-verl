@@ -1,0 +1,441 @@
+{
+  "reward_version": 10,
+  "training_steps": 128,
+  "epoch": 1.0,
+  "validation": {
+    "0": {
+      "score": 0.36200000000000004,
+      "exec": 0.42,
+      "sql": 0.62,
+      "final": 0.625,
+      "tools": 1.0,
+      "protocol": 0.995,
+      "tool_error": 0.225
+    },
+    "5": {
+      "score": 0.38381,
+      "exec": 0.44,
+      "sql": 0.645,
+      "final": 0.65,
+      "tools": 1.0,
+      "protocol": 0.99,
+      "tool_error": 0.23
+    },
+    "8": {
+      "score": 0.37847499999999995,
+      "exec": 0.435,
+      "sql": 0.645,
+      "final": 0.65,
+      "tools": 1.0,
+      "protocol": 0.99,
+      "tool_error": 0.23
+    },
+    "12": {
+      "score": 0.378405,
+      "exec": 0.435,
+      "sql": 0.68,
+      "final": 0.69,
+      "tools": 1.0,
+      "protocol": 0.97,
+      "tool_error": 0.235
+    },
+    "16": {
+      "score": 0.39493,
+      "exec": 0.45,
+      "sql": 0.71,
+      "final": 0.715,
+      "tools": 1.0,
+      "protocol": 0.98,
+      "tool_error": 0.21
+    },
+    "20": {
+      "score": 0.37293,
+      "exec": 0.43,
+      "sql": 0.69,
+      "final": 0.705,
+      "tools": 1.0,
+      "protocol": 0.99,
+      "tool_error": 0.245
+    },
+    "24": {
+      "score": 0.389405,
+      "exec": 0.445,
+      "sql": 0.695,
+      "final": 0.715,
+      "tools": 1.0,
+      "protocol": 0.96,
+      "tool_error": 0.25
+    },
+    "28": {
+      "score": 0.41143,
+      "exec": 0.465,
+      "sql": 0.725,
+      "final": 0.76,
+      "tools": 1.0,
+      "protocol": 0.96,
+      "tool_error": 0.255
+    },
+    "32": {
+      "score": 0.42786,
+      "exec": 0.48,
+      "sql": 0.73,
+      "final": 0.765,
+      "tools": 1.0,
+      "protocol": 0.97,
+      "tool_error": 0.28
+    },
+    "36": {
+      "score": 0.42235999999999996,
+      "exec": 0.475,
+      "sql": 0.715,
+      "final": 0.76,
+      "tools": 1.0,
+      "protocol": 0.97,
+      "tool_error": 0.285
+    },
+    "40": {
+      "score": 0.36729,
+      "exec": 0.425,
+      "sql": 0.645,
+      "final": 0.69,
+      "tools": 1.0,
+      "protocol": 0.96,
+      "tool_error": 0.275
+    },
+    "44": {
+      "score": 0.41672,
+      "exec": 0.47,
+      "sql": 0.74,
+      "final": 0.82,
+      "tools": 1.0,
+      "protocol": 0.975,
+      "tool_error": 0.295
+    },
+    "48": {
+      "score": 0.42772,
+      "exec": 0.48,
+      "sql": 0.75,
+      "final": 0.845,
+      "tools": 1.0,
+      "protocol": 0.975,
+      "tool_error": 0.305
+    },
+    "52": {
+      "score": 0.42762500000000003,
+      "exec": 0.48,
+      "sql": 0.76,
+      "final": 0.86,
+      "tools": 1.0,
+      "protocol": 0.985,
+      "tool_error": 0.3
+    },
+    "56": {
+      "score": 0.416625,
+      "exec": 0.47,
+      "sql": 0.745,
+      "final": 0.86,
+      "tools": 1.0,
+      "protocol": 0.99,
+      "tool_error": 0.31
+    },
+    "60": {
+      "score": 0.41107999999999995,
+      "exec": 0.465,
+      "sql": 0.755,
+      "final": 0.88,
+      "tools": 1.0,
+      "protocol": 0.995,
+      "tool_error": 0.305
+    },
+    "64": {
+      "score": 0.41111,
+      "exec": 0.465,
+      "sql": 0.745,
+      "final": 0.89,
+      "tools": 1.0,
+      "protocol": 0.99,
+      "tool_error": 0.3
+    },
+    "68": {
+      "score": 0.42754,
+      "exec": 0.48,
+      "sql": 0.745,
+      "final": 0.89,
+      "tools": 1.0,
+      "protocol": 0.98,
+      "tool_error": 0.305
+    },
+    "72": {
+      "score": 0.40008000000000005,
+      "exec": 0.455,
+      "sql": 0.735,
+      "final": 0.935,
+      "tools": 1.0,
+      "protocol": 0.985,
+      "tool_error": 0.3
+    },
+    "76": {
+      "score": 0.41107999999999995,
+      "exec": 0.465,
+      "sql": 0.735,
+      "final": 0.915,
+      "tools": 1.0,
+      "protocol": 0.97,
+      "tool_error": 0.29
+    },
+    "80": {
+      "score": 0.422055,
+      "exec": 0.475,
+      "sql": 0.75,
+      "final": 0.905,
+      "tools": 1.0,
+      "protocol": 0.97,
+      "tool_error": 0.265
+    },
+    "84": {
+      "score": 0.42207500000000003,
+      "exec": 0.475,
+      "sql": 0.78,
+      "final": 0.9,
+      "tools": 1.0,
+      "protocol": 0.96,
+      "tool_error": 0.235
+    },
+    "88": {
+      "score": 0.438505,
+      "exec": 0.49,
+      "sql": 0.78,
+      "final": 0.875,
+      "tools": 1.0,
+      "protocol": 0.945,
+      "tool_error": 0.225
+    },
+    "92": {
+      "score": 0.43848,
+      "exec": 0.49,
+      "sql": 0.77,
+      "final": 0.87,
+      "tools": 1.0,
+      "protocol": 0.945,
+      "tool_error": 0.235
+    },
+    "96": {
+      "score": 0.42747999999999997,
+      "exec": 0.48,
+      "sql": 0.78,
+      "final": 0.88,
+      "tools": 1.0,
+      "protocol": 0.97,
+      "tool_error": 0.235
+    },
+    "100": {
+      "score": 0.41112499999999996,
+      "exec": 0.465,
+      "sql": 0.755,
+      "final": 0.86,
+      "tools": 1.0,
+      "protocol": 0.95,
+      "tool_error": 0.24
+    },
+    "104": {
+      "score": 0.42200499999999996,
+      "exec": 0.475,
+      "sql": 0.755,
+      "final": 0.865,
+      "tools": 1.0,
+      "protocol": 0.95,
+      "tool_error": 0.25
+    },
+    "108": {
+      "score": 0.411055,
+      "exec": 0.465,
+      "sql": 0.755,
+      "final": 0.87,
+      "tools": 1.0,
+      "protocol": 0.955,
+      "tool_error": 0.26
+    },
+    "112": {
+      "score": 0.36707999999999996,
+      "exec": 0.425,
+      "sql": 0.72,
+      "final": 0.855,
+      "tools": 1.0,
+      "protocol": 0.935,
+      "tool_error": 0.23
+    },
+    "116": {
+      "score": 0.32308,
+      "exec": 0.385,
+      "sql": 0.655,
+      "final": 0.88,
+      "tools": 1.0,
+      "protocol": 0.945,
+      "tool_error": 0.275
+    },
+    "120": {
+      "score": 0.306515,
+      "exec": 0.37,
+      "sql": 0.625,
+      "final": 0.86,
+      "tools": 0.995,
+      "protocol": 0.915,
+      "tool_error": 0.265
+    },
+    "124": {
+      "score": 0.41113,
+      "exec": 0.465,
+      "sql": 0.74,
+      "final": 0.93,
+      "tools": 1.0,
+      "protocol": 1.0,
+      "tool_error": 0.26
+    },
+    "128": {
+      "score": 0.43317,
+      "exec": 0.485,
+      "sql": 0.76,
+      "final": 0.935,
+      "tools": 1.0,
+      "protocol": 1.0,
+      "tool_error": 0.275
+    }
+  },
+  "training_blocks": [
+    {
+      "start": 65,
+      "end": 72,
+      "score": 0.209375,
+      "exec": 0.28125,
+      "final": 0.48046875,
+      "tools": 0.9609375,
+      "protocol": 0.9609375,
+      "information_rate": 0.75,
+      "all_wrong_rate": 0.25,
+      "bad_wrong_groups": 0
+    },
+    {
+      "start": 73,
+      "end": 80,
+      "score": 0.2566015625,
+      "exec": 0.32421875,
+      "final": 0.53125,
+      "tools": 0.96484375,
+      "protocol": 0.96484375,
+      "information_rate": 0.75,
+      "all_wrong_rate": 0.25,
+      "bad_wrong_groups": 0
+    },
+    {
+      "start": 81,
+      "end": 88,
+      "score": 0.273828125,
+      "exec": 0.33984375,
+      "final": 0.58984375,
+      "tools": 0.9765625,
+      "protocol": 0.97265625,
+      "information_rate": 0.71875,
+      "all_wrong_rate": 0.28125,
+      "bad_wrong_groups": 0
+    },
+    {
+      "start": 89,
+      "end": 96,
+      "score": 0.342578125,
+      "exec": 0.40234375,
+      "final": 0.64453125,
+      "tools": 0.96875,
+      "protocol": 0.96484375,
+      "information_rate": 0.84375,
+      "all_wrong_rate": 0.09375,
+      "bad_wrong_groups": 0
+    },
+    {
+      "start": 97,
+      "end": 104,
+      "score": 0.3210234375,
+      "exec": 0.3828125,
+      "final": 0.6796875,
+      "tools": 0.97265625,
+      "protocol": 0.95703125,
+      "information_rate": 0.78125,
+      "all_wrong_rate": 0.21875,
+      "bad_wrong_groups": 0
+    },
+    {
+      "start": 105,
+      "end": 112,
+      "score": 0.59453125,
+      "exec": 0.6328125,
+      "final": 0.79296875,
+      "tools": 0.98828125,
+      "protocol": 0.96484375,
+      "information_rate": 0.8125,
+      "all_wrong_rate": 0.03125,
+      "bad_wrong_groups": 0
+    },
+    {
+      "start": 113,
+      "end": 120,
+      "score": 0.265234375,
+      "exec": 0.33203125,
+      "final": 0.6171875,
+      "tools": 0.984375,
+      "protocol": 0.96484375,
+      "information_rate": 0.8125,
+      "all_wrong_rate": 0.1875,
+      "bad_wrong_groups": 0
+    },
+    {
+      "start": 121,
+      "end": 128,
+      "score": 0.359765625,
+      "exec": 0.41796875,
+      "final": 0.76171875,
+      "tools": 0.9765625,
+      "protocol": 0.953125,
+      "information_rate": 0.71875,
+      "all_wrong_rate": 0.1875,
+      "bad_wrong_groups": 0
+    }
+  ],
+  "incorrect_scores": [
+    -0.1
+  ],
+  "positive_incorrect": 0,
+  "wrong_process_nonzero": 0,
+  "bad_wrong_groups": 0,
+  "adjacent_collapses": [],
+  "consecutive_low_information": false,
+  "checks": {
+    "incorrect_score_uniform": true,
+    "positive_incorrect_zero": true,
+    "wrong_process_nonzero_zero": true,
+    "bad_wrong_groups_zero": true,
+    "no_adjacent_collapse": true,
+    "no_consecutive_low_information": true,
+    "step128_execution_stable": true,
+    "step128_protocol_stable": true,
+    "step128_tools_stable": true
+  },
+  "passed": true,
+  "predeclared_candidates": [
+    32,
+    64,
+    128
+  ],
+  "stable_candidates": [
+    32,
+    64,
+    128
+  ],
+  "candidates_within_one_point": [
+    32,
+    128
+  ],
+  "pilot_selected_checkpoint": 128,
+  "next_action": "run_selection417",
+  "selection417_used": false,
+  "bird_used": false,
+  "old_final_holdout_used": false
+}

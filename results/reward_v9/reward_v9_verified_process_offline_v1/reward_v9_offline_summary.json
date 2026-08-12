@@ -1,0 +1,23 @@
+{
+  "reward_version": 9,
+  "trajectory_count": 4096,
+  "step_count": 128,
+  "group_size": 8,
+  "group_count": 512,
+  "execution_correct_rate": 0.0537109375,
+  "v9_score_mean": -0.19171875,
+  "v9_score_std": 0.27431951496213774,
+  "process_reward_mean": 0.016796875,
+  "process_penalty_mean": 0.01759765625,
+  "correct_min": 0.8099999999999999,
+  "correct_max": 1.0,
+  "incorrect_min": -0.29,
+  "incorrect_max": -0.1,
+  "positive_incorrect_count": 0,
+  "binary_informative_group_count": 94,
+  "binary_informative_group_rate": 0.18359375,
+  "v9_informative_group_count": 491,
+  "v9_informative_group_rate": 0.958984375,
+  "metric_extraction_failures": 0,
+  "final_holdout_used": false
+}

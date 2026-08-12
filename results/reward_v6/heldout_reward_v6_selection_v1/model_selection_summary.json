@@ -1,0 +1,45 @@
+{
+  "dataset": "/home/archlab/yb/data/spider/processed/heldout_v1/model_selection_417.parquet",
+  "final_holdout_used": false,
+  "models": {
+    "reward_v5_step48_baseline": {
+      "n": 417,
+      "score_mean": 0.36040367705835336,
+      "execution_correct_rate": 0.38609112709832133,
+      "sql_executable_rate": 0.8177458033573142,
+      "executable_but_wrong_rate": 0.4316546762589928,
+      "final_matches_successful_execute_rate": 0.7985611510791367,
+      "tool_error_rate": 0.18465227817745802,
+      "average_tool_calls": 2.997601918465228
+    },
+    "reward_v6_step24": {
+      "n": 417,
+      "score_mean": 0.35189122987324434,
+      "execution_correct_rate": 0.3645083932853717,
+      "sql_executable_rate": 0.8848920863309353,
+      "executable_but_wrong_rate": 0.5203836930455635,
+      "final_matches_successful_execute_rate": 0.8513189448441247,
+      "tool_error_rate": 0.1366906474820144,
+      "average_tool_calls": 3.0
+    }
+  },
+  "paired_execution_test": {
+    "left_only": 12,
+    "right_only": 3,
+    "net_gain": -9,
+    "p_value": 0.03515625
+  },
+  "bootstrap_accuracy_difference_v6_minus_v5": {
+    "mean_difference": -0.021582733812949617,
+    "ci_low": -0.04076738609112707,
+    "ci_high": -0.004796163069544335
+  },
+  "selection_rule": "Primary: execution accuracy. Models within 1 percentage point use SQL executability, final consistency, lower tool error, then score.",
+  "equivalent_accuracy_candidates": [
+    "reward_v5_step48_baseline"
+  ],
+  "selected_model_name": "reward_v5_step48_baseline",
+  "selected_model_path": "/home/archlab/yb/models/text2sql_agent/spider_agent_grpo_reward_v5_step48_hf",
+  "model_locked_after_selection": true,
+  "old_final_holdout_reuse_forbidden": true
+}

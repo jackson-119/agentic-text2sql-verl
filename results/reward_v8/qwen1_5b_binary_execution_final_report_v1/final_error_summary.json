@@ -1,0 +1,21 @@
+{
+  "analysis_only": true,
+  "tuning_forbidden": true,
+  "sft_states": {
+    "correct": 198,
+    "no_recognized_final_sql": 128,
+    "executable_but_wrong": 91
+  },
+  "grpo_step32_states": {
+    "correct": 231,
+    "executable_but_wrong": 113,
+    "no_recognized_final_sql": 60,
+    "final_sql_non_executable": 13
+  },
+  "paired_transitions": {
+    "both_correct": 187,
+    "both_wrong": 175,
+    "step32_only": 44,
+    "sft_only": 11
+  }
+}

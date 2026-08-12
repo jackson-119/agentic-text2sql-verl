@@ -1,0 +1,25 @@
+{
+  "selected_arm": "v9_std",
+  "selected_checkpoint": "/home/archlab/yb/verl/checkpoints/text2sql_agent/qwen1_5b_grpo_reward_v9_std_smoke5_v1_retry1/global_step_16",
+  "next_action": "continue_selected_arm_to_step32",
+  "reason": "只有该分支通过稳定性门槛",
+  "eligibility": {
+    "v9_std": {
+      "eligible": true,
+      "reasons": []
+    },
+    "v9_nostd": {
+      "eligible": false,
+      "reasons": [
+        "协议合规率低于95%"
+      ]
+    }
+  },
+  "selection_rule": {
+    "primary": "Step16 deterministic execution accuracy",
+    "tie_margin": "1 percentage point",
+    "tie_preference": "v9_nostd",
+    "std_requirement": "Step16领先超过1个百分点，且在Step8/12/16至少两次持续领先，并且后半程Process-only率不超过70%"
+  },
+  "final_holdout_used": false
+}

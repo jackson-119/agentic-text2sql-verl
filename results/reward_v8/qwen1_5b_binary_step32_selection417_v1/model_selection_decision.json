@@ -1,0 +1,10 @@
+{
+  "dataset": "model_selection_417",
+  "selected_name": "grpo_step32",
+  "selected_model": "/home/archlab/yb/models/text2sql_agent/qwen1_5b_grpo_binary_execution_temp01_step32_hf",
+  "selection_reason": "Step32在固定模型选择集上取得更高执行准确率",
+  "primary_metric": "execution_correct_rate",
+  "model_selection_locked": true,
+  "step64_and_later_rejected": true,
+  "final_holdout_used": false
+}

@@ -1,0 +1,146 @@
+{
+  "validation": {
+    "0": {
+      "n": 200,
+      "score": 0.3500797619047619,
+      "score_std": 0.39584986139320893,
+      "execution_correct": 0.38,
+      "sql_executable": 0.8,
+      "executable_but_wrong": 0.42,
+      "verified_eligible": 0.4,
+      "final_ok": 0.78,
+      "tool_error": 0.21,
+      "duplicate_execute": 0.0,
+      "semantic_reward": 0.022929761904761904,
+      "semantic_gap_penalty": 0.0168,
+      "negative_rate": 0.22,
+      "tool_call_count": 3.0
+    },
+    "5": {
+      "n": 200,
+      "score": 0.35563904761904763,
+      "score_std": 0.3954915822055697,
+      "execution_correct": 0.385,
+      "sql_executable": 0.805,
+      "executable_but_wrong": 0.42,
+      "verified_eligible": 0.405,
+      "final_ok": 0.79,
+      "tool_error": 0.195,
+      "duplicate_execute": 0.0,
+      "semantic_reward": 0.023289047619047615,
+      "semantic_gap_penalty": 0.0168,
+      "negative_rate": 0.205,
+      "tool_call_count": 3.005
+    }
+  },
+  "training": {
+    "1": {
+      "n": 32,
+      "score": 0.029029017857142847,
+      "score_std": 0.07244212560589798,
+      "execution_correct": 0.0,
+      "sql_executable": 0.5,
+      "executable_but_wrong": 0.5,
+      "verified_eligible": 0.4375,
+      "final_ok": 0.4375,
+      "tool_error": 0.34375,
+      "duplicate_execute": 0.0,
+      "semantic_reward": 0.029341517857142854,
+      "semantic_gap_penalty": 0.02,
+      "negative_rate": 0.46875,
+      "tool_call_count": 2.90625
+    },
+    "2": {
+      "n": 32,
+      "score": 0.40659375000000003,
+      "score_std": 0.40928694544407046,
+      "execution_correct": 0.46875,
+      "sql_executable": 0.6875,
+      "executable_but_wrong": 0.21875,
+      "verified_eligible": 0.21875,
+      "final_ok": 0.59375,
+      "tool_error": 0.21875,
+      "duplicate_execute": 0.0,
+      "semantic_reward": 0.01315625,
+      "semantic_gap_penalty": 0.00875,
+      "negative_rate": 0.21875,
+      "tool_call_count": 2.90625
+    },
+    "3": {
+      "n": 32,
+      "score": 0.21171875,
+      "score_std": 0.369018142709051,
+      "execution_correct": 0.25,
+      "sql_executable": 0.6875,
+      "executable_but_wrong": 0.4375,
+      "verified_eligible": 0.21875,
+      "final_ok": 0.4375,
+      "tool_error": 0.40625,
+      "duplicate_execute": 0.0,
+      "semantic_reward": 0.013593749999999998,
+      "semantic_gap_penalty": 0.0175,
+      "negative_rate": 0.5,
+      "tool_call_count": 2.9375
+    },
+    "4": {
+      "n": 32,
+      "score": 0.20601339285714287,
+      "score_std": 0.3465331655605081,
+      "execution_correct": 0.21875,
+      "sql_executable": 0.625,
+      "executable_but_wrong": 0.40625,
+      "verified_eligible": 0.34375,
+      "final_ok": 0.5625,
+      "tool_error": 0.28125,
+      "duplicate_execute": 0.0,
+      "semantic_reward": 0.021013392857142855,
+      "semantic_gap_penalty": 0.01625,
+      "negative_rate": 0.34375,
+      "tool_call_count": 2.875
+    },
+    "5": {
+      "n": 32,
+      "score": 0.26956250000000004,
+      "score_std": 0.36809127073831843,
+      "execution_correct": 0.28125,
+      "sql_executable": 0.71875,
+      "executable_but_wrong": 0.4375,
+      "verified_eligible": 0.375,
+      "final_ok": 0.65625,
+      "tool_error": 0.1875,
+      "duplicate_execute": 0.0,
+      "semantic_reward": 0.0255,
+      "semantic_gap_penalty": 0.0175,
+      "negative_rate": 0.28125,
+      "tool_call_count": 2.90625
+    }
+  },
+  "paired_tests": {
+    "execution_correct": {
+      "left_only": 0,
+      "right_only": 1,
+      "net": 1,
+      "p_value": 1.0
+    },
+    "sql_executable": {
+      "left_only": 1,
+      "right_only": 2,
+      "net": 1,
+      "p_value": 1.0
+    }
+  },
+  "group_quality": {
+    "group_count": 40,
+    "informative_group_count": 40,
+    "informative_group_rate": 1.0,
+    "negative_trajectory_rate": 0.3625
+  },
+  "acceptance": {
+    "five_steps_complete": true,
+    "no_final_holdout": true,
+    "informative_group_rate_ok": true,
+    "execution_not_collapsed": true,
+    "sql_executable_not_collapsed": true,
+    "passed": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "reward_version": 7,
+  "selected_source": "/home/archlab/yb/verl/examples/text2sql_agent/rewards/spider_correctness_first_reward_v7.py",
+  "repository_source": "rewards/source/spider_correctness_first_reward_v7.py",
+  "sha256": "59e240dbd55ffee3cfb09b64a88b09d31859446a46a868945cfca8189057317a",
+  "candidate_count": 1,
+  "candidates": [
+    {
+      "path": "/home/archlab/yb/verl/examples/text2sql_agent/rewards/spider_correctness_first_reward_v7.py",
+      "sha256": "59e240dbd55ffee3cfb09b64a88b09d31859446a46a868945cfca8189057317a"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "reward_version": 6,
+  "fix": "terminal correctness weight 0.80 -> 0.77 to avoid upper clipping saturation",
+  "selection417": {
+    "n": 417,
+    "v5_mean": 0.481005861977085,
+    "v6_mean": 0.3587705835331735,
+    "v6_std": 0.3914559979497721,
+    "v6_min": -0.06,
+    "v6_max": 0.8500000000000001,
+    "execution_correct_rate": 0.38369304556354916,
+    "sql_executable_rate": 0.8201438848920863,
+    "executable_but_wrong_rate": 0.4364508393285372,
+    "eligible_rate": 0.4244604316546763,
+    "semantic_reward_mean": 0.02625259792166267,
+    "semantic_gap_penalty_mean": 0.017458033573141487,
+    "total_penalty_mean": 0.031510791366906474,
+    "correct_count": 160,
+    "incorrect_count": 257,
+    "correct_min": 0.77,
+    "incorrect_max": 0.12999999999999998
+  },
+  "training2048": {
+    "n": 2048,
+    "v5_mean": 0.2796166912921063,
+    "v6_mean": 0.19966688966957524,
+    "v6_std": 0.3554730830770377,
+    "v6_min": -0.07,
+    "v6_max": 0.8500000000000001,
+    "execution_correct_rate": 0.22802734375,
+    "sql_executable_rate": 0.537109375,
+    "executable_but_wrong_rate": 0.30908203125,
+    "eligible_rate": 0.2490234375,
+    "semantic_reward_mean": 0.015340322519277597,
+    "semantic_gap_penalty_mean": 0.01236328125,
+    "total_penalty_mean": 0.0397509765625,
+    "correct_count": 467,
+    "incorrect_count": 1581,
+    "correct_min": 0.76,
+    "incorrect_max": 0.18999999999999997
+  },
+  "grpo_group_audit": {
+    "group_count": 512,
+    "informative_group_count": 506,
+    "uniform_group_count": 6,
+    "informative_group_rate": 0.98828125,
+    "negative_trajectory_count": 875,
+    "negative_trajectory_rate": 0.42724609375
+  },
+  "methodology": {
+    "main_start_model": "reward_v5_step48",
+    "sft_v4_mainline_selected": false,
+    "model_selection_gold_used_for_training": false,
+    "final_holdout_used": false
+  }
+}

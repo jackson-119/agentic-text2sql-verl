@@ -1,0 +1,268 @@
+{
+  "reward_version": "v1",
+  "classification": "results_only",
+  "source_code_status": "not_recovered",
+  "source_code_claim": "The original Reward v1 implementation was not found in Git history, the active reward directory, backups, or backup archives.",
+  "experiment_name": "ppo_pilot20_reward_v1",
+  "training_evidence": {
+    "training_log": {
+      "path": "/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log",
+      "exists": true,
+      "size_bytes": 248318,
+      "line_count": null,
+      "sha256": "75bc2ed74b09cee8dacf02691ff3054154e40c1bab075d9db285a71f38438323"
+    },
+    "build_log": {
+      "path": "/home/archlab/yb/verl/logs/text2sql_agent/build_reward_v1.log",
+      "exists": true,
+      "size_bytes": 3805,
+      "line_count": null,
+      "sha256": "e66280a5e44d4393faf280c3067cb006865859097cdbede70ecea226c0444a6d"
+    },
+    "rollout_steps_expected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "rollout_steps_present": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "validation_steps_expected": [
+      0,
+      10,
+      20
+    ],
+    "validation_steps_present": [
+      0,
+      10,
+      20
+    ],
+    "checkpoints": [
+      {
+        "step": 10,
+        "path": "/home/archlab/yb/verl/checkpoints/ppo_pilot20_reward_v1/global_step_10",
+        "exists": true
+      },
+      {
+        "step": 20,
+        "path": "/home/archlab/yb/verl/checkpoints/ppo_pilot20_reward_v1/global_step_20",
+        "exists": true
+      }
+    ]
+  },
+  "validation_files_not_uploaded": [
+    {
+      "path": "/home/archlab/yb/verl/evaluation/ppo_pilot20_reward_v1/0.jsonl",
+      "exists": true,
+      "size_bytes": 783841,
+      "line_count": 500,
+      "sha256": "1fea66089775ed8166d0697089ada3b9317fe28b83775356317ed820dd8f6da1"
+    },
+    {
+      "path": "/home/archlab/yb/verl/evaluation/ppo_pilot20_reward_v1/10.jsonl",
+      "exists": true,
+      "size_bytes": 782036,
+      "line_count": 500,
+      "sha256": "9c04616e8cb6dc027e26c3675e8993cea5f900c3e9ea9f7e1f29911bcef37b80"
+    },
+    {
+      "path": "/home/archlab/yb/verl/evaluation/ppo_pilot20_reward_v1/20.jsonl",
+      "exists": true,
+      "size_bytes": 794167,
+      "line_count": 500,
+      "sha256": "59ca9506cc9dd10380fd356f354f29252d532f471e2d526caf58b808f5a48b49"
+    }
+  ],
+  "rollout_files_not_uploaded": [
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/1.jsonl",
+      "exists": true,
+      "size_bytes": 102268,
+      "line_count": 64,
+      "sha256": "48408a97fac0f95eba9d7366321ab9d17304085fef23aa4e31d34b827ef38a78"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/2.jsonl",
+      "exists": true,
+      "size_bytes": 107949,
+      "line_count": 64,
+      "sha256": "95495f967418f6a6e215c42270fccf377e73ade06a595791a11280a5059ee07d"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/3.jsonl",
+      "exists": true,
+      "size_bytes": 107054,
+      "line_count": 64,
+      "sha256": "68394fbc99461ab4a938e4da502128b312196e111ceb7eff66995de2268255d5"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/4.jsonl",
+      "exists": true,
+      "size_bytes": 104513,
+      "line_count": 64,
+      "sha256": "b3162693c0c43c0fee1fd856d5b22ed85cb0062012e9992a5d7332f396f75c27"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/5.jsonl",
+      "exists": true,
+      "size_bytes": 107203,
+      "line_count": 64,
+      "sha256": "d11c9f8e9e4a436eebe58a82a62dc9cae985eb2735af52d363aeb336ee75c5ce"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/6.jsonl",
+      "exists": true,
+      "size_bytes": 100671,
+      "line_count": 64,
+      "sha256": "2eb4382da3a151f45659120d1bbd04505bdad111f3502d9c0a47499c210ff8a4"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/7.jsonl",
+      "exists": true,
+      "size_bytes": 111189,
+      "line_count": 64,
+      "sha256": "a59a0ee0b82f2ca41b29e4fc6dad66a93c0bcbbf9ffee16fc0f96cf11dd63e0c"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/8.jsonl",
+      "exists": true,
+      "size_bytes": 98195,
+      "line_count": 64,
+      "sha256": "d00f15e255818c05bc8ded0648ea0b2806c723019fb01d9df71b6bf5d9241f60"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/9.jsonl",
+      "exists": true,
+      "size_bytes": 98000,
+      "line_count": 64,
+      "sha256": "2c603449ba6d2a68fffa8466c3b28e97672cd8f690ce476636e773b82405f3e9"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/10.jsonl",
+      "exists": true,
+      "size_bytes": 92804,
+      "line_count": 64,
+      "sha256": "47aac17b6ca0665a10b2eb73e6f73af3eab6d70ab2bb3fa890264a4227dcb52e"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/11.jsonl",
+      "exists": true,
+      "size_bytes": 105434,
+      "line_count": 64,
+      "sha256": "21bc5f2d38143ae5e2bbbb371a1908d86e113cb9f00607988bdf6ed1ee109fe7"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/12.jsonl",
+      "exists": true,
+      "size_bytes": 98007,
+      "line_count": 64,
+      "sha256": "32c02cd246f8729d7ac6fbd6fcccbca713749f4fc3e8dc0cd47b6967293b860a"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/13.jsonl",
+      "exists": true,
+      "size_bytes": 105695,
+      "line_count": 64,
+      "sha256": "2b86e36056b142e5f3261bef9b7d37de999f02d8ecf5967876c7ae3023874599"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/14.jsonl",
+      "exists": true,
+      "size_bytes": 98963,
+      "line_count": 64,
+      "sha256": "039ddb03db1fec79a220b605f5ae1f988bc54622a83f8b2c3f7f44163441d746"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/15.jsonl",
+      "exists": true,
+      "size_bytes": 102388,
+      "line_count": 64,
+      "sha256": "f2856ed6ee0979ab7d0038c3853208b21f906e20d44fdb06df4955ee8d088864"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/16.jsonl",
+      "exists": true,
+      "size_bytes": 105174,
+      "line_count": 64,
+      "sha256": "db7a4d786729a6cdfc6a56171ba1a5e3bcf2501b7bd85d337bba026af9cf28a2"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/17.jsonl",
+      "exists": true,
+      "size_bytes": 101071,
+      "line_count": 64,
+      "sha256": "2d838018d4281be8e9a2ddc7655b3570a1cc051a61a1186050b1f75be683bfca"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/18.jsonl",
+      "exists": true,
+      "size_bytes": 106584,
+      "line_count": 64,
+      "sha256": "69465eca241d13f1b49109b70eae5ba00a7b1c73a0d1b8f225ab8720f6013745"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/19.jsonl",
+      "exists": true,
+      "size_bytes": 99617,
+      "line_count": 64,
+      "sha256": "2c10e37021b60462f1c16f206d336d0f56ef15cd24f6b48b52bb7d4309174c64"
+    },
+    {
+      "path": "/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/20.jsonl",
+      "exists": true,
+      "size_bytes": 104169,
+      "line_count": 64,
+      "sha256": "db21b4a48badf08e0aa1ccffef3c90d10ab7c1498f312d8b743bb96388a0d24b"
+    }
+  ],
+  "archived_compact_results": [
+    {
+      "path": "results/reward_v1/reward_v1_vs_v3_smoke5.json",
+      "size_bytes": 15631,
+      "sha256": "1ec243418066c2f6f2cfdba67a7fd8c7e2f56aa2ffc92e9ae6e4e7cea704b2ed"
+    },
+    {
+      "path": "results/reward_v1/wandb_v1_vs_v3.json",
+      "size_bytes": 8090,
+      "sha256": "dade2314c5995d227e6fd2c9130f6dbae6d7ccda59e2c2829f70e4375e57f4ab"
+    }
+  ],
+  "forensic_audit": "docs/reward_v1_recovery_audit.txt",
+  "candidate_search": "docs/reward_v1_candidate_search.txt"
+}

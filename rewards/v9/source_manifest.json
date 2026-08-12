@@ -1,0 +1,13 @@
+{
+  "reward_version": 9,
+  "selected_source": "/home/archlab/yb/verl/examples/text2sql_agent/rewards/spider_verified_process_reward_v9.py",
+  "repository_source": "rewards/source/spider_verified_process_reward_v9.py",
+  "sha256": "4c1db9d4c4b327b12491918e3e42367f9cea0ff867f6e7d25a1a370dd48e09d0",
+  "candidate_count": 1,
+  "candidates": [
+    {
+      "path": "/home/archlab/yb/verl/examples/text2sql_agent/rewards/spider_verified_process_reward_v9.py",
+      "sha256": "4c1db9d4c4b327b12491918e3e42367f9cea0ff867f6e7d25a1a370dd48e09d0"
+    }
+  ]
+}

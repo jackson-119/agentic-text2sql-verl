@@ -1,0 +1,9 @@
+{
+  "selected_model_name": "reward_v5_step48_baseline",
+  "selected_model_path": "/home/archlab/yb/models/text2sql_agent/spider_agent_grpo_reward_v5_step48_hf",
+  "equivalent_accuracy_candidates": [
+    "reward_v5_step48_baseline"
+  ],
+  "final_holdout_used": false,
+  "old_final_holdout_reuse_forbidden": true
+}

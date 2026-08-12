@@ -1,0 +1,56 @@
+{
+  "dataset": "/home/archlab/yb/data/spider/processed/heldout_v1/model_selection_417.parquet",
+  "models": {
+    "reward_v8_step32_locked": {
+      "model": "/home/archlab/yb/models/text2sql_agent/qwen1_5b_grpo_binary_execution_temp01_step32_hf",
+      "result": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_binary_step32_selection417_v1/results/grpo_step32/generated/0.jsonl",
+      "metrics": {
+        "n": 417,
+        "execution_correct_rate": 0.5203836930455635,
+        "sql_executable_rate": 0.8105515587529976,
+        "answer_found_rate": 0.8537170263788969,
+        "format_compliance_rate": 0.8537170263788969,
+        "tool_called_rate": 1.0,
+        "tool_protocol_valid_rate": 0.9808153477218226,
+        "tool_error_rate": 0.19424460431654678,
+        "mean_tool_calls": 4.067146282973621
+      }
+    },
+    "reward_v10_step128": {
+      "model": "/home/archlab/yb/models/text2sql_agent/qwen1_5b_grpo_reward_v10_step128_hf",
+      "result": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_reward_v10_step128_selection417_v1/results/reward_v10_step128/generated/0.jsonl",
+      "metrics": {
+        "n": 417,
+        "execution_correct_rate": 0.4988009592326139,
+        "sql_executable_rate": 0.7937649880095923,
+        "answer_found_rate": 0.9520383693045563,
+        "format_compliance_rate": 0.9520383693045563,
+        "tool_called_rate": 1.0,
+        "tool_protocol_valid_rate": 1.0,
+        "tool_error_rate": 0.2685851318944844,
+        "mean_tool_calls": 3.697841726618705
+      }
+    }
+  },
+  "paired_test": {
+    "both_correct": 187,
+    "v8_only": 30,
+    "v10_only": 21,
+    "both_wrong": 179,
+    "net_correct": -9,
+    "accuracy_delta": -0.021582733812949617,
+    "bootstrap_95_ci": [
+      -0.05515587529976019,
+      0.011990407673860911
+    ],
+    "mcnemar_exact_p": 0.2624375357110438
+  },
+  "selection_winner": "reward_v8_step32_locked",
+  "v10_eligible_for_bird": true,
+  "models_locked_for_bird": [
+    "reward_v8_step32_locked",
+    "reward_v10_step128_locked"
+  ],
+  "bird_used": false,
+  "old_final_holdout_used": false
+}

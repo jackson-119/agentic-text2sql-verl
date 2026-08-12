@@ -1,0 +1,82 @@
+{
+  "reward_version": 10,
+  "design": "all incorrect trajectories receive -0.10; process reward is correctness-gated",
+  "datasets": {
+    "v8_training": {
+      "source": "v8_training",
+      "rollout_root": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_grpo_binary_execution_n8_temp01_smoke5_v1/rollouts",
+      "step_count": 128,
+      "trajectory_count": 4096,
+      "group_size": 8,
+      "group_count": 512,
+      "execution_correct_rate": 0.0537109375,
+      "v10_score_mean": -0.04265332031250001,
+      "v10_score_std": 0.241183497409274,
+      "score_correctness_correlation": 0.9980245695560024,
+      "correct_min": 0.8,
+      "correct_max": 1.0,
+      "incorrect_min": -0.1,
+      "incorrect_max": -0.1,
+      "unique_incorrect_scores": [
+        -0.1
+      ],
+      "positive_incorrect_count": 0,
+      "wrong_process_nonzero_count": 0,
+      "correctness_informative_group_rate": 0.18359375,
+      "reward_informative_group_rate": 0.18359375,
+      "all_wrong_group_rate": 0.81640625,
+      "all_wrong_nonuniform_count": 0,
+      "all_wrong_nonuniform_rate": 0.0,
+      "all_correct_group_count": 0,
+      "all_correct_process_informative_rate": 0.0,
+      "branch_counts": {
+        "0": 3876,
+        "3": 172,
+        "1": 23,
+        "2": 25
+      }
+    },
+    "v9_training": {
+      "source": "v9_training",
+      "rollout_root": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_grpo_reward_v9_std_smoke5_v1_retry1/rollouts",
+      "step_count": 32,
+      "trajectory_count": 1024,
+      "group_size": 8,
+      "group_count": 128,
+      "execution_correct_rate": 0.1376953125,
+      "v10_score_mean": 0.051464843749999996,
+      "v10_score_std": 0.3790378994675705,
+      "score_correctness_correlation": 0.9999999999999913,
+      "correct_min": 1.0,
+      "correct_max": 1.0,
+      "incorrect_min": -0.1,
+      "incorrect_max": -0.1,
+      "unique_incorrect_scores": [
+        -0.1
+      ],
+      "positive_incorrect_count": 0,
+      "wrong_process_nonzero_count": 0,
+      "correctness_informative_group_rate": 0.5,
+      "reward_informative_group_rate": 0.5,
+      "all_wrong_group_rate": 0.5,
+      "all_wrong_nonuniform_count": 0,
+      "all_wrong_nonuniform_rate": 0.0,
+      "all_correct_group_count": 0,
+      "all_correct_process_informative_rate": 0.0,
+      "branch_counts": {
+        "0": 883,
+        "3": 141
+      }
+    }
+  },
+  "all_invariants_passed": true,
+  "recommended_online_settings": {
+    "rollout_n": 8,
+    "temperature": 0.1,
+    "norm_adv_by_std_in_grpo": false,
+    "actor_learning_rate": 5e-07,
+    "smoke_steps": 5
+  },
+  "bird_external_dataset_used": false,
+  "old_final_holdout_used": false
+}

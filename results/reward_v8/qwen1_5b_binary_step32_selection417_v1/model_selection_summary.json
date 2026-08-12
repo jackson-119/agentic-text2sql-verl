@@ -1,0 +1,53 @@
+{
+  "dataset": "model_selection_417",
+  "sample_count": 417,
+  "models": {
+    "sft_baseline": {
+      "path": "/home/archlab/yb/models/text2sql_agent/spider_agent_sft_qwen2_5_coder_1_5b_protocol_v2_maskfix_v1_full_epoch1/final_hf",
+      "total": 417,
+      "score_mean": 0.44364508393285373,
+      "execution_correct_count": 185,
+      "execution_correct_rate": 0.44364508393285373,
+      "execution_correct_wilson_95ci": [
+        0.39669070674982515,
+        0.491628281280237
+      ],
+      "sql_executable_rate": 0.6690647482014388,
+      "answer_found_rate": 0.6714628297362111,
+      "tool_called_rate": 1.0,
+      "tool_error_rate": 0.19664268585131894
+    },
+    "grpo_step32": {
+      "path": "/home/archlab/yb/models/text2sql_agent/qwen1_5b_grpo_binary_execution_temp01_step32_hf",
+      "total": 417,
+      "score_mean": 0.5203836930455635,
+      "execution_correct_count": 217,
+      "execution_correct_rate": 0.5203836930455635,
+      "execution_correct_wilson_95ci": [
+        0.4724665849202637,
+        0.5679286747284372
+      ],
+      "sql_executable_rate": 0.8105515587529976,
+      "answer_found_rate": 0.8537170263788969,
+      "tool_called_rate": 1.0,
+      "tool_error_rate": 0.19424460431654678
+    }
+  },
+  "paired_test": {
+    "both_correct": 176,
+    "sft_only": 9,
+    "step32_only": 41,
+    "both_wrong": 191,
+    "net_correct_change": 32,
+    "execution_accuracy_delta": 0.0767386091127098,
+    "bootstrap_delta_95ci": [
+      0.045563549160671464,
+      0.11031175059952038
+    ],
+    "mcnemar_exact_pvalue": 5.614100093254137e-06
+  },
+  "selected_name": "grpo_step32",
+  "selected_model": "/home/archlab/yb/models/text2sql_agent/qwen1_5b_grpo_binary_execution_temp01_step32_hf",
+  "selection_reason": "Step32在固定模型选择集上取得更高执行准确率",
+  "final_holdout_used": false
+}

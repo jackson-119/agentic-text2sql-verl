@@ -1,0 +1,58 @@
+{
+  "evaluation_type": "locked_final_evaluation",
+  "sample_count": 417,
+  "models": {
+    "sft_baseline": {
+      "path": "/home/archlab/yb/models/text2sql_agent/spider_agent_sft_qwen2_5_coder_1_5b_protocol_v2_maskfix_v1_full_epoch1/final_hf",
+      "total": 417,
+      "score_mean": 0.4748201438848921,
+      "execution_correct_count": 198,
+      "execution_correct_rate": 0.4748201438848921,
+      "execution_correct_wilson_95ci": [
+        0.42733965130082485,
+        0.5227603220743092
+      ],
+      "sql_executable_rate": 0.6930455635491607,
+      "answer_found_rate": 0.6930455635491607,
+      "tool_called_rate": 1.0,
+      "tool_error_rate": 0.19664268585131894
+    },
+    "grpo_step32_locked": {
+      "path": "/home/archlab/yb/models/text2sql_agent/qwen1_5b_grpo_binary_execution_temp01_step32_hf",
+      "total": 417,
+      "score_mean": 0.5539568345323741,
+      "execution_correct_count": 231,
+      "execution_correct_rate": 0.5539568345323741,
+      "execution_correct_wilson_95ci": [
+        0.5059703312107584,
+        0.600958297271097
+      ],
+      "sql_executable_rate": 0.8249400479616307,
+      "answer_found_rate": 0.8561151079136691,
+      "tool_called_rate": 1.0,
+      "tool_error_rate": 0.1774580335731415
+    }
+  },
+  "paired_test": {
+    "both_correct": 187,
+    "sft_only": 11,
+    "step32_only": 44,
+    "both_wrong": 175,
+    "net_correct_change": 33,
+    "execution_accuracy_delta": 0.07913669064748202,
+    "bootstrap_delta_95ci": [
+      0.045563549160671464,
+      0.11270983213429256
+    ],
+    "mcnemar_exact_pvalue": 8.699371704778969e-06
+  },
+  "comparison_with_selection": {
+    "selection_accuracy_delta": 0.0767386091127098,
+    "final_accuracy_delta": 0.07913669064748202,
+    "delta_difference": 0.002398081534772223
+  },
+  "improvement_confirmed": true,
+  "selection_locked_before_final": true,
+  "further_tuning_forbidden": true,
+  "holdout_note": "Unused by the 1.5B model selection pipeline but previously used in the broader 0.5B project."
+}

@@ -1,0 +1,212 @@
+{
+  "dataset": "/home/archlab/yb/data/spider/processed/heldout_v1/model_selection_417.parquet",
+  "reward": "/home/archlab/yb/verl/examples/text2sql_agent/rewards/spider_verified_structural_reward_v5.py",
+  "decoding": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "n": 1
+  },
+  "metrics": {
+    "reward_v3_step20": {
+      "model": "/home/archlab/yb/models/text2sql_agent/spider_agent_grpo_reward_v3_step20_hf",
+      "checkpoint_step": 20,
+      "samples": 417,
+      "score": 0.43646064101100107,
+      "execution_correct": 0.36930455635491605,
+      "sql_executable": 0.7002398081534772,
+      "answer_found": 1.0,
+      "format_compliance": 0.9976019184652278,
+      "verified_structural_eligible": 0.3237410071942446,
+      "structural_reward": 0.01154457386471774,
+      "final_matches_successful_execute": 0.6882494004796164,
+      "final_was_failed": 0.2853717026378897,
+      "final_unverified": 0.3117505995203837,
+      "tool_error": 0.2949640287769784,
+      "duplicate_execute": 0.0,
+      "tool_call_count": 3.5467625899280577
+    },
+    "reward_v5_step32": {
+      "model": "/home/archlab/yb/models/text2sql_agent/spider_agent_grpo_reward_v5_step32_hf",
+      "checkpoint_step": 32,
+      "samples": 417,
+      "score": 0.46234588519660536,
+      "execution_correct": 0.38848920863309355,
+      "sql_executable": 0.7458033573141487,
+      "answer_found": 0.9976019184652278,
+      "format_compliance": 0.9976019184652278,
+      "verified_structural_eligible": 0.3405275779376499,
+      "structural_reward": 0.011866268889650176,
+      "final_matches_successful_execute": 0.7170263788968825,
+      "final_was_failed": 0.22062350119904076,
+      "final_unverified": 0.2805755395683453,
+      "tool_error": 0.2302158273381295,
+      "duplicate_execute": 0.0,
+      "tool_call_count": 3.052757793764988
+    },
+    "reward_v5_step48": {
+      "model": "/home/archlab/yb/models/text2sql_agent/spider_agent_grpo_reward_v5_step48_hf",
+      "checkpoint_step": 48,
+      "samples": 417,
+      "score": 0.4810058619770859,
+      "execution_correct": 0.38369304556354916,
+      "sql_executable": 0.8201438848920863,
+      "answer_found": 0.9952038369304557,
+      "format_compliance": 0.9952038369304557,
+      "verified_structural_eligible": 0.4244604316546763,
+      "structural_reward": 0.01438715694111376,
+      "final_matches_successful_execute": 0.8033573141486811,
+      "final_was_failed": 0.15827338129496402,
+      "final_unverified": 0.19184652278177458,
+      "tool_error": 0.18225419664268586,
+      "duplicate_execute": 0.0,
+      "tool_call_count": 2.9952038369304557
+    },
+    "reward_v5_step64": {
+      "model": "/home/archlab/yb/models/text2sql_agent/spider_agent_grpo_reward_v5_step64_hf",
+      "checkpoint_step": 64,
+      "samples": 417,
+      "score": 0.48315909177420024,
+      "execution_correct": 0.3669064748201439,
+      "sql_executable": 0.882494004796163,
+      "answer_found": 1.0,
+      "format_compliance": 1.0,
+      "verified_structural_eligible": 0.4892086330935252,
+      "structural_reward": 0.016420482661489842,
+      "final_matches_successful_execute": 0.8537170263788969,
+      "final_was_failed": 0.08633093525179857,
+      "final_unverified": 0.14628297362110312,
+      "tool_error": 0.13908872901678657,
+      "duplicate_execute": 0.0,
+      "tool_call_count": 3.011990407673861
+    }
+  },
+  "pairwise_tests": [
+    {
+      "left": "reward_v3_step20",
+      "right": "reward_v5_step32",
+      "metric": "execution_correct",
+      "left_only": 11,
+      "right_only": 19,
+      "net_right": 8,
+      "p_value": 0.20048842206597328
+    },
+    {
+      "left": "reward_v3_step20",
+      "right": "reward_v5_step32",
+      "metric": "sql_executable",
+      "left_only": 26,
+      "right_only": 45,
+      "net_right": 19,
+      "p_value": 0.03192716208321237
+    },
+    {
+      "left": "reward_v3_step20",
+      "right": "reward_v5_step48",
+      "metric": "execution_correct",
+      "left_only": 18,
+      "right_only": 24,
+      "net_right": 6,
+      "p_value": 0.44079906734259566
+    },
+    {
+      "left": "reward_v3_step20",
+      "right": "reward_v5_step48",
+      "metric": "sql_executable",
+      "left_only": 15,
+      "right_only": 65,
+      "net_right": 50,
+      "p_value": 1.4114668409813958e-08
+    },
+    {
+      "left": "reward_v3_step20",
+      "right": "reward_v5_step64",
+      "metric": "execution_correct",
+      "left_only": 23,
+      "right_only": 22,
+      "net_right": -1,
+      "p_value": 1.0
+    },
+    {
+      "left": "reward_v3_step20",
+      "right": "reward_v5_step64",
+      "metric": "sql_executable",
+      "left_only": 6,
+      "right_only": 82,
+      "net_right": 76,
+      "p_value": 3.7711198441363256e-18
+    },
+    {
+      "left": "reward_v5_step32",
+      "right": "reward_v5_step48",
+      "metric": "execution_correct",
+      "left_only": 12,
+      "right_only": 10,
+      "net_right": -2,
+      "p_value": 0.8318119049072266
+    },
+    {
+      "left": "reward_v5_step32",
+      "right": "reward_v5_step48",
+      "metric": "sql_executable",
+      "left_only": 9,
+      "right_only": 40,
+      "net_right": 31,
+      "p_value": 9.263546409954415e-06
+    },
+    {
+      "left": "reward_v5_step32",
+      "right": "reward_v5_step64",
+      "metric": "execution_correct",
+      "left_only": 21,
+      "right_only": 12,
+      "net_right": -9,
+      "p_value": 0.16275565745308995
+    },
+    {
+      "left": "reward_v5_step32",
+      "right": "reward_v5_step64",
+      "metric": "sql_executable",
+      "left_only": 8,
+      "right_only": 65,
+      "net_right": 57,
+      "p_value": 3.230981506909271e-12
+    },
+    {
+      "left": "reward_v5_step48",
+      "right": "reward_v5_step64",
+      "metric": "execution_correct",
+      "left_only": 14,
+      "right_only": 7,
+      "net_right": -7,
+      "p_value": 0.18924713134765625
+    },
+    {
+      "left": "reward_v5_step48",
+      "right": "reward_v5_step64",
+      "metric": "sql_executable",
+      "left_only": 10,
+      "right_only": 36,
+      "net_right": 26,
+      "p_value": 0.00015641720852954677
+    }
+  ],
+  "decision": {
+    "selection_rule": [
+      "最高执行准确率",
+      "与最高准确率相差不超过1个百分点且McNemar p>=0.05视为并列",
+      "并列时选择SQL可执行率更高者",
+      "再并列时选择FinalOK更高者",
+      "再并列时选择工具错误率更低者",
+      "完全相同时选择更早Checkpoint"
+    ],
+    "top_execution_candidate": "reward_v5_step32",
+    "execution_tied_candidates": [
+      "reward_v5_step32",
+      "reward_v5_step48"
+    ],
+    "selected_candidate": "reward_v5_step48",
+    "selected_model": "/home/archlab/yb/models/text2sql_agent/spider_agent_grpo_reward_v5_step48_hf",
+    "selected_checkpoint_step": 48
+  },
+  "final_holdout_evaluated": false
+}

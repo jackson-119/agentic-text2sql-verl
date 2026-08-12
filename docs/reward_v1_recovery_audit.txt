@@ -1,0 +1,64 @@
+===== Reward v1 Recovery Audit =====
+
+审计时间：2026-08-12T13:48:26+08:00
+
+===== Git历史中的Reward文件 =====
+
+===== Git历史中的严格v1版本字段 =====
+
+===== 工作区、配置与日志中的v1引用 =====
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:398: [36m(TaskRunner pid=2309205)[0m                                              'experiment_name': 'ppo_pilot20_reward_v1',
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:798: [36m(TaskRunner pid=2309205)[0m              'default_local_dir': '/home/archlab/yb/verl/checkpoints/ppo_pilot20_reward_v1',
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:802: [36m(TaskRunner pid=2309205)[0m              'experiment_name': 'ppo_pilot20_reward_v1',
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:813: [36m(TaskRunner pid=2309205)[0m              'rollout_data_dir': '/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1',
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:830: [36m(TaskRunner pid=2309205)[0m              'validation_data_dir': '/home/archlab/yb/verl/evaluation/ppo_pilot20_reward_v1'},
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1048: [36m(TaskRunner pid=2309205)[0m wandb: Syncing run ppo_pilot20_reward_v1
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1093: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/evaluation/ppo_pilot20_reward_v1/0.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1103: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/1.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1110: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/2.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1118: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/3.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1125: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/4.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1132: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/5.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1139: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/6.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1145: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/7.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1152: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/8.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1159: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/9.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1164: [36m(TaskRunner pid=2309205)[0m local_global_step_folder: /home/archlab/yb/verl/checkpoints/ppo_pilot20_reward_v1/global_step_10
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1172: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/10.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1176: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/evaluation/ppo_pilot20_reward_v1/10.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1182: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/11.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1188: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/12.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1195: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/13.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1202: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/14.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1210: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/15.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1216: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/16.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1223: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/17.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1231: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/18.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1238: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/19.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1242: [36m(TaskRunner pid=2309205)[0m local_global_step_folder: /home/archlab/yb/verl/checkpoints/ppo_pilot20_reward_v1/global_step_20
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1250: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1/20.jsonl
+/home/archlab/yb/verl/logs/ppo_pilot20_reward_v1.log:1254: [36m(TaskRunner pid=2309205)[0m Dumped generations to /home/archlab/yb/verl/evaluation/ppo_pilot20_reward_v1/20.jsonl
+/home/archlab/yb/verl/logs/text2sql_agent/build_reward_v1.log:84: 日志：/home/archlab/yb/verl/logs/text2sql_agent/build_reward_v1.log
+/home/archlab/yb/verl/evaluation/text2sql_agent/sftv2_grpo_reward_v3_smoke5_v1_retry2/true_v3_analysis/reward_v1_vs_v3_smoke5.json:2: "reward_v1_training": {
+/home/archlab/yb/verl/evaluation/text2sql_agent/sftv2_grpo_reward_v3_smoke5_v1_retry2/true_v3_analysis/reward_v1_vs_v3_smoke5.json:286: "reward_v1_validation": {
+/home/archlab/yb/verl/evaluation/text2sql_agent/sftv2_grpo_reward_v3_smoke5_v1_retry2/true_v3_analysis/analyze_reward_v1_vs_v3.log:82: 汇总文件： /home/archlab/yb/verl/evaluation/text2sql_agent/sftv2_grpo_reward_v3_smoke5_v1_retry2/true_v3_analysis/reward_v1_vs_v3_smoke5.json
+/home/archlab/yb/verl/evaluation/text2sql_agent/sftv2_grpo_reward_v3_smoke5_v1_retry2/true_v3_analysis/analyze_reward_v1_vs_v3.log:205: -rw-rw-r-- 1 archlab archlab  16K Aug  1 16:03 /home/archlab/yb/verl/evaluation/text2sql_agent/sftv2_grpo_reward_v3_smoke5_v1_retry2/true_v3_analysis/reward_v1_vs_v3_smoke5.json
+/home/archlab/yb/verl/evaluation/text2sql_agent/sftv2_grpo_reward_v3_smoke5_v1_retry2/true_v3_analysis/analyze_reward_v1_vs_v3.log:207: 对比汇总：/home/archlab/yb/verl/evaluation/text2sql_agent/sftv2_grpo_reward_v3_smoke5_v1_retry2/true_v3_analysis/reward_v1_vs_v3_smoke5.json
+/home/archlab/yb/verl/evaluation/text2sql_agent/sftv2_grpo_reward_v3_smoke5_v1_retry2/true_v3_analysis/analyze_reward_v1_vs_v3.log:209: 分析日志：/home/archlab/yb/verl/evaluation/text2sql_agent/sftv2_grpo_reward_v3_smoke5_v1_retry2/true_v3_analysis/analyze_reward_v1_vs_v3.log
+/home/archlab/yb/verl/evaluation/text2sql_agent/sftv2_grpo_reward_v3_smoke5_v1_retry2/true_v3_analysis/wandb_v1_vs_v3.json:2: "reward_v1": {
+/home/archlab/yb/verl/outputs/2026-07-28/16-36-06/.hydra/overrides.yaml:36: - trainer.experiment_name=ppo_pilot20_reward_v1
+/home/archlab/yb/verl/outputs/2026-07-28/16-36-06/.hydra/overrides.yaml:42: - trainer.rollout_data_dir=/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1
+/home/archlab/yb/verl/outputs/2026-07-28/16-36-06/.hydra/overrides.yaml:43: - trainer.validation_data_dir=/home/archlab/yb/verl/evaluation/ppo_pilot20_reward_v1
+/home/archlab/yb/verl/outputs/2026-07-28/16-36-06/.hydra/overrides.yaml:44: - trainer.default_local_dir=/home/archlab/yb/verl/checkpoints/ppo_pilot20_reward_v1
+/home/archlab/yb/verl/outputs/2026-07-28/16-36-06/.hydra/config.yaml:843: experiment_name: ppo_pilot20_reward_v1
+/home/archlab/yb/verl/outputs/2026-07-28/16-36-06/.hydra/config.yaml:848: rollout_data_dir: /home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1
+/home/archlab/yb/verl/outputs/2026-07-28/16-36-06/.hydra/config.yaml:849: validation_data_dir: /home/archlab/yb/verl/evaluation/ppo_pilot20_reward_v1
+/home/archlab/yb/verl/outputs/2026-07-28/16-36-06/.hydra/config.yaml:862: default_local_dir: /home/archlab/yb/verl/checkpoints/ppo_pilot20_reward_v1
+/home/archlab/yb/verl/outputs/2026-07-28/16-36-06/.hydra/hydra.yaml:150: - trainer.experiment_name=ppo_pilot20_reward_v1
+/home/archlab/yb/verl/outputs/2026-07-28/16-36-06/.hydra/hydra.yaml:156: - trainer.rollout_data_dir=/home/archlab/yb/verl/rollout_data/ppo_pilot20_reward_v1
+/home/archlab/yb/verl/outputs/2026-07-28/16-36-06/.hydra/hydra.yaml:157: - trainer.validation_data_dir=/home/archlab/yb/verl/evaluation/ppo_pilot20_reward_v1
+/home/archlab/yb/verl/outputs/2026-07-28/16-36-06/.hydra/hydra.yaml:158: - trainer.default_local_dir=/home/archlab/yb/verl/checkpoints/ppo_pilot20_reward_v1
+/home/archlab/yb/verl/outputs/2026-07-28/16-36-06/.hydra/hydra.yaml:168: override_dirname: actor_rollout_ref.actor.fsdp_config.optimizer_offload=False,actor_rollout_ref.actor.fsdp_config.param_offload=False,actor_rollout_ref.actor.optim.lr=1e-6,actor_rollout_ref.actor.ppo_micro_batch_size_per_gpu=4,actor_rollout_ref.actor.ppo_mini_batch_size=32,actor_rollout_ref.model.enable_gradient_checkpointing=True,actor_rollout_ref.model.path=/home/archlab/yb/models/Qwen2.5-0.5B-Instruct,actor_rollout_ref.model.use_remove_padding=True,actor_rollout_ref.ref.fsdp_config.param_offl
+
+===== 备份压缩包中的Reward文件 =====
+备份压缩包中没有找到额外Reward源码。

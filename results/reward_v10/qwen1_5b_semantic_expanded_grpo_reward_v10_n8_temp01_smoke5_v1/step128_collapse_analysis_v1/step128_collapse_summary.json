@@ -1,0 +1,217 @@
+{
+  "validation_curve": [
+    {
+      "step": 88,
+      "execution_correct_rate": 0.52,
+      "sql_executable_rate": 0.825,
+      "answer_found_rate": 0.97,
+      "tool_called_rate": 1.0,
+      "malformed_rate": 0.0,
+      "tool_error_rate": 0.205,
+      "execute_succeeded_rate": 0.835,
+      "mean_tool_calls": 3.77,
+      "statuses": {
+        "executable_but_wrong": 61,
+        "correct": 104,
+        "final_sql_non_executable": 29,
+        "execute_called_without_success": 5,
+        "schema_only_without_execute": 1
+      }
+    },
+    {
+      "step": 104,
+      "execution_correct_rate": 0.52,
+      "sql_executable_rate": 0.81,
+      "answer_found_rate": 0.985,
+      "tool_called_rate": 1.0,
+      "malformed_rate": 0.0,
+      "tool_error_rate": 0.205,
+      "execute_succeeded_rate": 0.81,
+      "mean_tool_calls": 3.62,
+      "statuses": {
+        "executable_but_wrong": 58,
+        "correct": 104,
+        "final_sql_non_executable": 35,
+        "execute_called_without_success": 2,
+        "schema_only_without_execute": 1
+      }
+    },
+    {
+      "step": 112,
+      "execution_correct_rate": 0.52,
+      "sql_executable_rate": 0.81,
+      "answer_found_rate": 0.99,
+      "tool_called_rate": 1.0,
+      "malformed_rate": 0.0,
+      "tool_error_rate": 0.2,
+      "execute_succeeded_rate": 0.805,
+      "mean_tool_calls": 3.595,
+      "statuses": {
+        "executable_but_wrong": 58,
+        "correct": 104,
+        "final_sql_non_executable": 36,
+        "execute_called_without_success": 1,
+        "schema_only_without_execute": 1
+      }
+    },
+    {
+      "step": 120,
+      "execution_correct_rate": 0.515,
+      "sql_executable_rate": 0.79,
+      "answer_found_rate": 0.97,
+      "tool_called_rate": 1.0,
+      "malformed_rate": 0.0,
+      "tool_error_rate": 0.195,
+      "execute_succeeded_rate": 0.785,
+      "mean_tool_calls": 3.805,
+      "statuses": {
+        "executable_but_wrong": 55,
+        "correct": 103,
+        "final_sql_non_executable": 36,
+        "schema_only_without_execute": 5,
+        "no_tool_or_final": 1
+      }
+    },
+    {
+      "step": 128,
+      "execution_correct_rate": 0.43,
+      "sql_executable_rate": 0.625,
+      "answer_found_rate": 0.76,
+      "tool_called_rate": 1.0,
+      "malformed_rate": 0.0,
+      "tool_error_rate": 0.165,
+      "execute_succeeded_rate": 0.61,
+      "mean_tool_calls": 3.87,
+      "statuses": {
+        "final_sql_non_executable": 27,
+        "correct": 86,
+        "executable_but_wrong": 39,
+        "schema_only_without_execute": 45,
+        "no_tool_or_final": 2,
+        "execute_called_without_success": 1
+      }
+    }
+  ],
+  "step120_to_128_paired": {
+    "both_correct": 80,
+    "step120_only": 23,
+    "step128_only": 6,
+    "both_wrong": 91,
+    "absolute_delta": -0.08500000000000002,
+    "mcnemar_exact_p": 0.002315700054168701
+  },
+  "step121_to_128_training": [
+    {
+      "step": 121,
+      "execution_correct_rate": 0.5,
+      "sql_executable_rate": 1.0,
+      "answer_found_rate": 1.0,
+      "tool_error_rate": 0.03125,
+      "malformed_rate": 0.0,
+      "v10_score_mean": 0.44999999999999996,
+      "informative_group_rate": 1.0,
+      "all_wrong_group_rate": 0.0,
+      "all_correct_group_rate": 0.0
+    },
+    {
+      "step": 122,
+      "execution_correct_rate": 0.5,
+      "sql_executable_rate": 0.96875,
+      "answer_found_rate": 0.96875,
+      "tool_error_rate": 0.0,
+      "malformed_rate": 0.0,
+      "v10_score_mean": 0.45,
+      "informative_group_rate": 1.0,
+      "all_wrong_group_rate": 0.0,
+      "all_correct_group_rate": 0.0
+    },
+    {
+      "step": 123,
+      "execution_correct_rate": 0.75,
+      "sql_executable_rate": 0.75,
+      "answer_found_rate": 0.9375,
+      "tool_error_rate": 0.25,
+      "malformed_rate": 0.0,
+      "v10_score_mean": 0.725,
+      "informative_group_rate": 0.5,
+      "all_wrong_group_rate": 0.0,
+      "all_correct_group_rate": 0.5
+    },
+    {
+      "step": 124,
+      "execution_correct_rate": 0.75,
+      "sql_executable_rate": 0.875,
+      "answer_found_rate": 1.0,
+      "tool_error_rate": 0.125,
+      "malformed_rate": 0.0,
+      "v10_score_mean": 0.72375,
+      "informative_group_rate": 1.0,
+      "all_wrong_group_rate": 0.0,
+      "all_correct_group_rate": 0.0
+    },
+    {
+      "step": 125,
+      "execution_correct_rate": 0.5,
+      "sql_executable_rate": 0.75,
+      "answer_found_rate": 1.0,
+      "tool_error_rate": 0.25,
+      "malformed_rate": 0.0,
+      "v10_score_mean": 0.45,
+      "informative_group_rate": 0.0,
+      "all_wrong_group_rate": 0.5,
+      "all_correct_group_rate": 0.5
+    },
+    {
+      "step": 126,
+      "execution_correct_rate": 0.3125,
+      "sql_executable_rate": 0.46875,
+      "answer_found_rate": 0.84375,
+      "tool_error_rate": 0.40625,
+      "malformed_rate": 0.0,
+      "v10_score_mean": 0.24312499999999998,
+      "informative_group_rate": 1.0,
+      "all_wrong_group_rate": 0.0,
+      "all_correct_group_rate": 0.0
+    },
+    {
+      "step": 127,
+      "execution_correct_rate": 0.5,
+      "sql_executable_rate": 0.65625,
+      "answer_found_rate": 0.875,
+      "tool_error_rate": 0.5625,
+      "malformed_rate": 0.0,
+      "v10_score_mean": 0.43125,
+      "informative_group_rate": 1.0,
+      "all_wrong_group_rate": 0.0,
+      "all_correct_group_rate": 0.0
+    },
+    {
+      "step": 128,
+      "execution_correct_rate": 0.25,
+      "sql_executable_rate": 0.9375,
+      "answer_found_rate": 0.9375,
+      "tool_error_rate": 0.0,
+      "malformed_rate": 0.0,
+      "v10_score_mean": 0.175,
+      "informative_group_rate": 0.5,
+      "all_wrong_group_rate": 0.5,
+      "all_correct_group_rate": 0.0
+    }
+  ],
+  "execution_delta_120_to_128": -0.08500000000000002,
+  "sql_executable_delta_120_to_128": -0.16500000000000004,
+  "answer_found_delta_120_to_128": -0.20999999999999996,
+  "classification": "semantic_policy_collapse_without_tool_protocol_collapse",
+  "training_should_continue": false,
+  "reject_step128": true,
+  "pilot_primary_candidate": 88,
+  "pilot_backup_candidates": [
+    104,
+    112
+  ],
+  "candidate_reason": "Step88/104/112执行准确率并列52%；Step88具有最高SQL可执行率82.5%，且是最早达到峰值的Checkpoint。",
+  "next_action": "merge_step88_and_evaluate_preselected_candidates_on_selection417",
+  "selection417_used": false,
+  "bird_used": false,
+  "old_final_holdout_used": false
+}

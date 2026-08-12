@@ -1,0 +1,16 @@
+{
+  "selected_name": "reward_v8_step32_locked",
+  "selected_model": "/home/archlab/yb/models/text2sql_agent/qwen1_5b_grpo_binary_execution_temp01_step32_hf",
+  "reason": "Reward v9没有在固定Selection集上形成超过1个百分点的稳定优势，保留已经锁定并完成最终盲测的Reward v8 Step32",
+  "eligible_models": [
+    "reward_v8_step32_locked",
+    "reward_v9_step20",
+    "reward_v9_step24"
+  ],
+  "reward_v8_execution_accuracy": 0.5203836930455635,
+  "best_candidate": "reward_v8_step32_locked",
+  "best_candidate_execution_accuracy": 0.5203836930455635,
+  "old_final_holdout_must_not_be_reused": true,
+  "final_holdout_used_in_this_selection": false,
+  "next_action": "retain_reward_v8_and_finalize_analysis"
+}

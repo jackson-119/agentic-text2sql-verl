@@ -1,0 +1,273 @@
+{
+  "steps": {
+    "0": {
+      "n": 200,
+      "execution_correct_rate": 0.435,
+      "stored_protocol_rate": 0.98,
+      "reconstructed_syntax_rate": 0.665,
+      "reconstructed_ordered_rate": 0.665,
+      "stored_invalid_count": 4,
+      "syntax_invalid_count": 67,
+      "ordering_invalid_count": 67,
+      "stored_invalid_but_reconstructed_valid": 4,
+      "reconstructed_invalid_but_stored_valid": 67,
+      "stored_malformed_trajectory_count": 0,
+      "stored_malformed_call_count": 0.0,
+      "error_types": {
+        "unbalanced_tags": 67,
+        "unparsed_tool_block": 8
+      },
+      "invalid_and_execution_correct": 0,
+      "invalid_and_execution_wrong": 4
+    },
+    "5": {
+      "n": 200,
+      "execution_correct_rate": 0.455,
+      "stored_protocol_rate": 0.975,
+      "reconstructed_syntax_rate": 0.685,
+      "reconstructed_ordered_rate": 0.685,
+      "stored_invalid_count": 5,
+      "syntax_invalid_count": 63,
+      "ordering_invalid_count": 63,
+      "stored_invalid_but_reconstructed_valid": 5,
+      "reconstructed_invalid_but_stored_valid": 63,
+      "stored_malformed_trajectory_count": 0,
+      "stored_malformed_call_count": 0.0,
+      "error_types": {
+        "unbalanced_tags": 63,
+        "unparsed_tool_block": 7
+      },
+      "invalid_and_execution_correct": 0,
+      "invalid_and_execution_wrong": 5
+    },
+    "8": {
+      "n": 200,
+      "execution_correct_rate": 0.445,
+      "stored_protocol_rate": 0.97,
+      "reconstructed_syntax_rate": 0.7050000000000001,
+      "reconstructed_ordered_rate": 0.7050000000000001,
+      "stored_invalid_count": 6,
+      "syntax_invalid_count": 59,
+      "ordering_invalid_count": 59,
+      "stored_invalid_but_reconstructed_valid": 6,
+      "reconstructed_invalid_but_stored_valid": 59,
+      "stored_malformed_trajectory_count": 0,
+      "stored_malformed_call_count": 0.0,
+      "error_types": {
+        "unbalanced_tags": 59,
+        "unparsed_tool_block": 7
+      },
+      "invalid_and_execution_correct": 0,
+      "invalid_and_execution_wrong": 6
+    },
+    "12": {
+      "n": 200,
+      "execution_correct_rate": 0.48,
+      "stored_protocol_rate": 0.92,
+      "reconstructed_syntax_rate": 0.8049999999999999,
+      "reconstructed_ordered_rate": 0.8049999999999999,
+      "stored_invalid_count": 16,
+      "syntax_invalid_count": 39,
+      "ordering_invalid_count": 39,
+      "stored_invalid_but_reconstructed_valid": 16,
+      "reconstructed_invalid_but_stored_valid": 39,
+      "stored_malformed_trajectory_count": 0,
+      "stored_malformed_call_count": 0.0,
+      "error_types": {
+        "unbalanced_tags": 39,
+        "unparsed_tool_block": 11
+      },
+      "invalid_and_execution_correct": 0,
+      "invalid_and_execution_wrong": 16
+    },
+    "16": {
+      "n": 200,
+      "execution_correct_rate": 0.475,
+      "stored_protocol_rate": 0.91,
+      "reconstructed_syntax_rate": 0.8200000000000001,
+      "reconstructed_ordered_rate": 0.8200000000000001,
+      "stored_invalid_count": 18,
+      "syntax_invalid_count": 36,
+      "ordering_invalid_count": 36,
+      "stored_invalid_but_reconstructed_valid": 18,
+      "reconstructed_invalid_but_stored_valid": 36,
+      "stored_malformed_trajectory_count": 0,
+      "stored_malformed_call_count": 0.0,
+      "error_types": {
+        "unbalanced_tags": 36,
+        "unparsed_tool_block": 9
+      },
+      "invalid_and_execution_correct": 0,
+      "invalid_and_execution_wrong": 18
+    }
+  },
+  "transitions": [
+    {
+      "step": 5,
+      "step0_invalid": [
+        17,
+        23,
+        86,
+        110
+      ],
+      "current_invalid": [
+        41,
+        94,
+        110,
+        151,
+        155
+      ],
+      "newly_invalid": [
+        41,
+        94,
+        151,
+        155
+      ],
+      "recovered": [
+        17,
+        23,
+        86
+      ],
+      "net_new_invalid": 1
+    },
+    {
+      "step": 8,
+      "step0_invalid": [
+        17,
+        23,
+        86,
+        110
+      ],
+      "current_invalid": [
+        3,
+        41,
+        94,
+        151,
+        188,
+        194
+      ],
+      "newly_invalid": [
+        3,
+        41,
+        94,
+        151,
+        188,
+        194
+      ],
+      "recovered": [
+        17,
+        23,
+        86,
+        110
+      ],
+      "net_new_invalid": 2
+    },
+    {
+      "step": 12,
+      "step0_invalid": [
+        17,
+        23,
+        86,
+        110
+      ],
+      "current_invalid": [
+        12,
+        18,
+        21,
+        27,
+        41,
+        48,
+        86,
+        94,
+        110,
+        139,
+        149,
+        151,
+        178,
+        185,
+        188,
+        194
+      ],
+      "newly_invalid": [
+        12,
+        18,
+        21,
+        27,
+        41,
+        48,
+        94,
+        139,
+        149,
+        151,
+        178,
+        185,
+        188,
+        194
+      ],
+      "recovered": [
+        17,
+        23
+      ],
+      "net_new_invalid": 12
+    },
+    {
+      "step": 16,
+      "step0_invalid": [
+        17,
+        23,
+        86,
+        110
+      ],
+      "current_invalid": [
+        9,
+        18,
+        26,
+        35,
+        38,
+        41,
+        48,
+        75,
+        78,
+        86,
+        94,
+        100,
+        110,
+        140,
+        149,
+        151,
+        178,
+        188
+      ],
+      "newly_invalid": [
+        9,
+        18,
+        26,
+        35,
+        38,
+        41,
+        48,
+        75,
+        78,
+        94,
+        100,
+        140,
+        149,
+        151,
+        178,
+        188
+      ],
+      "recovered": [
+        17,
+        23
+      ],
+      "net_new_invalid": 14
+    }
+  ],
+  "diagnosis": "true_protocol_drift",
+  "metric_disagreement_rate_step16": 0.09,
+  "true_protocol_drift": true,
+  "next_action": "stop_training_and_select_from_steps_5_or_8",
+  "selection417_used": false,
+  "bird_used": false,
+  "old_final_holdout_used": false
+}

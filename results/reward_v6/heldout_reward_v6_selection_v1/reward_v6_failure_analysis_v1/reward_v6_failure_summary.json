@@ -1,0 +1,116 @@
+{
+  "dataset": "model_selection_417",
+  "n": 417,
+  "reward_v5_status": {
+    "correct": 161,
+    "executable_but_wrong": 180,
+    "final_sql_non_executable": 75,
+    "no_recognized_final_sql": 1
+  },
+  "reward_v6_status": {
+    "correct": 152,
+    "executable_but_wrong": 217,
+    "final_sql_non_executable": 48
+  },
+  "transitions": {
+    "correct -> correct": 149,
+    "correct -> executable_but_wrong": 11,
+    "correct -> final_sql_non_executable": 1,
+    "executable_but_wrong -> correct": 1,
+    "executable_but_wrong -> executable_but_wrong": 179,
+    "final_sql_non_executable -> correct": 2,
+    "final_sql_non_executable -> executable_but_wrong": 26,
+    "final_sql_non_executable -> final_sql_non_executable": 47,
+    "no_recognized_final_sql -> executable_but_wrong": 1
+  },
+  "paired_correctness": {
+    "both_correct": 149,
+    "v5_only_correct_regression": 12,
+    "v6_only_correct_improvement": 3,
+    "both_wrong": 253,
+    "net_correct_change": -9
+  },
+  "reward_v6_components_by_outcome": {
+    "correct": {
+      "n": 152,
+      "score_mean": 0.8494736842105264,
+      "semantic_reward_mean": 0.0,
+      "semantic_gap_penalty_mean": 0.0,
+      "eligible_mean": 0.0,
+      "eligible_rate": 0.0,
+      "table_f1_mean": 0.9254385964912281,
+      "column_f1_mean": 0.9283051378446114,
+      "join_f1_mean": 0.006578947368421052,
+      "final_ok_mean": 0.993421052631579,
+      "final_ok_rate": 0.993421052631579,
+      "tool_error_mean": 0.0,
+      "tool_error_rate": 0.0,
+      "total_penalty_mean": 0.0003289473684210526,
+      "tool_calls_mean": 3.0,
+      "positive_semantic_reward_rate": 0.0
+    },
+    "executable_but_wrong": {
+      "n": 217,
+      "score_mean": 0.09308130348913758,
+      "semantic_reward_mean": 0.05773568136932192,
+      "semantic_gap_penalty_mean": 0.04,
+      "eligible_mean": 0.9400921658986175,
+      "eligible_rate": 0.9400921658986175,
+      "table_f1_mean": 0.7086021505376343,
+      "column_f1_mean": 0.62547363031234,
+      "join_f1_mean": 0.0,
+      "final_ok_mean": 0.9400921658986175,
+      "final_ok_rate": 0.9400921658986175,
+      "tool_error_mean": 0.041474654377880185,
+      "tool_error_rate": 0.041474654377880185,
+      "total_penalty_mean": 0.04244239631336406,
+      "tool_calls_mean": 3.0,
+      "positive_semantic_reward_rate": 0.880184331797235
+    },
+    "final_sql_non_executable": {
+      "n": 48,
+      "score_mean": -0.05375,
+      "semantic_reward_mean": 0.0,
+      "semantic_gap_penalty_mean": 0.0,
+      "eligible_mean": 0.0,
+      "eligible_rate": 0.0,
+      "table_f1_mean": 0.5756944444444444,
+      "column_f1_mean": 0.535350529100529,
+      "join_f1_mean": 0.020833333333333332,
+      "final_ok_mean": 0.0,
+      "final_ok_rate": 0.0,
+      "tool_error_mean": 1.0,
+      "tool_error_rate": 1.0,
+      "total_penalty_mean": 0.07375,
+      "tool_calls_mean": 3.0,
+      "positive_semantic_reward_rate": 0.0
+    },
+    "no_recognized_final_sql": {
+      "n": 0
+    }
+  },
+  "semantic_reward_diagnostic": {
+    "semantic_reward_correctness_correlation": -0.6481482204412944,
+    "executable_but_wrong_count": 217,
+    "executable_wrong_with_positive_semantic_reward": 191,
+    "executable_wrong_with_positive_semantic_reward_rate": 0.880184331797235,
+    "executable_wrong_eligible_count": 204,
+    "executable_wrong_eligible_rate": 0.9400921658986175
+  },
+  "decision": {
+    "reward_v6_status": "rejected",
+    "continue_reward_v6_training": false,
+    "selected_mainline_model": "/home/archlab/yb/models/text2sql_agent/spider_agent_grpo_reward_v5_step48_hf",
+    "reason": "Reward v6 significantly reduced execution accuracy while increasing executable-but-wrong SQL, indicating proxy objective overoptimization.",
+    "old_final_holdout_reuse_forbidden": true
+  },
+  "recommended_next_experiment": {
+    "name": "reward_v7_correctness_first",
+    "requirements": [
+      "Remove or sharply reduce positive structural reward for executable-but-wrong SQL.",
+      "Measure correctness-informative GRPO groups, not only score-informative groups.",
+      "Test rollout.n=8 to increase the probability that hard groups contain a correct trajectory.",
+      "Use model_selection_417 only; never reuse the old final holdout for tuning."
+    ]
+  }
+}

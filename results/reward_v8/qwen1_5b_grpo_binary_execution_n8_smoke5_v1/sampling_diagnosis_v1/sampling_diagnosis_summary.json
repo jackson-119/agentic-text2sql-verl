@@ -1,0 +1,70 @@
+{
+  "model": "/home/archlab/yb/models/text2sql_agent/spider_agent_sft_qwen2_5_coder_1_5b_protocol_v2_maskfix_v1_full_epoch1/final_hf",
+  "protocol_rows": 16,
+  "samples_per_prompt": 8,
+  "top_p": 0.95,
+  "temperature_results": {
+    "1.0": {
+      "total": 128,
+      "valid": 9,
+      "valid_rate": 0.0703125,
+      "categories": {
+        "broken_tool_tags": 89,
+        "valid_list_tables": 9,
+        "json_without_tags": 24,
+        "chat_tokens": 5,
+        "other": 1
+      }
+    },
+    "0.8": {
+      "total": 128,
+      "valid": 36,
+      "valid_rate": 0.28125,
+      "categories": {
+        "broken_tool_tags": 89,
+        "valid_list_tables": 36,
+        "json_without_tags": 2,
+        "chat_tokens": 1
+      }
+    },
+    "0.6": {
+      "total": 128,
+      "valid": 46,
+      "valid_rate": 0.359375,
+      "categories": {
+        "valid_list_tables": 46,
+        "broken_tool_tags": 82
+      }
+    },
+    "0.4": {
+      "total": 128,
+      "valid": 45,
+      "valid_rate": 0.3515625,
+      "categories": {
+        "broken_tool_tags": 83,
+        "valid_list_tables": 45
+      }
+    },
+    "0.2": {
+      "total": 128,
+      "valid": 59,
+      "valid_rate": 0.4609375,
+      "categories": {
+        "valid_list_tables": 59,
+        "broken_tool_tags": 69
+      }
+    }
+  },
+  "greedy": {
+    "total": 16,
+    "valid": 16,
+    "valid_rate": 1.0,
+    "categories": {
+      "valid_list_tables": 16
+    }
+  },
+  "selection_rule": "highest temperature with valid protocol rate >= 95%",
+  "recommended_temperature": null,
+  "requires_boundary_weighting": true,
+  "final_holdout_used": false
+}

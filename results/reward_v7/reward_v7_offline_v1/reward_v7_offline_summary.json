@@ -1,0 +1,101 @@
+{
+  "reward": "/home/archlab/yb/verl/examples/text2sql_agent/rewards/spider_correctness_first_reward_v7.py",
+  "reward_version": 7,
+  "design": {
+    "correct_clean_score": 1.0,
+    "correct_floor": 0.9,
+    "incorrect_max": 0.0,
+    "incorrect_base_penalty": 0.1,
+    "positive_structural_reward": 0.0,
+    "positive_semantic_reward": 0.0,
+    "process_bonus": 0.0,
+    "reliability_penalties_only": true
+  },
+  "datasets": {
+    "selection417": {
+      "metrics": {
+        "n": 417,
+        "score_mean": 0.30335731414868106,
+        "score_std": 0.5539929177364443,
+        "score_min": -0.22000000000000003,
+        "score_max": 1.0,
+        "execution_correct_rate": 0.38609112709832133,
+        "sql_executable_rate": 0.8177458033573142,
+        "executable_but_wrong_rate": 0.4316546762589928,
+        "negative_trajectory_rate": 0.6139088729016786,
+        "positive_incorrect_count": 0,
+        "correct_min": 1.0,
+        "incorrect_max": -0.1,
+        "semantic_reward_mean": 0.0,
+        "structural_reward_mean": 0.0,
+        "score_correctness_correlation": 0.9972380122574912
+      },
+      "groups": null
+    },
+    "v5_training2048": {
+      "metrics": {
+        "n": 2048,
+        "score_mean": 0.10625976562499999,
+        "score_std": 0.4876462870481227,
+        "score_min": -0.23,
+        "score_max": 1.0,
+        "execution_correct_rate": 0.22802734375,
+        "sql_executable_rate": 0.537109375,
+        "executable_but_wrong_rate": 0.30908203125,
+        "negative_trajectory_rate": 0.77197265625,
+        "positive_incorrect_count": 0,
+        "correct_min": 0.99,
+        "incorrect_max": -0.1,
+        "semantic_reward_mean": 0.0,
+        "structural_reward_mean": 0.0,
+        "score_correctness_correlation": 0.9960191208756072
+      },
+      "groups": {
+        "group_size": 4,
+        "group_count": 512,
+        "correctness_informative_group_count": 289,
+        "correctness_informative_group_rate": 0.564453125,
+        "reward_informative_group_count": 497,
+        "reward_informative_group_rate": 0.970703125,
+        "all_wrong_group_count": 219,
+        "all_wrong_group_rate": 0.427734375,
+        "all_wrong_reward_informative_count": 208,
+        "all_wrong_reward_informative_rate": 0.9497716894977168
+      }
+    },
+    "v6_training2048": {
+      "metrics": {
+        "n": 2048,
+        "score_mean": 0.18883300781249998,
+        "score_std": 0.5138040340391065,
+        "score_min": -0.26,
+        "score_max": 1.0,
+        "execution_correct_rate": 0.28515625,
+        "sql_executable_rate": 0.75390625,
+        "executable_but_wrong_rate": 0.46875,
+        "negative_trajectory_rate": 0.71484375,
+        "positive_incorrect_count": 0,
+        "correct_min": 0.98,
+        "incorrect_max": -0.1,
+        "semantic_reward_mean": 0.0,
+        "structural_reward_mean": 0.0,
+        "score_correctness_correlation": 0.9970596510016781
+      },
+      "groups": {
+        "group_size": 4,
+        "group_count": 512,
+        "correctness_informative_group_count": 325,
+        "correctness_informative_group_rate": 0.634765625,
+        "reward_informative_group_count": 463,
+        "reward_informative_group_rate": 0.904296875,
+        "all_wrong_group_count": 180,
+        "all_wrong_group_rate": 0.3515625,
+        "all_wrong_reward_informative_count": 138,
+        "all_wrong_reward_informative_rate": 0.7666666666666667
+      }
+    }
+  },
+  "all_invariants_passed": true,
+  "final_holdout_used": false,
+  "recommended_online_rollout_n": 8
+}

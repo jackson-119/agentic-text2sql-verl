@@ -1,0 +1,6 @@
+step,n,protocol_rate,malformed_rate,ordered_chain_rate,execute_succeeded_rate,tool_error_rate,execution_correct_rate,answer_found_rate,invalid_count
+0,200,0.98,0.0,0.825,0.825,0.185,0.435,0.645,4
+5,200,0.975,0.0,0.82,0.82,0.19,0.455,0.66,5
+8,200,0.97,0.0,0.83,0.83,0.205,0.445,0.67,6
+12,200,0.92,0.0,0.83,0.83,0.19,0.48,0.725,16
+16,200,0.91,0.0,0.82,0.82,0.205,0.475,0.73,18

@@ -1,0 +1,147 @@
+{
+  "reward_version": 10,
+  "rollout_n": 8,
+  "training_steps": {
+    "1": {
+      "n": 32,
+      "score_mean": 0.003124999999999995,
+      "score_std": 0.32062865494992804,
+      "execution_correct_rate": 0.09375,
+      "sql_executable_rate": 0.09375,
+      "answer_found_rate": 0.09375,
+      "tool_called_rate": 0.78125,
+      "tool_protocol_valid_rate": 0.78125,
+      "tool_error_rate": 0.03125,
+      "process_bonus_mean": 0.001875,
+      "positive_incorrect_count": 0,
+      "wrong_process_nonzero_count": 0
+    },
+    "2": {
+      "n": 32,
+      "score_mean": -0.1,
+      "score_std": 0.0,
+      "execution_correct_rate": 0.0,
+      "sql_executable_rate": 0.0625,
+      "answer_found_rate": 0.0625,
+      "tool_called_rate": 0.71875,
+      "tool_protocol_valid_rate": 0.71875,
+      "tool_error_rate": 0.0625,
+      "process_bonus_mean": 0.0,
+      "positive_incorrect_count": 0,
+      "wrong_process_nonzero_count": 0
+    },
+    "3": {
+      "n": 32,
+      "score_mean": -0.03125000000000001,
+      "score_std": 0.2662676050517599,
+      "execution_correct_rate": 0.0625,
+      "sql_executable_rate": 0.09375,
+      "answer_found_rate": 0.09375,
+      "tool_called_rate": 0.8125,
+      "tool_protocol_valid_rate": 0.8125,
+      "tool_error_rate": 0.03125,
+      "process_bonus_mean": 0.00125,
+      "positive_incorrect_count": 0,
+      "wrong_process_nonzero_count": 0
+    },
+    "4": {
+      "n": 32,
+      "score_mean": -0.03125000000000001,
+      "score_std": 0.2662676050517599,
+      "execution_correct_rate": 0.0625,
+      "sql_executable_rate": 0.0625,
+      "answer_found_rate": 0.0625,
+      "tool_called_rate": 0.65625,
+      "tool_protocol_valid_rate": 0.65625,
+      "tool_error_rate": 0.0,
+      "process_bonus_mean": 0.00125,
+      "positive_incorrect_count": 0,
+      "wrong_process_nonzero_count": 0
+    },
+    "5": {
+      "n": 32,
+      "score_mean": 0.03749999999999999,
+      "score_std": 0.36379080527138125,
+      "execution_correct_rate": 0.125,
+      "sql_executable_rate": 0.1875,
+      "answer_found_rate": 0.1875,
+      "tool_called_rate": 0.65625,
+      "tool_protocol_valid_rate": 0.65625,
+      "tool_error_rate": 0.0,
+      "process_bonus_mean": 0.0025,
+      "positive_incorrect_count": 0,
+      "wrong_process_nonzero_count": 0
+    }
+  },
+  "validation": {
+    "0": {
+      "n": 200,
+      "score_mean": 0.36200000000000004,
+      "score_std": 0.5429143578871349,
+      "execution_correct_rate": 0.42,
+      "sql_executable_rate": 0.62,
+      "answer_found_rate": 0.625,
+      "tool_called_rate": 1.0,
+      "tool_protocol_valid_rate": 0.995,
+      "tool_error_rate": 0.225,
+      "process_bonus_mean": 0.0084,
+      "positive_incorrect_count": 0,
+      "wrong_process_nonzero_count": 0
+    },
+    "5": {
+      "n": 200,
+      "score_mean": 0.38381,
+      "score_std": 0.5458138821063458,
+      "execution_correct_rate": 0.44,
+      "sql_executable_rate": 0.645,
+      "answer_found_rate": 0.65,
+      "tool_called_rate": 1.0,
+      "tool_protocol_valid_rate": 0.99,
+      "tool_error_rate": 0.23,
+      "process_bonus_mean": 0.00876,
+      "positive_incorrect_count": 0,
+      "wrong_process_nonzero_count": 0
+    }
+  },
+  "group_quality": {
+    "group_count": 20,
+    "correctness_informative_group_count": 8,
+    "correctness_informative_group_rate": 0.4,
+    "reward_informative_group_count": 8,
+    "reward_informative_group_rate": 0.4,
+    "all_wrong_group_count": 12,
+    "all_wrong_group_rate": 0.6,
+    "all_wrong_nonuniform_group_count": 0,
+    "all_correct_process_informative_groups": 0
+  },
+  "reward_invariants": {
+    "unique_incorrect_scores": [
+      -0.1
+    ],
+    "correct_min": 1.0,
+    "positive_incorrect_count": 0,
+    "wrong_process_nonzero_count": 0
+  },
+  "paired_validation": {
+    "both_correct": 84,
+    "step0_only": 0,
+    "step5_only": 4,
+    "both_wrong": 112,
+    "net_correct": 4,
+    "mcnemar_exact_p": 0.125
+  },
+  "checks": {
+    "five_steps_complete": true,
+    "incorrect_score_uniform": true,
+    "positive_incorrect_zero": true,
+    "wrong_process_nonzero_zero": true,
+    "all_wrong_nonuniform_zero": true,
+    "correctness_information_ok": true,
+    "execution_not_collapsed": true,
+    "protocol_not_collapsed": true,
+    "tools_not_collapsed": true
+  },
+  "passed": true,
+  "final_holdout_used": false,
+  "bird_used": false
+}

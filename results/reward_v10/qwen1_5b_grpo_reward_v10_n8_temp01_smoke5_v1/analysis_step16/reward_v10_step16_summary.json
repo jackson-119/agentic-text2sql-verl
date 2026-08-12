@@ -1,0 +1,98 @@
+{
+  "reward_version": 10,
+  "validation": {
+    "0": {
+      "n": 200,
+      "score": 0.36200000000000004,
+      "exec": 0.42,
+      "sql": 0.62,
+      "final": 0.625,
+      "tools": 1.0,
+      "protocol": 0.995,
+      "tool_error": 0.225,
+      "process": 0.0084
+    },
+    "5": {
+      "n": 200,
+      "score": 0.38381,
+      "exec": 0.44,
+      "sql": 0.645,
+      "final": 0.65,
+      "tools": 1.0,
+      "protocol": 0.99,
+      "tool_error": 0.23,
+      "process": 0.00876
+    },
+    "8": {
+      "n": 200,
+      "score": 0.37847499999999995,
+      "exec": 0.435,
+      "sql": 0.645,
+      "final": 0.65,
+      "tools": 1.0,
+      "protocol": 0.99,
+      "tool_error": 0.23,
+      "process": 0.0087
+    },
+    "12": {
+      "n": 200,
+      "score": 0.378405,
+      "exec": 0.435,
+      "sql": 0.68,
+      "final": 0.69,
+      "tools": 1.0,
+      "protocol": 0.97,
+      "tool_error": 0.235,
+      "process": 0.00868
+    },
+    "16": {
+      "n": 200,
+      "score": 0.39493,
+      "exec": 0.45,
+      "sql": 0.71,
+      "final": 0.715,
+      "tools": 1.0,
+      "protocol": 0.98,
+      "tool_error": 0.21,
+      "process": 0.00898
+    }
+  },
+  "group_quality": {
+    "group_count": 64,
+    "correctness_information_rate": 0.375,
+    "late_information_rate": 0.36363636363636365,
+    "all_wrong_group_rate": 0.625,
+    "all_wrong_nonuniform_count": 0,
+    "all_correct_process_information_count": 0
+  },
+  "invariants": {
+    "incorrect_scores": [
+      -0.1
+    ],
+    "positive_incorrect": 0,
+    "wrong_process_nonzero": 0
+  },
+  "stable_steps": [
+    0,
+    5,
+    8,
+    12,
+    16
+  ],
+  "pilot_best_step": 16,
+  "checks": {
+    "all_steps_complete": true,
+    "incorrect_score_uniform": true,
+    "positive_incorrect_zero": true,
+    "wrong_process_nonzero_zero": true,
+    "all_wrong_nonuniform_zero": true,
+    "late_information_ok": true,
+    "step16_execution_stable": true,
+    "step16_protocol_stable": true,
+    "step16_tools_stable": true
+  },
+  "passed": true,
+  "next_action": "evaluate_step_candidates_or_continue_to_step32",
+  "bird_used": false,
+  "old_final_holdout_used": false
+}

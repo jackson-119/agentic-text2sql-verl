@@ -1,0 +1,18 @@
+{
+  "selection_rule": [
+    "最高执行准确率",
+    "与最高准确率相差不超过1个百分点且McNemar p>=0.05视为并列",
+    "并列时选择SQL可执行率更高者",
+    "再并列时选择FinalOK更高者",
+    "再并列时选择工具错误率更低者",
+    "完全相同时选择更早Checkpoint"
+  ],
+  "top_execution_candidate": "reward_v5_step32",
+  "execution_tied_candidates": [
+    "reward_v5_step32",
+    "reward_v5_step48"
+  ],
+  "selected_candidate": "reward_v5_step48",
+  "selected_model": "/home/archlab/yb/models/text2sql_agent/spider_agent_grpo_reward_v5_step48_hf",
+  "selected_checkpoint_step": 48
+}

@@ -1,0 +1,21 @@
+{
+  "reward_version": 8,
+  "selected_source": "/home/archlab/yb/verl/examples/text2sql_agent/rewards/spider_binary_execution_reward_v8.py",
+  "repository_source": "rewards/source/spider_binary_execution_reward_v8.py",
+  "sha256": "f6c49bbe36a06a7d2aaaa074b937a6f2e0366b77e6ff256f4112cc33f4d35dae",
+  "candidate_count": 3,
+  "candidates": [
+    {
+      "path": "/home/archlab/yb/verl/examples/text2sql_agent/rewards/spider_binary_execution_reward_v8.py",
+      "sha256": "f6c49bbe36a06a7d2aaaa074b937a6f2e0366b77e6ff256f4112cc33f4d35dae"
+    },
+    {
+      "path": "/home/archlab/yb/verl/examples/text2sql_agent/rewards/bird_binary_execution_reward_v8_adapter.py",
+      "sha256": "48ff09f03291907f5b539861b3cda5c711a2acd4e97dcffb1316f960848bb864"
+    },
+    {
+      "path": "/home/archlab/yb/verl/backups/bird_external_adapter_fix/20260810_151633/bird_binary_execution_reward_v8_adapter.py",
+      "sha256": "660be8c04b211f7d671268b05be7630e05f180cbeadf5d83310f417a1245b16b"
+    }
+  ]
+}

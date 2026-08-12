@@ -1,0 +1,51 @@
+{
+  "models": {
+    "protocol_v2_before_expansion": {
+      "n": 200,
+      "score": 0.4866886507936508,
+      "execution_correct_rate": 0.425,
+      "sql_executable_rate": 0.64,
+      "answer_found_rate": 0.645,
+      "format_compliance_rate": 0.645,
+      "tool_called_rate": 1.0,
+      "protocol_valid_rate": 0.985,
+      "tool_error_rate": 0.225,
+      "mean_tool_calls": 3.96
+    },
+    "semantic_expanded_v1": {
+      "n": 200,
+      "score": 0.49959251984126984,
+      "execution_correct_rate": 0.435,
+      "sql_executable_rate": 0.655,
+      "answer_found_rate": 0.655,
+      "format_compliance_rate": 0.655,
+      "tool_called_rate": 1.0,
+      "protocol_valid_rate": 0.975,
+      "tool_error_rate": 0.18,
+      "mean_tool_calls": 4.005
+    }
+  },
+  "execution_delta": 0.010000000000000009,
+  "new_execution_wilson_95_ci": [
+    0.36815725502699076,
+    0.504292637402054
+  ],
+  "paired_test": {
+    "both_correct": 79,
+    "old_only": 6,
+    "new_only": 8,
+    "both_wrong": 107,
+    "net_gain": 2,
+    "mcnemar_exact_p": 0.79052734375
+  },
+  "checks": {
+    "sample_order_identical": true,
+    "new_tools_stable": true,
+    "new_protocol_stable": true,
+    "execution_not_regressed_over_1pp": true
+  },
+  "ready_for_next_stage": true,
+  "next_stage": "evaluate_on_model_selection_417",
+  "bird_used": false,
+  "old_final_holdout_used": false
+}

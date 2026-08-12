@@ -1,0 +1,13 @@
+{
+  "reward_version": 10,
+  "selected_source": "/home/archlab/yb/verl/examples/text2sql_agent/rewards/spider_correctness_gated_reward_v10.py",
+  "repository_source": "rewards/source/spider_correctness_gated_reward_v10.py",
+  "sha256": "6ecb7bf03833303042e20c5d53e404a362bf91825828692fc4edf5619fb6de4d",
+  "candidate_count": 1,
+  "candidates": [
+    {
+      "path": "/home/archlab/yb/verl/examples/text2sql_agent/rewards/spider_correctness_gated_reward_v10.py",
+      "sha256": "6ecb7bf03833303042e20c5d53e404a362bf91825828692fc4edf5619fb6de4d"
+    }
+  ]
+}

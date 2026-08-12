@@ -1,0 +1,61 @@
+{
+  "dataset": "/home/archlab/yb/data/spider/processed/heldout_v1/final_holdout_417.parquet",
+  "dataset_sha256": "5322238ba70e12c0ffd79e24d906d0ba18b4c93919f7702d824700686e2b0a77",
+  "model_selection_locked_before_final": true,
+  "locked_model": "/home/archlab/yb/models/text2sql_agent/spider_agent_grpo_reward_v5_step48_hf",
+  "metrics": {
+    "reward_v3_step20": {
+      "samples": 417,
+      "score": 0.42909562825929787,
+      "execution_correct_count": 153,
+      "execution_correct": 0.3669064748201439,
+      "execution_correct_ci95": [
+        0.322058428285061,
+        0.4141842881263626
+      ],
+      "sql_executable": 0.6882494004796164,
+      "answer_found": 0.9976019184652278,
+      "format_compliance": 0.9952038369304557,
+      "final_matches_successful_execute": 0.6666666666666666,
+      "final_was_failed": 0.2997601918465228,
+      "final_unverified": 0.33093525179856115,
+      "tool_error": 0.302158273381295,
+      "duplicate_execute": 0.0,
+      "tool_call_count": 3.5323741007194243
+    },
+    "reward_v5_step48_locked": {
+      "samples": 417,
+      "score": 0.5023249971451421,
+      "execution_correct_count": 167,
+      "execution_correct": 0.40047961630695444,
+      "execution_correct_ci95": [
+        0.3545646618535601,
+        0.4482114233910179
+      ],
+      "sql_executable": 0.8609112709832134,
+      "answer_found": 1.0,
+      "format_compliance": 1.0,
+      "final_matches_successful_execute": 0.8369304556354916,
+      "final_was_failed": 0.12470023980815348,
+      "final_unverified": 0.1630695443645084,
+      "tool_error": 0.1486810551558753,
+      "duplicate_execute": 0.0,
+      "tool_call_count": 3.0
+    }
+  },
+  "paired_execution_test": {
+    "both_correct": 137,
+    "baseline_only": 16,
+    "selected_only": 30,
+    "both_wrong": 234,
+    "net_selected_correct": 14,
+    "absolute_accuracy_change": 0.033573141486810565,
+    "bootstrap_95_ci": [
+      0.002398081534772182,
+      0.06474820143884892
+    ],
+    "mcnemar_exact_p": 0.054076031858869555
+  },
+  "final_results_used_for_model_selection": false,
+  "further_tuning_on_final_holdout_allowed": false
+}
