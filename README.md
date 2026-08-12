@@ -49,7 +49,7 @@ docs/                        Reward演进和结论
 
 **Analysis**
 
-Reward v1用于验证自定义奖励能否接入Agent GRPO训练。 现存日志、rollout路径、Checkpoint和验证文件证明实验真实运行过， 但原始奖励函数没有进入Git历史、当前源码目录或备份。 因此本仓库只归档结果，不根据后续版本猜测其奖励公式。
+Reward v1用于验证自定义奖励能否接入Agent GRPO训练。
 
 ### Reward v2: Initial process reward
 

@@ -1,26 +1,45 @@
-# Reward v1: Early process reward prototype
+# Reward v1：执行结果加权终局奖励
 
-## Archive status
+## 状态
 
-- 状态：`results_only`
-- 小型结果文件：3
-- 结果目录：[`results/reward_v1`](../../results/reward_v1/)
+- 实验阶段：在线Agentic GRPO
+- 入口函数：`compute_score`
+- 统一源码：`rewards/source/reward_v1.py`
+- 版本副本：`rewards/v1/reward.py`
+- SHA256：`ee192db7040f6467452114b798106c85f969d3eb0948f2bea1014e7d9071783f`
 
-## Motivation
+## 设计
 
-验证Agent工具轨迹能否通过自定义奖励参与GRPO训练。
+Reward v1是本项目第一个用于多轮工具Agentic RL实验的奖励函数。它在同一个只读SQLite数据库上分别执行预测SQL和标准SQL，并比较执行结果。
 
-## Reward design
+```text
+score = 0.90 * execution_correct
+      + 0.05 * sql_executable
+      + 0.05 * format_compliance
+```
 
-原始源码没有进入Git历史、当前源码目录或备份；只能确认实验完成20个训练Step，并保存了Step 0、10、20验证结果。
+奖励由三部分组成：
 
-原始源码未恢复。
-本目录故意不提供`reward.py`，避免用猜测代码冒充真实实现。
+- `execution_correct`：预测SQL与标准SQL返回等价结果。
+- `sql_executable`：提取出的最终SQL能够成功执行。
+- `format_compliance`：回答符合严格的`FINAL_SQL:`输出格式。
 
-## Key result
+Agent Loop仍然可以调用`list_tables`、`get_table_schema`和`execute_sql`，但v1不直接奖励中间工具动作、错误恢复或调用效率。
 
-Reward v1训练结果及v1与v3的离线比较仍然存在，但无法可靠恢复原始奖励公式。
+## 实验分析
 
-## Decision
+Reward v1实际完成过五步在线GRPO训练，并非未使用的历史代码。
 
-归档为results-only，不使用推测代码冒充真实Reward。
+| 指标 | Step 0 | Step 5 | 变化 |
+| --- | ---: | ---: | ---: |
+| 执行准确率 | 25.00% | 34.50% | +9.50个百分点 |
+| SQL可执行率 | 38.50% | 60.00% | +21.50个百分点 |
+| 最终SQL输出率 | 39.00% | 61.50% | +22.50个百分点 |
+| 重复execute率 | 72.50% | 35.50% | -37.00个百分点 |
+| 工具错误率 | 48.50% | 37.50% | -11.00个百分点 |
+
+结果表明，基于执行结果的终局监督能够快速改善Agent表现。但该奖励较为稀疏，无法直接解决中间工具动作的信用分配问题；Step5仍存在较高的重复执行率和工具错误率。这些问题推动了后续Reward v2和Reward v3对过程奖励的探索。
+
+## 来源确认
+
+当前源码与Reward v2、Reward v3构建前保存的备份具有相同SHA256。训练配置和运行时Reward路由也都指向该文件，因此可以确认它是本项目第一轮在线Reward实验实际使用的Reward v1。
