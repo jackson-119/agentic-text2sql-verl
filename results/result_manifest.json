@@ -2,421 +2,351 @@
   {
     "reward_version": 0,
     "repository_path": "results/baseline/qwen1_5b_protocol_v2_agent_turn8_pilot200_v1/pilot200_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_protocol_v2_agent_turn8_pilot200_v1/pilot200_summary.json",
     "sha256": "4c658901e8520b2fa26085b30ba5d83c310335cf90ac6a8f03477ff4ec29dae5"
   },
   {
     "reward_version": 0,
     "repository_path": "results/baseline/qwen1_5b_semantic_expanded_agent_turn8_pilot200_v1/pilot200_comparison_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_semantic_expanded_agent_turn8_pilot200_v1/pilot200_comparison_summary.json",
     "sha256": "e01614ebeda1947d5e9ba39afc88f04be65f3893417a2847e40c87478ca52723"
   },
   {
     "reward_version": 1,
     "repository_path": "results/reward_v1/experiment_evidence.json",
-    "source": "generated evidence manifest",
     "sha256": "76081540efe6e6c8de02008a4b82af82e7671725087e2d279cc0d851cd34be1d"
   },
   {
     "reward_version": 1,
     "repository_path": "results/reward_v1/reward_v1_vs_v3_smoke5.json",
-    "source": "archived compact result",
     "sha256": "1ec243418066c2f6f2cfdba67a7fd8c7e2f56aa2ffc92e9ae6e4e7cea704b2ed"
   },
   {
     "reward_version": 1,
     "repository_path": "results/reward_v1/wandb_v1_vs_v3.json",
-    "source": "archived compact result",
     "sha256": "dade2314c5995d227e6fd2c9130f6dbae6d7ccda59e2c2829f70e4375e57f4ab"
   },
   {
     "reward_version": 2,
     "repository_path": "results/reward_v2/reward_v2_offline_rescore/offline_rescore_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/reward_v2_offline_rescore/offline_rescore_summary.json",
     "sha256": "31035d1fdfca0fab1d4214d57a532a7208699c9fcf27990964153a02eca23f04"
   },
   {
     "reward_version": 3,
     "repository_path": "results/reward_v3/reward_v3_offline_rescore/reward_v3_offline_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/reward_v3_offline_rescore/reward_v3_offline_summary.json",
     "sha256": "4623a12e27e1a6dc5ecf339b05ee3e0ad96f5fc78d8e9c87277ccc22eccb41f8"
   },
   {
     "reward_version": 3,
     "repository_path": "results/reward_v3/sftv2_grpo_reward_v3_smoke5_v1_retry2/error_analysis_v1/error_analysis_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/sftv2_grpo_reward_v3_smoke5_v1_retry2/error_analysis_v1/error_analysis_summary.json",
     "sha256": "35a91169e9fc848ff85dc9d8289bf066bf993cfbd80a76f236755aad49da9309"
   },
   {
     "reward_version": 3,
     "repository_path": "results/reward_v3/sftv2_grpo_reward_v3_smoke5_v1_retry2/error_analysis_v1/error_category_summary.csv",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/sftv2_grpo_reward_v3_smoke5_v1_retry2/error_analysis_v1/error_category_summary.csv",
     "sha256": "92f1f515e0e0c0f780c5f82d0403232e14ce48a24ef68eafaf160daf58742033"
   },
   {
     "reward_version": 3,
     "repository_path": "results/reward_v3/sftv2_grpo_reward_v3_smoke5_v1_retry2/step20_analysis_v1/reward_v3_step20_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/sftv2_grpo_reward_v3_smoke5_v1_retry2/step20_analysis_v1/reward_v3_step20_summary.json",
     "sha256": "f7e06998182bc4b1f2a7729994f347093558fc42702355e4cbb37fc1a460bf97"
   },
   {
     "reward_version": 3,
     "repository_path": "results/reward_v3/sftv2_grpo_reward_v3_smoke5_v1_retry2/step20_analysis_v1/training_step_summary.csv",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/sftv2_grpo_reward_v3_smoke5_v1_retry2/step20_analysis_v1/training_step_summary.csv",
     "sha256": "2af2723e33989a4790dbc33382646a9b942667cb27a2d502fb959b9d66fc8680"
   },
   {
     "reward_version": 3,
     "repository_path": "results/reward_v3/sftv2_grpo_reward_v3_smoke5_v1_retry2/step20_analysis_v1/validation_step_summary.csv",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/sftv2_grpo_reward_v3_smoke5_v1_retry2/step20_analysis_v1/validation_step_summary.csv",
     "sha256": "a2c064c5c9d12caba4b5c125518437482845ea38145fb9aa00dbcc5e4d674d26"
   },
   {
     "reward_version": 4,
     "repository_path": "results/reward_v4/reward_v4_offline_v1_retry2/reward_v4_offline_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/reward_v4_offline_v1_retry2/reward_v4_offline_summary.json",
     "sha256": "d0be4703dd1b888a06f7b5014298688e44ef51af9c0d2eda296eb5d0bd57cd6b"
   },
   {
     "reward_version": 5,
     "repository_path": "results/reward_v5/final_holdout_reward_v5_v1/final_evaluation_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/final_holdout_reward_v5_v1/final_evaluation_summary.json",
     "sha256": "da093236ce182b1ef76bd324ebe4e98f9350cb229a99aa8cf53baf86d0379df4"
   },
   {
     "reward_version": 5,
     "repository_path": "results/reward_v5/final_project_report_v1/reward_v5_learning_curve.csv",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/final_project_report_v1/reward_v5_learning_curve.csv",
     "sha256": "e6e25009d34a87ba410a07b71ed16be9f4b415cfee310028f9266a4312bf7482"
   },
   {
     "reward_version": 5,
     "repository_path": "results/reward_v5/heldout_reward_v5_selection_v1/model_selection_decision.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/heldout_reward_v5_selection_v1/model_selection_decision.json",
     "sha256": "91419ce37e9143fb9e9a8303a3fd70b84eae586beeefb0d10bda2e8e3e7a7393"
   },
   {
     "reward_version": 5,
     "repository_path": "results/reward_v5/heldout_reward_v5_selection_v1/model_selection_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/heldout_reward_v5_selection_v1/model_selection_summary.json",
     "sha256": "29a657b28d8874919e7f4a873646d5fb40fd3fd514b4b0d24ed9042f2f7d2804"
   },
   {
     "reward_version": 5,
     "repository_path": "results/reward_v5/reward_v5_offline_v1/reward_v5_offline_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/reward_v5_offline_v1/reward_v5_offline_summary.json",
     "sha256": "493569ea4d1bc5617214c8370efb8fd7c9b7ca24d3a29850a20f817c30dadb0c"
   },
   {
     "reward_version": 5,
     "repository_path": "results/reward_v5/reward_v5_step48_semantic_error_analysis_v1/semantic_error_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/reward_v5_step48_semantic_error_analysis_v1/semantic_error_summary.json",
     "sha256": "36832bb74f467b8d7d3f10233b94dd48baf522f8a1f4b9521b1d1bba0888c94e"
   },
   {
     "reward_version": 6,
     "repository_path": "results/reward_v6/grpo_reward_v6_smoke5_v1/analysis/reward_v6_smoke5_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/grpo_reward_v6_smoke5_v1/analysis/reward_v6_smoke5_summary.json",
     "sha256": "9b966203e46a17f251281980e8704c2a130b61deb783f345557aa968e78b50c3"
   },
   {
     "reward_version": 6,
     "repository_path": "results/reward_v6/grpo_reward_v6_smoke5_v1/analysis_one_epoch/reward_v6_one_epoch_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/grpo_reward_v6_smoke5_v1/analysis_one_epoch/reward_v6_one_epoch_summary.json",
     "sha256": "f96841aae7e7bfd37fac0a3a1264ec01704b406b079a0418327b7c17b70ad5e1"
   },
   {
     "reward_version": 6,
     "repository_path": "results/reward_v6/grpo_reward_v6_smoke5_v1/analysis_one_epoch/reward_v6_validation_curve.csv",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/grpo_reward_v6_smoke5_v1/analysis_one_epoch/reward_v6_validation_curve.csv",
     "sha256": "1046812b00c989b5a8fe3141815315ed478b445b6cf81ed3922f7f04d58af859"
   },
   {
     "reward_version": 6,
     "repository_path": "results/reward_v6/heldout_reward_v6_selection_v1/model_selection_decision.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/heldout_reward_v6_selection_v1/model_selection_decision.json",
     "sha256": "ad49586ad1bb84b37fd8a672a6542ea91fa278130142aef8c4dda7fec69f1b74"
   },
   {
     "reward_version": 6,
     "repository_path": "results/reward_v6/heldout_reward_v6_selection_v1/model_selection_metrics.csv",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/heldout_reward_v6_selection_v1/model_selection_metrics.csv",
     "sha256": "1a9a8f2cb5dca68844b845e39d00cfe6cc3273288c3d92a2ae5fa159c63310d4"
   },
   {
     "reward_version": 6,
     "repository_path": "results/reward_v6/heldout_reward_v6_selection_v1/model_selection_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/heldout_reward_v6_selection_v1/model_selection_summary.json",
     "sha256": "d999cc4a2c594156b291833abaa3faf5a19a978f5fa0018b1d9e0a3e1e31156d"
   },
   {
     "reward_version": 6,
     "repository_path": "results/reward_v6/heldout_reward_v6_selection_v1/reward_v6_failure_analysis_v1/reward_v6_failure_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/heldout_reward_v6_selection_v1/reward_v6_failure_analysis_v1/reward_v6_failure_summary.json",
     "sha256": "968f83d5b2637939c9bd3a9f48335096340db9d48eaf157d3c02c927764abbb1"
   },
   {
     "reward_version": 6,
     "repository_path": "results/reward_v6/heldout_reward_v6_selection_v1/reward_v6_failure_analysis_v1/reward_v6_rejection_decision.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/heldout_reward_v6_selection_v1/reward_v6_failure_analysis_v1/reward_v6_rejection_decision.json",
     "sha256": "737d7778cbe4137eb7699e4bf030f8d6333b9cee1e3294bb456ca8576b73918e"
   },
   {
     "reward_version": 6,
     "repository_path": "results/reward_v6/reward_v6_offline_v1_retry1/reward_v6_offline_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/reward_v6_offline_v1_retry1/reward_v6_offline_summary.json",
     "sha256": "a9c462df7dfc4f1b7b826e4699d520c3a461058172c264711b098bc54ba4ca4e"
   },
   {
     "reward_version": 7,
     "repository_path": "results/reward_v7/reward_v7_offline_v1/reward_v7_offline_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/reward_v7_offline_v1/reward_v7_offline_summary.json",
     "sha256": "3b67b6dc028e19146768969453975b9534563e108cfa42bce06b71e599df7483"
   },
   {
     "reward_version": 8,
     "repository_path": "results/reward_v8/qwen1_5b_binary_execution_final_report_v1/core_metrics.csv",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_binary_execution_final_report_v1/core_metrics.csv",
     "sha256": "50be87b47defe6efaf1aceb9cdf8e9a579464fda60953ddc30ba8529f638148d"
   },
   {
     "reward_version": 8,
     "repository_path": "results/reward_v8/qwen1_5b_binary_execution_final_report_v1/final_error_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_binary_execution_final_report_v1/final_error_summary.json",
     "sha256": "dcb98119521fa52e998d42ff872dd939b780c4f5b126d969538e7a3d2cf1fe2e"
   },
   {
     "reward_version": 8,
     "repository_path": "results/reward_v8/qwen1_5b_binary_execution_final_report_v1/training_validation_curve.csv",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_binary_execution_final_report_v1/training_validation_curve.csv",
     "sha256": "117375461c4a0078a2cae7454d9c9c1231c0bd405d55906b3049ca6b27b6b743"
   },
   {
     "reward_version": 8,
     "repository_path": "results/reward_v8/qwen1_5b_binary_step32_final_holdout_v1/final_conclusion.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_binary_step32_final_holdout_v1/final_conclusion.json",
     "sha256": "38a3ebfc035e7b27915482398fb486a00773c16b0c14d4c4379a629b0585978f"
   },
   {
     "reward_version": 8,
     "repository_path": "results/reward_v8/qwen1_5b_binary_step32_final_holdout_v1/final_evaluation_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_binary_step32_final_holdout_v1/final_evaluation_summary.json",
     "sha256": "14ebc6f6eebb64c93e98b987243dae87c57897570a3f3a3b713bfeb6fb70812b"
   },
   {
     "reward_version": 8,
     "repository_path": "results/reward_v8/qwen1_5b_binary_step32_selection417_v1/model_selection_decision.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_binary_step32_selection417_v1/model_selection_decision.json",
     "sha256": "9e6b6947d27aecea6b49b4f876948e658158737fba334280be30895e67eb41b3"
   },
   {
     "reward_version": 8,
     "repository_path": "results/reward_v8/qwen1_5b_binary_step32_selection417_v1/model_selection_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_binary_step32_selection417_v1/model_selection_summary.json",
     "sha256": "aa342cc1a38fc2e257e7749346bb3ac126365e0b9af7863898cab051921ce06a"
   },
   {
     "reward_version": 8,
     "repository_path": "results/reward_v8/qwen1_5b_grpo_binary_execution_n8_smoke5_v1/analysis/smoke5_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_grpo_binary_execution_n8_smoke5_v1/analysis/smoke5_summary.json",
     "sha256": "0e5ce8d20d2486323ecfdff2db06fefab4d0939dde0a5822b59ff6d77e0fe26c"
   },
   {
     "reward_version": 8,
     "repository_path": "results/reward_v8/qwen1_5b_grpo_binary_execution_n8_smoke5_v1/sampling_diagnosis_v1/sampling_diagnosis_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_grpo_binary_execution_n8_smoke5_v1/sampling_diagnosis_v1/sampling_diagnosis_summary.json",
     "sha256": "992292c770822502d127a00ab7de38dc33208288dc49bd7b19929863d2b6581c"
   },
   {
     "reward_version": 8,
     "repository_path": "results/reward_v8/qwen1_5b_grpo_binary_execution_n8_temp01_smoke5_v1/analysis_one_epoch/one_epoch_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_grpo_binary_execution_n8_temp01_smoke5_v1/analysis_one_epoch/one_epoch_summary.json",
     "sha256": "90d894f2acdfbc8ff04f7f7d9fd8ebd3b65bb1efb3bcf913beb6bcd8c6261595"
   },
   {
     "reward_version": 9,
     "repository_path": "results/reward_v9/qwen1_5b_grpo_reward_v9_std_smoke5_v1_retry1/analysis_step32/reward_v9_step32_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_grpo_reward_v9_std_smoke5_v1_retry1/analysis_step32/reward_v9_step32_summary.json",
     "sha256": "b05594f12dd57afce2dc53deb38a3c476d934849c25beab89f799fe1d3ffb810"
   },
   {
     "reward_version": 9,
     "repository_path": "results/reward_v9/qwen1_5b_grpo_reward_v9_std_smoke5_v1_retry1/analysis_step32/validation_curve_step32.csv",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_grpo_reward_v9_std_smoke5_v1_retry1/analysis_step32/validation_curve_step32.csv",
     "sha256": "6e30579e2a477301627a008e4557cec7f69996e8aa9d50d8669ea6ab436324fa"
   },
   {
     "reward_version": 9,
     "repository_path": "results/reward_v9/qwen1_5b_reward_v9_selection417_v1/model_selection_decision.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_reward_v9_selection417_v1/model_selection_decision.json",
     "sha256": "e478adaa6b57bf5fd8f744d6a0519761ca2acd0d205a5da7b7129b31353553e5"
   },
   {
     "reward_version": 9,
     "repository_path": "results/reward_v9/qwen1_5b_reward_v9_selection417_v1/model_selection_metrics.csv",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_reward_v9_selection417_v1/model_selection_metrics.csv",
     "sha256": "16f63b2bc41b82d97ffbfc72a35523cc2aa56c605a8133e7735f121359247424"
   },
   {
     "reward_version": 9,
     "repository_path": "results/reward_v9/qwen1_5b_reward_v9_selection417_v1/model_selection_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_reward_v9_selection417_v1/model_selection_summary.json",
     "sha256": "c531551d4d715e0f6b89fcd32fe40cbc89d4db939ff66b4fdf0b4aaa958c1d8c"
   },
   {
     "reward_version": 9,
     "repository_path": "results/reward_v9/reward_v9_step16_comparison_v1/step16_comparison_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/reward_v9_step16_comparison_v1/step16_comparison_summary.json",
     "sha256": "d21781562fff8cd1765b6168924bb0c49b3ae589d5ef923003d2349b25600793"
   },
   {
     "reward_version": 9,
     "repository_path": "results/reward_v9/reward_v9_step16_comparison_v1/step16_selection_decision.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/reward_v9_step16_comparison_v1/step16_selection_decision.json",
     "sha256": "0fa03c3ee40e2ef90d7d0a22f9022353a75812cf80330686b57832c42755f905"
   },
   {
     "reward_version": 9,
     "repository_path": "results/reward_v9/reward_v9_step16_comparison_v1/training_curve.csv",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/reward_v9_step16_comparison_v1/training_curve.csv",
     "sha256": "be2ef57e9c7ec0adb07f192cccb5ffc3f9fd1743c7f82ada8da1ae5e1c2128da"
   },
   {
     "reward_version": 9,
     "repository_path": "results/reward_v9/reward_v9_step16_comparison_v1/validation_curve.csv",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/reward_v9_step16_comparison_v1/validation_curve.csv",
     "sha256": "cf8f35d104cd3c84655d6adb5b6593a5309cef2136fb7fbf999d59f58c2d54ee"
   },
   {
     "reward_version": 9,
     "repository_path": "results/reward_v9/reward_v9_verified_process_offline_v1/reward_v9_offline_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/reward_v9_verified_process_offline_v1/reward_v9_offline_summary.json",
     "sha256": "e4cf8322951f5a30820e91a010352b491b40295e8512988fcbe8b57252ad0205"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_grpo_reward_v10_n8_temp01_smoke5_v1/analysis/reward_v10_smoke5_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_grpo_reward_v10_n8_temp01_smoke5_v1/analysis/reward_v10_smoke5_summary.json",
     "sha256": "94de485d9db62ef0a5d51ed3719fe9469bff994cc2d32474122f8e44f619a3a0"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_grpo_reward_v10_n8_temp01_smoke5_v1/analysis_one_epoch/reward_v10_one_epoch_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_grpo_reward_v10_n8_temp01_smoke5_v1/analysis_one_epoch/reward_v10_one_epoch_summary.json",
     "sha256": "a86119a2a1b3713892d6f9501e58cfc8cae2f42f09e989ed3eb9ecbd1732d1e7"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_grpo_reward_v10_n8_temp01_smoke5_v1/analysis_step16/reward_v10_step16_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_grpo_reward_v10_n8_temp01_smoke5_v1/analysis_step16/reward_v10_step16_summary.json",
     "sha256": "297d91c4c89d82f0c2610d3c60b0a064c282cd4e17b8dce316190f8c33136d32"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_grpo_reward_v10_n8_temp01_smoke5_v1/analysis_step32/reward_v10_step32_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_grpo_reward_v10_n8_temp01_smoke5_v1/analysis_step32/reward_v10_step32_summary.json",
     "sha256": "c59904f7eb7c13b530b38eff3f0c4668903efd2237315341fcd3d6d2b6c0b505"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_grpo_reward_v10_n8_temp01_smoke5_v1/analysis_stress64/reward_v10_stress64_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_grpo_reward_v10_n8_temp01_smoke5_v1/analysis_stress64/reward_v10_stress64_summary.json",
     "sha256": "29f7dc5dd0c24bccc2986327256da983880b7878386a6ea40215dba1cf24c232"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_reward_v10_step128_selection417_v1/analysis/model_selection_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_reward_v10_step128_selection417_v1/analysis/model_selection_summary.json",
     "sha256": "16791ec91bbbc547edd64fa3d1a6989988da78adb80525a0cdafbf8fe2e16a00"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/analysis/smoke5_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/analysis/smoke5_summary.json",
     "sha256": "92b4b89d00d4aea68429fcd4f306a32aa83fe0946d47ae5c58c9d6918ac7a5ab"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/analysis_step16/reward_v10_step16_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/analysis_step16/reward_v10_step16_summary.json",
     "sha256": "d9d19ed7f7fd3767c3234596279d4d272a8ee9e99f031f61d48bca360b93f17b"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/analysis_step16/validation_curve.csv",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/analysis_step16/validation_curve.csv",
     "sha256": "006acc86af8b5d72acd7df96845aec957c28701e96aadc7bd711b9db156c7289"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/matched_comparison_one_epoch_v1/one_epoch_comparison_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/matched_comparison_one_epoch_v1/one_epoch_comparison_summary.json",
     "sha256": "eccc293ea7f40b6ed34082bfbc2fe75750235cc04e24160728b8dda9a1b541fc"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/matched_comparison_one_epoch_v1/one_epoch_paired_tests.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/matched_comparison_one_epoch_v1/one_epoch_paired_tests.json",
     "sha256": "24eb855934d9a9e65ee138b63a11880259c2e01e06675745e4a4d130a5db92df"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/matched_comparison_one_epoch_v1/one_epoch_validation_curve.csv",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/matched_comparison_one_epoch_v1/one_epoch_validation_curve.csv",
     "sha256": "cb12215827e02d892105da12c5e71a5849683bb42345f44ec1178fc5e486cf43"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/matched_comparison_step32_v1/matched_paired_tests.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/matched_comparison_step32_v1/matched_paired_tests.json",
     "sha256": "47e7d31ee5cc61dafd2637b235488012e8942691ab9034c68e9830bc44959b3f"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/matched_comparison_step32_v1/matched_step32_comparison_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/matched_comparison_step32_v1/matched_step32_comparison_summary.json",
     "sha256": "ea7b398ffc8d5712b4f23042d707d3a975a152cedb9705655be7637ca5d5971f"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/matched_comparison_step32_v1/matched_validation_curves.csv",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/matched_comparison_step32_v1/matched_validation_curves.csv",
     "sha256": "8b00ce264bcbfbc259c21541614728d5eb889055d73690edd631a3802bfbad53"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/matched_comparison_step64_v1/matched_step64_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/matched_comparison_step64_v1/matched_step64_summary.json",
     "sha256": "e3ebe629bcfc5107454d2d8dc578b692f6e7fe7c3724cc8ed27a1526a6dd4263"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/matched_comparison_step64_v1/matched_validation_curve_step64.csv",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/matched_comparison_step64_v1/matched_validation_curve_step64.csv",
     "sha256": "0acdbcb61da81fbd404052015b5a33f459755ae901842257c32754fc3c1753fd"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/protocol_drift_analysis_step16/protocol_drift_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/protocol_drift_analysis_step16/protocol_drift_summary.json",
     "sha256": "c8b68f5df5485f46bd3d99967841813bc118fde48e0607965aef8cdbe1d8eb80"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/protocol_metric_definition_audit_v2/protocol_metric_curve.csv",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/protocol_metric_definition_audit_v2/protocol_metric_curve.csv",
     "sha256": "caa465f355a69b82bf6cccc0cd4c9802a70906bace6538c80fb28d2b717683f9"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/step128_collapse_analysis_v1/step128_collapse_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/qwen1_5b_semantic_expanded_grpo_reward_v10_n8_temp01_smoke5_v1/step128_collapse_analysis_v1/step128_collapse_summary.json",
     "sha256": "f712b5fdb4803624734e3423636b0dba5a8e7e2f86a80204c4d2c59a38fc4d41"
   },
   {
     "reward_version": 10,
     "repository_path": "results/reward_v10/reward_v10_offline_v1/reward_v10_offline_summary.json",
-    "source": "/home/archlab/yb/verl/evaluation/text2sql_agent/reward_v10_offline_v1/reward_v10_offline_summary.json",
     "sha256": "12778145f3d784aa8c2fd6260f0256f04b7e0b856bda3d3929c1b778844fbcac"
   }
 ]

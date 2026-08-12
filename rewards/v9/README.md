@@ -24,8 +24,3 @@ Reward信息组率接近100%，但Selection417中v9 Step20为51.08%，低于v8�
 ## Decision
 
 拒绝；密集过程奖励产生了可被策略利用的代理目标。
-
-## Comparison caveat
-
-只有基础模型、SFT数据、训练预算、采样参数和评测集一致时，
-不同Reward之间才能视为严格的同预算比较。

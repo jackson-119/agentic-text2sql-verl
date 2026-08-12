@@ -24,8 +24,3 @@ Pilot200 Step 0到20：Exec 25.50%→38.00%，SQLExec 39.00%→67.50%，Final 39
 ## Decision
 
 流程塑形有效，但SQL语义错误仍是主要瓶颈。
-
-## Comparison caveat
-
-只有基础模型、SFT数据、训练预算、采样参数和评测集一致时，
-不同Reward之间才能视为严格的同预算比较。

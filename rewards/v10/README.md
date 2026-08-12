@@ -24,8 +24,3 @@
 ## Decision
 
 选择扩展SFT Reward v10 Step88；门控避免v9式协议坍缩，但长期训练仍出现语义坍缩。
-
-## Comparison caveat
-
-只有基础模型、SFT数据、训练预算、采样参数和评测集一致时，
-不同Reward之间才能视为严格的同预算比较。

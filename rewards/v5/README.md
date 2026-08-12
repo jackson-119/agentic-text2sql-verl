@@ -24,8 +24,3 @@ Final Holdout中v3 Step20到v5 Step48：Exec 36.69%→40.05%，SQLExec 68.82%→
 ## Decision
 
 接受；显著改善可执行性和工具稳定性。
-
-## Comparison caveat
-
-只有基础模型、SFT数据、训练预算、采样参数和评测集一致时，
-不同Reward之间才能视为严格的同预算比较。

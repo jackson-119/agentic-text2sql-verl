@@ -24,8 +24,3 @@ Reward v1训练结果及v1与v3的离线比较仍然存在，但无法可靠恢�
 ## Decision
 
 归档为results-only，不使用推测代码冒充真实Reward。
-
-## Comparison caveat
-
-只有基础模型、SFT数据、训练预算、采样参数和评测集一致时，
-不同Reward之间才能视为严格的同预算比较。

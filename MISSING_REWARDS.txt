@@ -1,3 +1,0 @@
-缺失Reward源码：v1
-Reward v1实验结果：已归档
-最早可执行实现：Reward v2

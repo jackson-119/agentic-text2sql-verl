@@ -24,8 +24,3 @@
 ## Decision
 
 离线不变量通过，随后进一步简化为Reward v8。
-
-## Comparison caveat
-
-只有基础模型、SFT数据、训练预算、采样参数和评测集一致时，
-不同Reward之间才能视为严格的同预算比较。
