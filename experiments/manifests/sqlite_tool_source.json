@@ -1,0 +1,17 @@
+{
+  "component": "sqlite_database_tool",
+  "destination": "src/agentic_text2sql/agent/spider_db_tool.py",
+  "source_relative_path": "examples/text2sql_agent/tools/spider_db_tool.py",
+  "source_sha256": "58b8e0f50d3223cb46ad65dfa4a15d60b7609545dacd8c087b3bb051aa4b73d1",
+  "destination_sha256": "58b8e0f50d3223cb46ad65dfa4a15d60b7609545dacd8c087b3bb051aa4b73d1",
+  "source_verl_head": "e003163181731412595257a72ec173071efb125f",
+  "source_workspace_has_local_modifications": true,
+  "head_is_not_a_complete_source_snapshot": true,
+  "migration": "byte-identical copy; module path changed",
+  "external_dependencies": [
+    "verl.tools.base_tool",
+    "verl.utils.rollout_trace"
+  ],
+  "runtime_integration_verified": false,
+  "license_review_complete": false
+}

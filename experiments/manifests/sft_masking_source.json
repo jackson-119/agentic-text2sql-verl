@@ -1,0 +1,59 @@
+{
+  "component": "assistant_only_sft_masking",
+  "source_script": "train_agent_sft_maskfixed_v2.py",
+  "extracted_functions": [
+    "clean_messages",
+    "tokenize_with_mask"
+  ],
+  "function_bodies_preserved": true,
+  "sources": [
+    {
+      "role": "trainer_source",
+      "filename": "train_agent_sft_maskfixed_v2.py",
+      "sha256": "cbc5b26ddda63ca7b06e1c08906652f8425602e52cb8316a74b5b9b71743d20b"
+    },
+    {
+      "role": "dataset_manifest",
+      "filename": "manifest.json",
+      "sha256": "b6e031ea3a652b6164444aa9f6d042a052e0308b0a4e222313e89ad5a36c5c69"
+    },
+    {
+      "role": "dataset_acceptance",
+      "filename": "dataset_acceptance_v2.json",
+      "sha256": "549a207ec4998eee58bf7b4d47e098b65ffd0996867724f924fb0f600fef723c"
+    },
+    {
+      "role": "loss_mask_acceptance",
+      "filename": "loss_mask_acceptance.json",
+      "sha256": "9d4eb24318116cea65202166b1478455f10fa7239b2373e35ecf8e143f7eab1b"
+    },
+    {
+      "role": "training_summary",
+      "filename": "training_summary.json",
+      "sha256": "dd3e9cd5fa5769e5218cb5c02f1e109c9baeb83c88e2c98cbb1637879f1a8248"
+    },
+    {
+      "role": "trainer_state",
+      "filename": "trainer_state.json",
+      "sha256": "f6e6bd04b22f541b26445df88ff59cb1473fe4d8d9f9629cee6faefe8b12245e"
+    },
+    {
+      "role": "model_config",
+      "filename": "config.json",
+      "sha256": "6e3e1a14265c70bcd8f5b0095712a85992690f6f94d9bb35f0b3f1ee0b239805"
+    },
+    {
+      "role": "tokenizer",
+      "filename": "tokenizer.json",
+      "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa"
+    }
+  ],
+  "destination": "src/agentic_text2sql/sft/masking.py",
+  "destination_sha256": "51a49ea7a15d9e3fd1e062afe751e190b00c3893172e813b73ebdd8c0e0bd71c",
+  "synthetic_template_tests": {
+    "count": 9,
+    "passed": true
+  },
+  "real_tokenizer_replay_performed": false,
+  "training_started": false
+}

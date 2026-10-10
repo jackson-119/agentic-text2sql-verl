@@ -1,0 +1,24 @@
+{
+  "component": "token_level_truncated_importance_weights",
+  "upstream": "verl",
+  "source_file": "verl/trainer/ppo/rollout_corr_helper.py",
+  "source_sha256": "cc7cd16dde46e122fa267a2b7319910d2b1558fdd9724d3cc9eae248a2822f86",
+  "destination": "src/agentic_text2sql/algorithms/importance_sampling.py",
+  "destination_sha256": "b049ef378e13158b3efa9a9f348ef801cba14255336a807145dd4e4b88dd687e",
+  "scope": "token / upper cap / no batch normalization",
+  "safety_bound": 20.0,
+  "historical_upper_bound": 2.0,
+  "input_validation_stricter_than_source": true,
+  "tests": {
+    "unit_test_count": 9,
+    "legacy_weight_comparison_cases": 64,
+    "maximum_error": 0.0,
+    "metrics_stubbed_in_legacy_comparison": true,
+    "device": "cpu",
+    "torch_version": "2.10.0+cu129",
+    "passed": true
+  },
+  "actual_rollout_probability_semantics_verified": false,
+  "online_training_integration_verified": false,
+  "training_started": false
+}

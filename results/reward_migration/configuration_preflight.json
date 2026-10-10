@@ -1,0 +1,30 @@
+{
+  "experiment": "portable_baseline_configuration_preflight",
+  "checks": {
+    "required_input_paths_exist": true,
+    "tool_template_resolved": true,
+    "hydra_compose_passed": true,
+    "required_configuration_values_resolved": true,
+    "new_package_import_locations_correct": true,
+    "tool_async_lifecycle_passed": true,
+    "sources_and_templates_unchanged": true
+  },
+  "details": {
+    "critic_path_exists": true,
+    "critic_loaded": false,
+    "reward_signature": "(data_source: 'str', solution_str: 'str', ground_truth: 'Any', extra_info: 'dict | None' = None) -> 'dict[str, float]'",
+    "tool_actions_tested": [
+      "list_tables",
+      "get_table_schema",
+      "execute_sql"
+    ]
+  },
+  "passed": true,
+  "model_loaded": false,
+  "ray_started": false,
+  "training_started": false,
+  "online_reward_manager_verified": false,
+  "distributed_environment_propagation_verified": false,
+  "source_report_sha256": "17d5d24275a222566fec264fcce81bd784269d5613fb640a59566448b6fbbae8",
+  "scope_note": "Verified in the existing server environment, not a clean-install or distributed-training reproduction."
+}

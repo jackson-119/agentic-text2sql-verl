@@ -1,0 +1,18 @@
+{
+  "component": "ppo_coefficient_score_centering",
+  "source_file": "verl/workers/utils/sc_ppo_correction.py",
+  "source_sha256": "2e85bedc4eec1a509642de1d048a0e2233e449cf62a6eba376505f1bf4976dad",
+  "destination": "src/agentic_text2sql/algorithms/score_centering.py",
+  "migration": "byte-identical core implementation",
+  "tests": {
+    "file": "tests/test_score_centering.py",
+    "count": 10,
+    "passed": true,
+    "device": "cpu",
+    "torch_version": "2.10.0+cu129",
+    "scope": "Independent reference PPO and analytical logit gradients"
+  },
+  "online_actor_integration_verified_in_new_repository": false,
+  "sampler_and_transport_migrated": false,
+  "training_started": false
+}

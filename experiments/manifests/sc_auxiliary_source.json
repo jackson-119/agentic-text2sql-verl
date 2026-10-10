@@ -1,0 +1,20 @@
+{
+  "component": "sc_auxiliary_log_probability",
+  "source_file": "verl/workers/utils/sc_aux_logp.py",
+  "source_sha256": "ab7b33fb03485ed3dbcf105c691d9253dbdcecf26d557278cf79a37ce2e9c3de",
+  "destination": "src/agentic_text2sql/algorithms/sc_auxiliary.py",
+  "destination_sha256": "cf832cbe43b1cb7ce02d00efe8e4737c85a90804450622ba91acc5dbefa0e7e5",
+  "changes": [
+    "Removed optional diagnostic capture hook only"
+  ],
+  "auxiliary_count": 4,
+  "tests": {
+    "count": 8,
+    "passed": true,
+    "device": "cpu",
+    "torch_version": "2.10.0+cu129",
+    "scope": "Packed alignment and independent value/gradient reference"
+  },
+  "online_transport_verified_in_new_repository": false,
+  "training_started": false
+}

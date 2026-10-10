@@ -1,0 +1,14 @@
+{
+  "component": "correctness_gated_reward_composition",
+  "source_relative_path": "examples/text2sql_agent/rewards/spider_correctness_gated_reward_v10.py",
+  "source_sha256": "6ecb7bf03833303042e20c5d53e404a362bf91825828692fc4edf5619fb6de4d",
+  "destination": "src/agentic_text2sql/rewards/correctness_gated.py",
+  "destination_sha256": "aab4edb14104840aace0634d5b6af184c62a2487005aabec70d632ff24c8050b",
+  "transformation": "Extract static constants and pure functions; rename _compose_v10_score to compose_reward",
+  "comparison_cases": 16384,
+  "all_return_fields_equal": true,
+  "comparison_scope": "synthetic metric dictionaries; composition only",
+  "sql_evaluator_migrated": false,
+  "real_trajectory_replay_verified": false,
+  "online_training_integration_verified": false
+}

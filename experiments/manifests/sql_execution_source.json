@@ -1,0 +1,24 @@
+{
+  "component": "sql_execution_evaluator",
+  "source_relative_path": "examples/text2sql_agent/rewards/spider_process_reward_v2.py",
+  "source_sha256": "150f443a402d11d1b04612cdc985e6faa764af42ecf9024f0ba9c67514465de5",
+  "destination": "src/agentic_text2sql/evaluation/sql_execution.py",
+  "destination_sha256": "0f4354266fb1e58682065c62da4634998968bbe536e0c31eeb9af760c8a5a98e",
+  "extracted_functions": [
+    "_execute_query",
+    "_gold_requires_order",
+    "_normalize_value",
+    "_remove_leading_comments",
+    "_same_execution_result",
+    "_strip_code_fence",
+    "_validate_read_only_sql",
+    "extract_final_sql"
+  ],
+  "helper_source_segments_preserved": true,
+  "new_interface": "evaluate_answer(db_path, solution_str, gold_sql)",
+  "new_diagnostic_field": "evaluation_error_type",
+  "database_path_resolution": "explicit path; legacy marker lookup omitted",
+  "official_spider_evaluator": false,
+  "full_v10_compatibility_verified": false,
+  "historical_trajectory_replay_verified": false
+}
