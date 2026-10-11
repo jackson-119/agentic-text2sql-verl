@@ -1,0 +1,21 @@
+{
+  "component": "grpo_preparation_and_fresh_run_launcher",
+  "source_reports": [
+    {
+      "role": "preparation",
+      "sha256": "dd10a50761c6b391ada62f0658ffca2c562ee85cd0c286b6b3e8bd6a58c8976e"
+    },
+    {
+      "role": "cpu_ray_worker",
+      "sha256": "8c5c2b75c22f23e889379eed42f9c0d91e4ee310617063c8773901e8c8363f57"
+    }
+  ],
+  "repository_components": {
+    "src/agentic_text2sql/training/prepare_grpo.py": "8f8e97f21aaa0020941f355add78b2ee53460dc70cad5d543b191e92e53fae65",
+    "src/agentic_text2sql/training/launch_grpo.py": "6f82edec6a5202d793a25c14715e7abec72dc7b9f26f0b194dcf90a93372f9af",
+    "tests/test_grpo_preparation.py": "0f188a9ba17a9e1c3e0ec084aa9e715a84de32bace0445f1774d339d63330d73",
+    "tests/test_grpo_launcher.py": "cabbc3922f39b5bb1902fb6c0693b6f4cacb8f78d03684da3fbe41d26538396d"
+  },
+  "source_paths_excluded": true,
+  "note": "Full local evidence remains outside Git; hashes identify the reports."
+}

@@ -1,10 +1,14 @@
-# GRPO 配置
+# GRPO配置
 
-baseline_smoke5.yaml 是从历史 Control 配置迁出的基础模板，
-通过环境变量指定模型、数据、工具配置及输出路径。
+baseline_smoke5.yaml来自历史Control，输入和输出通过环境变量指定。
+已提供配置准备器和默认Dry-run的显式启动器。
 
-已完成已有环境中的 Hydra 组合和关键字段解析预检；
-不代表新仓库在线训练或分布式环境传递验证完成。
+已完成配置Compose、11项入口单元测试、真实配置Dry-run，
+以及独立CPU Ray worker的包导入、环境传递和评分测试。
+没有验证新入口的GPU训练链路或在线Reward Manager调用。
 
-参见 [配置说明](../../docs/baseline_configuration.md)。
-累计回报、IS 和 SC 的完整可运行训练配置尚未发布。
+适配绑定已检查的本地修改版verl，不支持任意上游版本。
+累计回报、IS和SC的完整可运行训练配置尚未发布。
+
+参见[配置说明](../../docs/baseline_configuration.md)和
+[准备与启动说明](../../docs/grpo_launcher.md)。

@@ -1,9 +1,9 @@
-# verl 适配状态
+# verl SC补丁
 
-当前目录没有可安装补丁。
+补丁：sc_core.patch
 
-独立 IS/SC 和 SFT 掩码组件已迁入 src；
-实际 Actor、Agent 和 Reward Manager 接线尚未完整迁入。
-不能仅凭安装本包就启用历史线上训练行为。
+仅支持来源清单记录的历史本地文件基线，不是任意上游版本。
+已在临时副本验证应用及哈希；没有安装到训练环境或重跑训练。
 
-后续补丁需记录上游版本、源文件哈希、安装顺序及回归测试。
+[适配范围与限制](../../docs/sc_patch_bundle.md)
+[文件哈希清单](../../experiments/manifests/sc_patch_bundle.json)

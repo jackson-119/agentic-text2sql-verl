@@ -1,0 +1,555 @@
+--- a/verl/workers/utils/losses.py
++++ b/verl/workers/utils/losses.py
+@@ -88,6 +88,7 @@
+         fields.append("rollout_is_weights")
+     if "ref_log_prob" in data:
+         fields.append("ref_log_prob")
++    data_for_sc = data
+     data = data.select(*fields).to_padded_tensor()
+ 
+     response_mask = data["response_mask"].to(bool)
+@@ -110,6 +111,30 @@
+         config=config,
+         rollout_is_weights=rollout_is_weights,
+     )
++
++
++    # SC is opt-in and affects the policy-gradient term only.
++    # Missing auxiliary transport must fail, never fall back silently.
++    import os as _sc_os
++    if _sc_os.environ.get("VERL_SC_ENABLED", "0") == "1":
++        if torch.is_grad_enabled() and log_prob.requires_grad:
++            if loss_mode != "vanilla":
++                raise RuntimeError("This SC experiment requires vanilla PPO.")
++            if rollout_is_weights is not None:
++                raise RuntimeError("SC-only experiment must not enable IS.")
++            if "sc_aux_mean_logp" not in model_output:
++                raise RuntimeError(
++                    "SC enabled but model_output.sc_aux_mean_logp is missing; "
++                    "sampler/transport/Actor-logits integration is incomplete."
++                )
++            from verl.workers.utils.sc_ppo_correction import apply_sc_correction
++            _sc_mean_logp = no_padding_2_padding(
++                model_output["sc_aux_mean_logp"], data_for_sc
++            )
++            pg_loss, _sc_metrics = apply_sc_correction(
++                pg_loss, log_prob, _sc_mean_logp, response_mask
++            )
++            pg_metrics.update(_sc_metrics)
+ 
+     # AggregationType.MEAN for pg metrics: assumes policy_loss_fn normalizes by local_bsz/local_tokens
+     # Ex: in compute_policy_loss_vanilla, pg_metrics are pg_clipfrac, ppo_kl, pg_clipfrac_lower
+--- /dev/null
++++ b/verl/workers/utils/sc_ppo_correction.py
+@@ -0,0 +1,59 @@
++
++"""PPO-coefficient-aware conditional score centering.
++
++This module consumes mean_logp from independent auxiliary actions drawn
++from the actual behavior distribution at the SAME token prefix.
++It does not construct that behavior distribution.
++"""
++import torch
++
++
++def apply_sc_correction(pg_loss, log_prob, mean_logp, response_mask):
++    if mean_logp is None:
++        raise RuntimeError("SC enabled but auxiliary mean log-prob is missing.")
++    if pg_loss.ndim != 0:
++        raise ValueError("Expected scalar aggregated PPO loss.")
++    if log_prob.shape != mean_logp.shape:
++        raise ValueError("SC mean log-prob and PPO log-prob shapes differ.")
++    if log_prob.shape != response_mask.shape:
++        raise ValueError("SC response mask shape differs.")
++    if not log_prob.requires_grad or not mean_logp.requires_grad:
++        raise RuntimeError("SC requires differentiable current-policy log-probs.")
++
++    mask = response_mask.bool()
++    if not mask.any():
++        raise ValueError("SC received a batch without assistant tokens.")
++    if not torch.isfinite(mean_logp[mask]).all():
++        raise FloatingPointError("Nonfinite SC auxiliary log-prob.")
++
++    # Includes the actual PPO clipping and aggregation coefficients.
++    coefficient = torch.autograd.grad(
++        pg_loss,
++        log_prob,
++        retain_graph=True,
++        create_graph=False,
++        allow_unused=False,
++    )[0].detach()
++
++    if not torch.isfinite(coefficient).all():
++        raise FloatingPointError("Nonfinite PPO coefficient.")
++    if torch.count_nonzero(coefficient[~mask]).item() != 0:
++        raise RuntimeError("Masked tokens have nonzero PPO coefficients.")
++
++    # Do not multiply 0 by NaN/Inf on tool or padding positions.
++    safe_mean = torch.where(mask, mean_logp, torch.zeros_like(mean_logp))
++    zero_forward_term = safe_mean - safe_mean.detach()
++    correction = -(coefficient * zero_forward_term).sum()
++    corrected_loss = pg_loss + correction
++
++    metrics = {
++        "actor/sc_active": 1.0,
++        "actor/sc_coefficient_abs_mean":
++            coefficient[mask].abs().mean().item(),
++        "actor/sc_coefficient_nonzero_fraction":
++            (coefficient[mask] != 0).float().mean().item(),
++        "actor/sc_aux_mean_logp":
++            safe_mean[mask].detach().mean().item(),
++        "actor/sc_forward_delta": correction.detach().item(),
++    }
++    return corrected_loss, metrics
+--- a/verl/workers/engine/fsdp/transformer_impl.py
++++ b/verl/workers/engine/fsdp/transformer_impl.py
+@@ -1177,6 +1177,26 @@
+         distillation_use_topk = tu.get_non_tensor_data(data=micro_batch, key="distillation_use_topk", default=False)
+         distillation_only = tu.get_non_tensor_data(data=micro_batch, key="distillation_only", default=False)
+ 
++        _sc_active = (
++            os.environ.get("VERL_SC_ENABLED", "0") == "1"
++            and torch.is_grad_enabled()
++            and getattr(output, "logits", None) is not None
++            and output.logits.requires_grad
++        )
++        if _sc_active:
++            if use_fused_kernels or not use_remove_padding or self.use_ulysses_sp:
++                raise RuntimeError(
++                    "SC currently requires non-fused remove-padding Actor "
++                    "without Ulysses sequence parallelism."
++                )
++            if distillation_only or distillation_use_topk:
++                raise RuntimeError("SC-only experiment must not enable distillation.")
++            if "sc_aux_ids" not in micro_batch:
++                raise RuntimeError(
++                    "SC requires sc_aux_ids from the actual rollout prefixes; "
++                    "auxiliary transport is missing."
++                )
++
+         if calculate_sum_pi_squared and use_fused_kernels:
+             raise NotImplementedError(
+                 "calculate_sum_pi_squared=True is not supported with use_fused_kernels=True: "
+@@ -1219,6 +1239,23 @@
+                     logits_rmpad = logits_rmpad.full_tensor()
+                 logits_rmpad = logits_rmpad / temperature_rmpad.clamp(min=1e-8).unsqueeze(-1).to(logits_rmpad.dtype)
+ 
++                if _sc_active:
++                    from verl.workers.utils.sc_aux_logp import auxiliary_mean_logp_packed
++                    _sc_ids = micro_batch["sc_aux_ids"]
++                    if not _sc_ids.is_nested:
++                        raise RuntimeError("SC expects nested full-input auxiliary IDs.")
++                    _sc_offsets = input_ids.offsets()
++                    if not torch.equal(_sc_ids.offsets(), _sc_offsets):
++                        raise RuntimeError("SC auxiliary/input sequence offsets differ.")
++                    _sc_mean = auxiliary_mean_logp_packed(
++                        logits_rmpad, _sc_ids.values().long(), _sc_offsets
++                    )
++                    model_output["sc_aux_mean_logp"] = (
++                        torch.nested.nested_tensor_from_jagged(
++                            _sc_mean, _sc_offsets
++                        )
++                    )
++
+                 log_probs = None
+ 
+                 if calculate_sum_pi_squared:
+@@ -1255,7 +1292,7 @@
+                 if not distillation_only:
+                     # if use_sp: ((total_nnz / sp) + pad) ; if not use_sp: (batch, seqlen)
+                     inplace_backward = True
+-                    if calculate_entropy:
++                    if calculate_entropy or _sc_active:
+                         inplace_backward = False
+                     log_probs = logprobs_from_logits(
+                         logits=logits_rmpad,
+--- /dev/null
++++ b/verl/workers/utils/sc_aux_logp.py
+@@ -0,0 +1,73 @@
++
++"""Current-policy auxiliary log-probs; q sampling is handled upstream."""
++import torch
++from torch.utils.checkpoint import checkpoint
++
++
++def shifted_auxiliary_ids(aux_ids, offsets):
++    """IDs at token j belong to logits at j-1; never cross sequences."""
++    if aux_ids.ndim != 2 or aux_ids.shape[1] != 4:
++        raise ValueError("Expected packed auxiliary IDs [N, 4].")
++    if aux_ids.dtype != torch.long:
++        raise TypeError("Auxiliary IDs must be int64.")
++    if offsets.ndim != 1 or offsets.numel() < 2:
++        raise ValueError("Invalid sequence offsets.")
++    if offsets[0].item() != 0 or offsets[-1].item() != aux_ids.shape[0]:
++        raise ValueError("Offsets do not cover packed auxiliary IDs.")
++    if not (offsets[1:] > offsets[:-1]).all():
++        raise ValueError("Empty or non-increasing sequence offsets.")
++    if (aux_ids < -1).any():
++        raise ValueError("Only -1 is allowed as an absent-ID sentinel.")
++
++    present = aux_ids >= 0
++    if (present.any(-1) != present.all(-1)).any():
++        raise ValueError("Each prefix must contain all four IDs or four -1s.")
++
++    shifted = torch.roll(aux_ids, shifts=-1, dims=0).clone()
++    ends = offsets[1:].to(device=aux_ids.device, dtype=torch.long) - 1
++    shifted[ends] = -1
++    return shifted
++
++
++def auxiliary_mean_logp_packed(logits, aux_ids, offsets, chunk_size=32):
++    """Input logits already follow the Actor temperature convention."""
++    if logits.ndim != 2 or logits.shape[0] != aux_ids.shape[0]:
++        raise ValueError("Logits and auxiliary sequence lengths differ.")
++    if logits.device != aux_ids.device:
++        raise ValueError("Logits and auxiliary IDs must share a device.")
++    if chunk_size <= 0:
++        raise ValueError("chunk_size must be positive.")
++
++    shifted = shifted_auxiliary_ids(aux_ids, offsets)
++    valid = shifted[:, 0] >= 0
++    positions = valid.nonzero(as_tuple=False).flatten()
++    if positions.numel() == 0:
++        return logits[:, 0] * 0.0
++    if (shifted[positions] >= logits.shape[-1]).any():
++        raise ValueError("Auxiliary ID exceeds vocabulary size.")
++
++    def calculate(x, ids):
++        # Preserve float64 for tests; use float32 numerics for bf16 training.
++        x = x if x.dtype == torch.float64 else x.float()
++        selected = x.gather(-1, ids).mean(-1)
++        return selected - torch.logsumexp(x, dim=-1)
++
++    parts = []
++    for indices in positions.split(chunk_size):
++        x = logits.index_select(0, indices)
++        ids = shifted.index_select(0, indices)
++        if torch.is_grad_enabled() and x.requires_grad:
++            value = checkpoint(
++                calculate, x, ids,
++                use_reentrant=False,
++                preserve_rng_state=False,
++            )
++        else:
++            value = calculate(x, ids)
++        parts.append(value)
++
++    values = torch.cat(parts)
++    result = torch.zeros(
++        logits.shape[0], device=logits.device, dtype=values.dtype
++    )
++    return result.index_copy(0, positions, values)
+--- /dev/null
++++ b/verl/workers/utils/sc_rollout_transport.py
+@@ -0,0 +1,88 @@
++
++"""SC-only private transport: candidate slots are IID auxiliary draws, NOT top-k."""
++import os
++import numpy as np
++import torch
++
++_generators = {}
++
++def enabled():
++    return os.environ.get("VERL_SC_ENABLED", "0") == "1"
++
++def replace_candidate_slots(logq, sampled, packed):
++    if logq.ndim != 2 or sampled.ndim != 1 or logq.shape[0] != sampled.numel():
++        raise RuntimeError("SC sampler shape mismatch")
++    lp = logq.detach().float()
++    if torch.isnan(lp).any() or torch.isposinf(lp).any():
++        raise RuntimeError("Invalid processed log-probabilities")
++    if not torch.allclose(
++        lp.logsumexp(-1), torch.zeros_like(lp[:, 0]),
++        atol=1e-4, rtol=0,
++    ):
++        raise RuntimeError("SC requires normalized actual sampling log-probs")
++
++    key = str(lp.device)
++    if key not in _generators:
++        generator = torch.Generator(device=lp.device)
++        generator.manual_seed(314159)
++        _generators[key] = generator
++
++    aux = torch.multinomial(
++        lp.exp(), 4, replacement=True, generator=_generators[key]
++    )
++    ids = torch.cat([sampled[:, None].long(), aux], dim=-1)
++    values = lp.gather(-1, ids)
++    if not torch.isfinite(values).all():
++        raise RuntimeError("Auxiliary action outside q support")
++    if not torch.equal(packed.logprob_token_ids[:, 0].long(), sampled.long()):
++        raise RuntimeError("Selected-token alignment mismatch")
++
++    # Preserve selected token and its rank.
++    # Remaining four slots implement the private SC transport protocol.
++    return packed._replace(
++        logprob_token_ids=ids.to(torch.int32),
++        logprobs=values,
++    )
++
++def capture_output(state, core_output):
++    if not enabled():
++        return
++    raw = core_output.new_logprobs
++    tokens = list(core_output.new_token_ids)
++    if raw is None:
++        return
++
++    ids = np.asarray(raw.logprob_token_ids)
++    values = np.asarray(raw.logprobs)
++    if ids.ndim != 2 or ids.shape[1] != 5:
++        return  # Greedy validation follows the ordinary path.
++
++    if ids.shape != values.shape or len(tokens) != ids.shape[0]:
++        raise RuntimeError("SC output rows do not match generated tokens")
++    if ids[:, 0].tolist() != tokens or not np.isfinite(values).all():
++        raise RuntimeError("SC output token/q mismatch")
++
++    if not hasattr(state, "_sc_aux_history"):
++        state._sc_aux_history = []
++        state._sc_aux_logq_history = []
++        state._sc_token_history = []
++
++    state._sc_aux_history.extend(ids[:, 1:].astype(np.int64).tolist())
++    state._sc_aux_logq_history.extend(values[:, 1:].astype(float).tolist())
++    state._sc_token_history.extend(tokens)
++
++def attach_completion(state, completion, delta):
++    if not enabled() or not hasattr(state, "_sc_aux_history"):
++        return completion
++    if delta:
++        raise RuntimeError("SC requires FINAL_ONLY output, not DELTA")
++
++    tokens = list(completion.token_ids)
++    n = len(tokens)
++    if n > len(state._sc_token_history) or state._sc_token_history[:n] != tokens:
++        raise RuntimeError("SC completion/history alignment failure")
++
++    completion.sc_aux_token_ids = state._sc_aux_history[:n]
++    completion.sc_aux_logq = state._sc_aux_logq_history[:n]
++    completion.sc_aux_protocol = "iid_processed_q_k4_v1"
++    return completion
+--- a/verl/workers/rollout/vllm_rollout/vllm_async_server.py
++++ b/verl/workers/rollout/vllm_rollout/vllm_async_server.py
+@@ -593,6 +593,16 @@
+             f"max_tokens {max_tokens} not in valid range [1, {max_possible_tokens}]"
+         )
+         sampling_params["logprobs"] = 0 if sampling_params.pop("logprobs", False) else None
++        from verl.workers.utils.sc_rollout_transport import enabled as _sc_enabled
++        _sc_request = _sc_enabled() and float(sampling_params.get("temperature", self.config.temperature)) > 1e-5
++        if _sc_request:
++            if sampling_params["logprobs"] != 0:
++                raise RuntimeError("SC requires rollout.calculate_log_probs=True")
++            if self.config.mtp is not None and self.config.mtp.enable and self.config.mtp.enable_rollout:
++                raise RuntimeError("SC does not support speculative rollout")
++            from vllm.sampling_params import RequestOutputKind
++            sampling_params["logprobs"] = 4
++            sampling_params["output_kind"] = RequestOutputKind.FINAL_ONLY
+         sampling_params.setdefault("repetition_penalty", self.config.get("repetition_penalty", 1.0))
+         sampling_params.setdefault("ignore_eos", self.config.get("ignore_eos", False))
+         # Inject per-request seed for deterministic sampling when full_determinism is enabled.
+@@ -666,6 +676,19 @@
+             result_dict=extra_fields,
+         )
+         token_ids = final_res.outputs[0].token_ids
++        if _sc_request:
++            _sc_completion = final_res.outputs[0]
++            if getattr(_sc_completion, "sc_aux_protocol", None) != "iid_processed_q_k4_v1":
++                raise RuntimeError("SC completion missing actual-q auxiliary data")
++            _sc_ids = _sc_completion.sc_aux_token_ids
++            _sc_logq = _sc_completion.sc_aux_logq
++            if len(_sc_ids) != len(token_ids) or len(_sc_logq) != len(token_ids):
++                raise RuntimeError("SC auxiliary/token lengths differ")
++            if any(len(row) != 4 for row in _sc_ids):
++                raise RuntimeError("SC auxiliary K must be four")
++            extra_fields["sc_aux_token_ids"] = _sc_ids
++            extra_fields["sc_aux_logq"] = _sc_logq
++            extra_fields["sc_aux_protocol"] = "iid_processed_q_k4_v1"
+         log_probs = None
+         if sampling_params.logprobs is not None:
+             log_probs = [logprobs[token_ids[i]].logprob for i, logprobs in enumerate(final_res.outputs[0].logprobs)]
+--- /dev/null
++++ b/verl/workers/utils/sc_agent_transport.py
+@@ -0,0 +1,120 @@
++"""SC auxiliary token transport for the padded, non-continuous agent path."""
++import math
++import os
++import torch
++
++PROTOCOL = "iid_processed_q_k4_v1"
++K = 4
++
++def enabled():
++    return os.environ.get("VERL_SC_ENABLED") == "1"
++
++def append_generation(agent_data, output, sampling_params, continuous=False):
++    if not enabled():
++        return
++    if "temperature" not in sampling_params:
++        raise RuntimeError("SC requires explicit sampling temperature")
++    if float(sampling_params["temperature"]) <= 1e-5:
++        return
++    if continuous:
++        raise RuntimeError("SC transport does not support continuous-token reconstruction")
++
++    extra = output.extra_fields or {}
++    if extra.get("sc_aux_protocol") != PROTOCOL:
++        raise RuntimeError("Missing or incompatible SC TokenOutput protocol")
++    tokens = list(output.token_ids)
++    ids = extra.get("sc_aux_token_ids")
++    logq = extra.get("sc_aux_logq")
++    if ids is None or logq is None or len(ids) != len(tokens) or len(logq) != len(tokens):
++        raise RuntimeError("SC auxiliary length differs from generated token length")
++
++    clean_ids, clean_q = [], []
++    for row, qr in zip(ids, logq):
++        if len(row) != K or len(qr) != K:
++            raise RuntimeError("SC requires exactly four auxiliary draws per token")
++        if any(isinstance(x, bool) or not isinstance(x, int) or x < 0 for x in row):
++            raise RuntimeError("SC auxiliary IDs must be nonnegative integers")
++        if any(not math.isfinite(float(x)) or float(x) > 1e-4 for x in qr):
++            raise RuntimeError("Invalid auxiliary log-q")
++        clean_ids.append(list(row))
++        clean_q.append([float(x) for x in qr])
++
++    history = getattr(agent_data, "_sc_history", None)
++    if history is None:
++        history = []
++        agent_data._sc_history = history
++    mask = list(agent_data.response_mask)
++    start = len(history)
++    if start > len(mask) or any(mask[start:]):
++        raise RuntimeError("Uncaptured assistant tokens before current generation")
++    history.extend([None] * (len(mask) - start))
++    history.extend(zip(tokens, clean_ids, clean_q))
++
++def finalize(agent_data, output):
++    history = getattr(agent_data, "_sc_history", None)
++    if history is None:
++        return
++    mask = list(output.response_mask)
++    tokens = list(output.response_ids)
++    if len(mask) != len(tokens):
++        raise RuntimeError("SC response/mask length mismatch")
++    if len(history) < len(tokens):
++        tail = mask[len(history):]
++        if any(tail):
++            raise RuntimeError("SC history missing generated tokens")
++        history = history + [None] * len(tail)
++
++    ids, logq = [], []
++    for token, active, entry in zip(tokens, mask, history[:len(tokens)]):
++        if active not in (0, 1):
++            raise RuntimeError("Non-binary response mask")
++        if active:
++            if entry is None or entry[0] != token:
++                raise RuntimeError("SC auxiliary/selected-token alignment mismatch")
++            ids.append(list(entry[1]))
++            logq.append(list(entry[2]))
++        else:
++            if entry is not None:
++                raise RuntimeError("SC generation assigned to observation token")
++            ids.append([-1] * K)
++            logq.append([0.0] * K)
++    output.extra_fields["sc_aux_token_ids"] = ids
++    output.extra_fields["sc_aux_logq"] = logq
++    output.extra_fields["sc_aux_protocol"] = PROTOCOL
++
++def collate(inputs):
++    packed = []
++    for item in inputs:
++        prompt_width = item.prompt_ids.shape[-1]
++        response_width = item.response_ids.shape[-1]
++        device = item.input_ids.device
++        extra = item.extra_fields
++        if extra.get("sc_aux_protocol") != PROTOCOL:
++            raise RuntimeError("Training trajectory missing SC auxiliary data")
++        ids = extra.get("sc_aux_token_ids")
++        if ids is None:
++            raise RuntimeError("Missing SC auxiliary IDs")
++        response_attention = item.attention_mask[0, prompt_width:]
++        n = int(response_attention.sum().item())
++        if len(ids) != n:
++            raise RuntimeError("SC auxiliary length differs from unpadded response")
++        if not bool(response_attention[:n].all()) or bool(response_attention[n:].any()):
++            raise RuntimeError("SC expects right-padded responses")
++        dense = torch.full(
++            (1, prompt_width + response_width, K),
++            -1, dtype=torch.long, device=device,
++        )
++        if n:
++            aux = torch.tensor(ids, dtype=torch.long, device=device)
++            if aux.shape != (n, K):
++                raise RuntimeError("Invalid SC auxiliary matrix shape")
++            dense[0, prompt_width:prompt_width+n] = aux
++        active = torch.zeros_like(item.attention_mask, dtype=torch.bool)
++        active[:, prompt_width:] = item.response_mask.bool()
++        present = dense.ge(0)
++        if not torch.equal(present.all(-1), active) or not torch.equal(present.any(-1), active):
++            raise RuntimeError("SC IDs must cover exactly assistant-token positions")
++        if bool((dense[~active] != -1).any()):
++            raise RuntimeError("SC non-assistant IDs must be -1")
++        packed.append(dense)
++    return torch.cat(packed, dim=0)
+--- a/verl/workers/utils/padding.py
++++ b/verl/workers/utils/padding.py
+@@ -93,6 +93,26 @@
+         data["teacher_logprobs"] = teacher_logprobs_nested
+         data["teacher_ids"] = teacher_ids_nested
+ 
++    if "sc_aux_ids" in data:
++        sc_aux_ids = data["sc_aux_ids"]
++        if sc_aux_ids.is_nested or sc_aux_ids.dtype != torch.long:
++            raise RuntimeError("SC padding input must be dense int64")
++        if tuple(sc_aux_ids.shape) != (*attention_mask.shape, 4):
++            raise RuntimeError("SC padding input has wrong shape")
++        sc_active = torch.zeros_like(attention_mask, dtype=torch.bool)
++        sc_active[:, -max_response_len:] = response_mask.bool()
++        if bool((sc_active & ~attention_mask.bool()).any()):
++            raise RuntimeError("SC assistant position outside attention mask")
++        sc_present = sc_aux_ids.ge(0)
++        if not torch.equal(sc_present.all(-1), sc_active) or not torch.equal(sc_present.any(-1), sc_active):
++            raise RuntimeError("SC padding coverage mismatch")
++        if bool((sc_aux_ids[~sc_active] != -1).any()):
++            raise RuntimeError("SC inactive positions must use -1")
++        sc_values = sc_aux_ids.flatten(0, 1).index_select(0, indices.long())
++        data["sc_aux_ids"] = torch.nested.nested_tensor_from_jagged(
++            sc_values, offsets=cu_seqlens
++        )
++
+     return data
+ 
+ 
+--- a/verl/experimental/agent_loop/agent_loop.py
++++ b/verl/experimental/agent_loop/agent_loop.py
+@@ -1062,6 +1062,9 @@
+         input_ids = torch.cat([input.input_ids for input in inputs], dim=0)
+         position_ids = torch.cat([input.position_ids for input in inputs], dim=0)
+         optional_outputs = {}
++        from verl.workers.utils.sc_agent_transport import enabled, collate
++        if enabled() and not validate:
++            optional_outputs["sc_aux_ids"] = collate(inputs)
+         if inputs[0].response_logprobs is not None:
+             optional_outputs["rollout_log_probs"] = torch.cat([input.response_logprobs for input in inputs], dim=0)
+         if inputs[0].routed_experts is not None:
+--- a/verl/experimental/agent_loop/tool_agent_loop.py
++++ b/verl/experimental/agent_loop/tool_agent_loop.py
+@@ -202,6 +202,8 @@
+             ),
+             extra_fields=agent_data.extra_fields,
+         )
++        from verl.workers.utils.sc_agent_transport import finalize
++        finalize(agent_data, output)
+         output.extra_fields.update({"turn_scores": agent_data.turn_scores, "tool_rewards": agent_data.tool_rewards})
+         return output
+ 
+@@ -241,6 +243,8 @@
+                 audio_data=agent_data.audio_data,
+                 mm_processor_kwargs=agent_data.mm_processor_kwargs,
+             )
++        from verl.workers.utils.sc_agent_transport import append_generation
++        append_generation(agent_data, output, sampling_params, self.enable_continuous_token)
+         # first time to set num_preempted
+         if agent_data.metrics.get("num_preempted") is None:
+             agent_data.metrics["num_preempted"] = output.num_preempted if output.num_preempted is not None else -1

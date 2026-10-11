@@ -1,0 +1,39 @@
+{
+  "component": "cumulative_process_credit",
+  "source_file": "verl/trainer/ppo/turn_aware_credit.py",
+  "source_sha256": "3f15478939f2c2533054028f256535214554a9b9a5cd35b6544cde24578d9514",
+  "destination": "src/agentic_text2sql/algorithms/cumulative_credit.py",
+  "migration": "byte-identical local experimental core",
+  "source_reports": [
+    {
+      "role": "patch_validation",
+      "relative_path": "cumulative_process_patch__c6zrh3q/summary.json",
+      "sha256": "d0b706094ab15511c7897bd709d3e48b03346fa7e22488370403a42d2a3a56a9"
+    },
+    {
+      "role": "entry_replay",
+      "relative_path": "cumulative_entry_replay_9oanp3tc/summary.json",
+      "sha256": "825c7d56d3900b7757b00f00e354d473e33be6539d654299e0dc89b7ea1f4b43"
+    },
+    {
+      "role": "pilot_selection",
+      "relative_path": "cumulative_process_train5_disk_retry_l84sqeoz/epoch1_continue_cgmrfqo_/pilot_selection_summary.json",
+      "sha256": "6b2d57f868ea5be915556a31f3bf7f16e47ad9f20c061b4a2ef029565d53aca0"
+    },
+    {
+      "role": "selection417_comparison",
+      "relative_path": "best_v10_vs_cumulative_selection417_l2eomnt4/comparison_summary.json",
+      "sha256": "e48e8a5d019975987f6b5d3bd32664090c9d77441985cd6c227185c9f647452c"
+    }
+  ],
+  "tests": {
+    "count": 10,
+    "passed": true,
+    "device": "cpu",
+    "scope": "Independent synthetic component checks"
+  },
+  "historical_experiments_rerun": false,
+  "online_event_mapping_migrated": false,
+  "new_repository_online_integration_verified": false,
+  "license_note": "Local source provenance is recorded; authorship and license review are not established by a hash."
+}

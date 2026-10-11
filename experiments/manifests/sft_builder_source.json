@@ -1,0 +1,32 @@
+{
+  "component": "gold_sql_guided_sft_builder",
+  "source_file": "examples/text2sql_agent/sft/build_spider_agent_sft.py",
+  "source_sha256": "7b38b5be954b56b4016c560bc194a027f63f440df2038f1ac47d701a38e1ba70",
+  "archived_snapshot_byte_identical": true,
+  "destination": "src/agentic_text2sql/sft/builder.py",
+  "destination_sha256": "f5516c6918df3930f24f26d450d5e9cef878312045f0fb109f8f10fd98d668b0",
+  "preserved": [
+    "Gold SQL structured-table selection",
+    "Standard and synthetic schema-error recovery trajectories",
+    "Seeded RNG sequence and database-level splitting",
+    "Historical CLI defaults and output row schema"
+  ],
+  "adaptations": [
+    "Lazy datasets and transformers imports",
+    "CLI value validation",
+    "Database ID and root-containment validation",
+    "Properly quoted read-only SQLite URI",
+    "Fresh output and input/output overlap guards"
+  ],
+  "tests": {
+    "synthetic_test_count": 9,
+    "passed": true,
+    "sqlite_fixture_real": true,
+    "tokenizer_mocked": true,
+    "parquet_writer_mocked": true
+  },
+  "real_spider_data_read": false,
+  "model_loaded": false,
+  "historical_dataset_reproduced": false,
+  "training_started": false
+}

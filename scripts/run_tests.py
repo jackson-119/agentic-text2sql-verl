@@ -12,10 +12,20 @@ GROUPS = {
         "test_scoring.py",
         "test_sft_masking.py",
     ],
+    "sft": [
+        "test_sft_trainer.py",
+        "test_sft_builder.py",
+        "test_sft_pipeline.py",
+    ],
+    "grpo": [
+        "test_grpo_preparation.py",
+        "test_grpo_launcher.py",
+    ],
     "algorithms": [
         "test_score_centering.py",
         "test_sc_auxiliary.py",
         "test_importance_sampling.py",
+        "test_cumulative_credit.py",
     ],
     "tools": [
         "test_sqlite_backend.py",

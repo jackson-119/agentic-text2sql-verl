@@ -1,0 +1,22 @@
+{
+  "scope": "Curated CPU regression in existing server environment",
+  "command": "python scripts/run_tests.py --group all",
+  "module_count": 14,
+  "test_count": 119,
+  "group_counts": {
+    "core": 43,
+    "sft": 18,
+    "grpo": 11,
+    "algorithms": 37,
+    "tools": 10
+  },
+  "failed_modules": 0,
+  "skipped_tests": 0,
+  "passed": true,
+  "source_log_sha256": "bc5fce33f3221f3b415570684e0fce30416339907b48347bb9fecf98e8c1a045",
+  "git_status_and_tracked_diff_unchanged_during_run": true,
+  "all_untracked_file_contents_verified_unchanged": false,
+  "clean_environment_verified": false,
+  "online_distributed_training_verified": false,
+  "historical_training_rerun": false
+}

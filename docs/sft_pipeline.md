@@ -26,7 +26,7 @@ User、System、Tool 和不训练的 Assistant 消息均保留为上下文，lab
 
 逐轮前缀和完整对话前缀必须一致，否则报错。
 超长序列报错，不静默截断；没有监督 token 的样本也报错。
-迁入的是掩码函数，padding collator 与完整 Trainer 尚未迁入。
+掩码函数、Dataset、padding collator 与单卡 Trainer 入口已迁入；在线模型训练尚未在新入口中验证。
 
 ## 已确认训练记录
 
@@ -48,10 +48,24 @@ tokenizer JSON 的不同 token ID 数及最大 ID 加一均为 151665。
 
 历史 loss mask 报告抽查 32 条样本并通过。
 新仓库新增 9 项合成 tokenizer 契约测试，不代表真实模板端到端回放。
-构建数据的代码、完整 SFT 训练入口及干净环境复现尚未完成迁入。
+数据构建器与单卡 SFT 入口均已迁入，并提供显式训练参数模板；历史数据逐条重建、模型训练和干净环境复现尚未完成。
 
 本 SFT 模型目录被后续已整理的 GRPO 配置引用为初始化模型。
 这一配置关联不等于本轮重新验证了模型权重或重新运行训练。
 
 - [历史精简证据](../results/sft/semantic_expanded_summary.json)
 - [来源记录](../experiments/manifests/sft_masking_source.json)
+
+## 新训练入口
+
+参见 [运行配置说明](../configs/sft/README.md)。该入口要求显式学习率，拒绝非空输出目录，默认关闭 W&B。增加的随机种子初始化及模板默认 SDPA 均属于迁移调整，不宣称与历史运行逐位等价。
+
+## 新增数据管线验收
+
+- 合成 SQLite → 构建器 → 真实 Parquet → Dataset → Collator 已通过。
+- 本地 Qwen2TokenizerFast 在标准、恢复和验证三条合成轨迹上通过字符 offset 与 labels 的交叉核对。
+- 错误恢复额外增加 68 个上下文 token，监督 token 仍为 79。
+- Tokenizer regex 警告尚未解决；本次未改变历史加载参数。
+
+这些测试不是历史数据重建，也未加载模型权重或执行训练。
+详见 [迁移验收](../results/sft/migration_validation.json)。

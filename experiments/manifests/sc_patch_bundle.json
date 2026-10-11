@@ -1,0 +1,109 @@
+{
+  "component": "historical_sc_online_wiring",
+  "baseline": "Exact local pre-SC file snapshots, not a clean upstream checkout",
+  "historical_verl_head": "e003163181731412595257a72ec173071efb125f",
+  "historical_vllm_version": "0.17.0",
+  "source_report_hashes": {
+    "loss": "913c920d78fd74e8e9cf54d70fbb40f8d1ee1d4ca30945026cfe48a3273c7727",
+    "actor": "495a791e7f91ba86c5cdc730972080e7a1aa67928b217a0e3df6e2f0f723c78e",
+    "rollout": "d14e96dead8e5488e0c03d6c36ce1c375bcdb44c0ce64301500a150e4c65016e",
+    "agent": "cbedb6a480b38dbf252e58a337e97e652adf7417a2db3d49326a3fdea5888612",
+    "dummy": "6da902484299d79e2ce3db4db2f5976ac6a964793c6aab9e047691871ae0ce9e"
+  },
+  "files": [
+    {
+      "root": "verl",
+      "path": "verl/workers/utils/losses.py",
+      "before_sha256": "c6dfeb10900054e96b432633b975f3e3a535d3358a4ad13eeda9f730c5942d4a",
+      "after_sha256": "e494efd531283e0c2d4bf9e65c95552aca1990df067aa56dcff0e21bad0150e7"
+    },
+    {
+      "root": "verl",
+      "path": "verl/workers/utils/sc_ppo_correction.py",
+      "before_sha256": null,
+      "after_sha256": "2e85bedc4eec1a509642de1d048a0e2233e449cf62a6eba376505f1bf4976dad"
+    },
+    {
+      "root": "verl",
+      "path": "verl/workers/engine/fsdp/transformer_impl.py",
+      "before_sha256": "361b16bf582f9d4990c4f0942c7f3ec44fb91dad6f7e0fc84c672cf9e6599ef7",
+      "after_sha256": "1f94966448117c3b4579a5f8bba6788e17db1ca17c65ccddec2d4069beea13af"
+    },
+    {
+      "root": "verl",
+      "path": "verl/workers/utils/sc_aux_logp.py",
+      "before_sha256": null,
+      "after_sha256": "cf832cbe43b1cb7ce02d00efe8e4737c85a90804450622ba91acc5dbefa0e7e5"
+    },
+    {
+      "root": "verl",
+      "path": "verl/workers/utils/sc_rollout_transport.py",
+      "before_sha256": null,
+      "after_sha256": "c8186e43a75968e8281741ceaac72c6b2d602bfa98bc950f873a71e16fa1039d"
+    },
+    {
+      "root": "verl",
+      "path": "verl/workers/rollout/vllm_rollout/vllm_async_server.py",
+      "before_sha256": "ed843e8af543f1409836828bdd0b15401d69a3bea9652308827cfba749cb9f83",
+      "after_sha256": "c485f8e2d0184065fd4976ad1b3d085cd26ab84b804a82f0ce22104b91df191a"
+    },
+    {
+      "root": "verl",
+      "path": "verl/workers/utils/sc_agent_transport.py",
+      "before_sha256": null,
+      "after_sha256": "e4ee547f437526d532fd58aeeca13a9695c70629fad3890a749d731040e23eac"
+    },
+    {
+      "root": "verl",
+      "path": "verl/workers/utils/padding.py",
+      "before_sha256": "f3cc823e6ef2099075406f6fe1244498f15a775f0fac90010c0babf1c82cbe7b",
+      "after_sha256": "c141bef2bfe80084f2645087f5e526f780d3061367c652af15e72427bb940982"
+    },
+    {
+      "root": "verl",
+      "path": "verl/experimental/agent_loop/agent_loop.py",
+      "before_sha256": "f44511bf71fb2e7ad9c70db167eb396f1f8d15e23261eb4464eb3f0b7a9c1f4e",
+      "after_sha256": "ec4db2731c1c76cfa606a63d21dd29c895397a989714aa80ff04c5ad950519e5"
+    },
+    {
+      "root": "verl",
+      "path": "verl/experimental/agent_loop/tool_agent_loop.py",
+      "before_sha256": "911864a9b3a41af23a204dfce90ec051c3ced646b3d41d4c50dd383de90abc1f",
+      "after_sha256": "ba5cbe01216014df0d1e60fa3f8a074e0686d4374eccf5b26fa3d97d1a621d7f"
+    },
+    {
+      "root": "vllm",
+      "path": "v1/engine/output_processor.py",
+      "before_sha256": "55c69b4c422d58428eb2e06ab27a83bb330583c54253524fb32ba7ff041192a2",
+      "after_sha256": "96164387c2ef1fea43eda513f91e2467d211c0ae094b49be0527ae8ca4c95beb"
+    },
+    {
+      "root": "vllm",
+      "path": "v1/worker/gpu_model_runner.py",
+      "before_sha256": "9eda49d0d8b1d0e70714f623f58b07b81e26e3818f2323a1d331b0b506311981",
+      "after_sha256": "38496e4b2a894090db1f742f7a13a3b474b15d33c7dd998c8647bb970a61bb3a"
+    },
+    {
+      "root": "vllm",
+      "path": "v1/sample/sampler.py",
+      "before_sha256": "b93600890dabde54310a39b34cf2a96173fbb66211b9d4a74386c1ab9ee4ae5e",
+      "after_sha256": "736e655d64901e44fac56f6eff98239e30cf4ab9e2beb3731b353ad646847fa5"
+    }
+  ],
+  "patch_roots": {
+    "verl": "verl checkout root",
+    "vllm": "vllm package directory"
+  },
+  "application_order": [
+    "verl",
+    "vllm"
+  ],
+  "diagnostic_capture_included": false,
+  "temporary_snapshot_application_verified": true,
+  "post_application_hashes_verified": true,
+  "python_syntax_verified": true,
+  "runtime_tests_rerun": false,
+  "clean_upstream_compatibility_verified": false,
+  "license_review_complete": false,
+  "training_started": false
+}

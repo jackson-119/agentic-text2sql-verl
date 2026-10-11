@@ -1,0 +1,32 @@
+{
+  "component": "single_gpu_assistant_only_sft_trainer",
+  "source_script": "train_agent_sft_maskfixed_v2.py",
+  "source_sha256": "cbc5b26ddda63ca7b06e1c08906652f8425602e52cb8316a74b5b9b71743d20b",
+  "destination": "src/agentic_text2sql/sft/trainer.py",
+  "destination_sha256": "cadd6ecae738dee8b88a33a43b1e19a472a3dacbdb424db9d2f9c5ccf7a09028",
+  "preserved": [
+    "Dataset row schema and eager tokenization",
+    "Historical collator implementation",
+    "Trainer optimizer and scheduler settings",
+    "Full-parameter BF16 training and final HF export"
+  ],
+  "adaptations": [
+    "Reuse migrated masking module",
+    "Explicit required learning rate and positive numeric validation",
+    "Reporting disabled by default; project name applied when enabled",
+    "Fresh output directory and single-GPU single-process guards",
+    "Set seed before model initialization",
+    "Template defaults to SDPA rather than Flash Attention 2"
+  ],
+  "tests": {
+    "interface_test_count": 8,
+    "passed": true,
+    "help_passed": true,
+    "shell_syntax_passed": true,
+    "dataset_loader_mocked": true
+  },
+  "historical_launch_command_reconstructed": false,
+  "model_loaded": false,
+  "training_started": false,
+  "online_training_verified": false
+}

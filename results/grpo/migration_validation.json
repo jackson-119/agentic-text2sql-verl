@@ -1,0 +1,71 @@
+{
+  "component": "grpo_preparation_and_fresh_run_launcher",
+  "unit_tests": {
+    "preparation": 5,
+    "launcher": 6,
+    "previously_passed_separately": true,
+    "launcher_subprocess_mocked": true,
+    "rerun_this_update": false
+  },
+  "preparation": {
+    "passed": true,
+    "checks": {
+      "prepared_configuration_composes": true,
+      "actual_ray_temp_path_correct": true,
+      "local_ray_requested": true,
+      "worker_environment_declares_required_paths": true,
+      "sc_and_diagnostic_flags_disabled": true,
+      "both_reward_entries_correct": true,
+      "tool_configuration_generated": true,
+      "ray_directory_not_created": true,
+      "sources_and_templates_unchanged": true
+    }
+  },
+  "cpu_ray_worker": {
+    "passed": true,
+    "checks": {
+      "worker_is_separate_process": true,
+      "new_reward_package_imported": true,
+      "declared_environment_propagated": true,
+      "no_gpu_assigned_or_visible": true,
+      "six_reward_tests_passed": true,
+      "training_launch_not_claimed": true,
+      "watched_files_unchanged": true
+    },
+    "environment_matches": {
+      "TEXT2SQL_MODEL_PATH": true,
+      "TEXT2SQL_CRITIC_MODEL_PATH": true,
+      "TEXT2SQL_TRAIN_PARQUET": true,
+      "TEXT2SQL_DEV_PARQUET": true,
+      "SPIDER_DATABASE_ROOT": true,
+      "TEXT2SQL_REPO_ROOT": true,
+      "TEXT2SQL_RUN_DIR": true,
+      "TEXT2SQL_RAY_TEMP_DIR": true,
+      "TEXT2SQL_TOOL_CONFIG": true,
+      "PYTHONPATH": true,
+      "VERL_SC_ENABLED": true,
+      "VERL_SC_DIAG_DIR": true,
+      "VERL_SC_Q_DIAG_DIR": true,
+      "TURN_CREDIT_TRACE_DIR": true,
+      "PYTHONDONTWRITEBYTECODE": true,
+      "RAY_USAGE_STATS_ENABLED": true
+    },
+    "existing_scoring_tests_run": 6
+  },
+  "unified_inventory": {
+    "modules": 13,
+    "tests": 109,
+    "groups": {
+      "core": 43,
+      "sft": 18,
+      "grpo": 11,
+      "algorithms": 27,
+      "tools": 10
+    }
+  },
+  "full_suite_rerun_this_update": false,
+  "online_reward_manager_verified": false,
+  "gpu_end_to_end_verified": false,
+  "clean_environment_verified": false,
+  "training_started_this_update": false
+}
