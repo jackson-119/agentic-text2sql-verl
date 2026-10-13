@@ -1,0 +1,142 @@
+{
+  "scope": "Historical reports imported; no experiment rerun",
+  "patch_validation": {
+    "gamma": 1.0,
+    "process_reward_definition_changed": false,
+    "terminal_reward_definition_changed": false,
+    "process_group_centering": false,
+    "correctness_gate_preserved": true,
+    "tests": [
+      {
+        "name": "cumulative_rewards",
+        "passed": true
+      },
+      {
+        "name": "terminal_advantage_unchanged",
+        "passed": true
+      },
+      {
+        "name": "terminal_plus_cumulative",
+        "passed": true
+      },
+      {
+        "name": "tool_padding_zero",
+        "passed": true
+      },
+      {
+        "name": "future_penalty_propagates_backward",
+        "passed": true
+      },
+      {
+        "name": "missing_turns_and_wrong_rewards_excluded_before_cumsum",
+        "passed": true
+      },
+      {
+        "name": "coefficient_applied_once",
+        "passed": true
+      },
+      {
+        "name": "real_160_trajectory_replay",
+        "passed": true
+      }
+    ],
+    "real_replay_rows": 160,
+    "real_replay_max_error": 0.0,
+    "passed": true
+  },
+  "entry_replay": {
+    "replayed_rows": 160,
+    "prompt_groups": 20,
+    "correct_rows": 15,
+    "rows_with_cumulative_local_signal": 15,
+    "maximum_error": 6.532669072356612e-08,
+    "checks": {
+      "actual_entry_matches_independent_cumulative_reference": true,
+      "terminal_only_matches_group_relative_reference": true,
+      "tool_and_padding_advantages_zero": true,
+      "wrong_trajectory_local_signal_zero": true,
+      "dense_and_object_vectors_equal": true,
+      "scalar_reward_not_counted_again": true,
+      "all_outputs_finite": true,
+      "correct_rows_have_cumulative_signal": true,
+      "source_unchanged_during_validation": true
+    },
+    "passed": true,
+    "scope": "actual compute_advantage entry; stored per-turn reward replay",
+    "reward_manager_rerun": false
+  },
+  "pilot_selection": {
+    "total_training_steps": 128,
+    "total_rollouts": 4096,
+    "validation_correct_counts": {
+      "0": 88,
+      "5": 90,
+      "8": 92,
+      "16": 97,
+      "24": 97,
+      "32": 101,
+      "40": 102,
+      "48": 102,
+      "56": 99,
+      "64": 104,
+      "72": 105,
+      "80": 102,
+      "88": 104,
+      "96": 101,
+      "104": 99,
+      "112": 100,
+      "120": 103,
+      "128": 96
+    },
+    "selected_step": 72,
+    "step0_execution_accuracy": 0.44,
+    "selected_execution_accuracy": 0.525,
+    "execution_gain_percentage_points": 8.5,
+    "paired": {
+      "available": true,
+      "both_correct": 83,
+      "step0_only_correct": 5,
+      "selected_only_correct": 22,
+      "both_wrong": 90,
+      "net_correct_change": 17,
+      "mcnemar_exact_p_descriptive": 0.0015137195587158203,
+      "caveat": "checkpoint selected on this same dataset; p is not confirmatory"
+    },
+    "selection_rule": "maximum execution accuracy; ties earliest step; include step0",
+    "selection_scope": "Pilot200 development selection, not independent test"
+  },
+  "selection417_comparison": {
+    "metrics": {
+      "original_v10_step88": {
+        "count": 417,
+        "execution_correct_count": 225,
+        "execution_accuracy": 0.539568345323741,
+        "sql_executable_rate": 0.8201438848920863
+      },
+      "cumulative_step72": {
+        "count": 417,
+        "execution_correct_count": 216,
+        "execution_accuracy": 0.5179856115107914,
+        "sql_executable_rate": 0.8081534772182254
+      }
+    },
+    "paired": {
+      "both_correct": 198,
+      "original_only_correct": 27,
+      "cumulative_only_correct": 18,
+      "both_wrong": 174,
+      "net_correct_change": -9,
+      "cumulative_minus_original_percentage_points": -2.158273381294964,
+      "paired_bootstrap_95ci_percentage_points": [
+        -5.275779376498801,
+        0.9592326139088728
+      ],
+      "mcnemar_exact_p": 0.23269319190831084
+    },
+    "interpretation_limit": "Repeatedly used development set; best-checkpoint comparison, not a reward-only controlled ablation or independent final test",
+    "final_holdout_used": false,
+    "bird_used": false
+  },
+  "historical_results_recomputed_this_migration": false,
+  "new_repository_online_integration_verified": false
+}

@@ -1,0 +1,84 @@
+--- a/v1/engine/output_processor.py
++++ b/v1/engine/output_processor.py
+@@ -395,7 +395,7 @@
+         if delta and logprobs:
+             logprobs = logprobs[-len(token_ids) :]
+ 
+-        return CompletionOutput(
++        _sc_completion = CompletionOutput(
+             index=self.request_index,
+             text=text,
+             token_ids=token_ids,
+@@ -405,6 +405,10 @@
+             finish_reason=str(finish_reason) if finished else None,
+             stop_reason=stop_reason if finished else None,
+         )
++        if __import__("os").environ.get("VERL_SC_ENABLED", "0") == "1":
++            from verl.workers.utils.sc_rollout_transport import attach_completion
++            return attach_completion(self, _sc_completion, delta)
++        return _sc_completion
+ 
+     def _new_pooling_output(self, pooling_output: torch.Tensor) -> PoolingOutput:
+         return PoolingOutput(data=pooling_output)
+@@ -633,6 +637,9 @@
+ 
+                 # 3) Compute sample and prompt logprobs for request,
+                 # if required.
++                if __import__("os").environ.get("VERL_SC_ENABLED", "0") == "1":
++                    from verl.workers.utils.sc_rollout_transport import capture_output
++                    capture_output(req_state, engine_core_output)
+                 req_state.logprobs_processor.update_from_output(engine_core_output)
+ 
+             # 4) Create and handle RequestOutput objects.
+--- a/v1/worker/gpu_model_runner.py
++++ b/v1/worker/gpu_model_runner.py
+@@ -5096,7 +5096,8 @@
+         )
+         try:
+             sampler_output = self.sampler(
+-                logits=logits, sampling_metadata=dummy_metadata
++                logits=logits, sampling_metadata=dummy_metadata,
++                _sc_internal_dummy=True,
+             )
+         except RuntimeError as e:
+             if "out of memory" in str(e):
+--- a/v1/sample/sampler.py
++++ b/v1/sample/sampler.py
+@@ -70,7 +70,14 @@
+         sampling_metadata: SamplingMetadata,
+         predict_bonus_token: bool = False,
+         logprobs_mode_override: LogprobsMode | None = None,
++        _sc_internal_dummy: bool = False,
+     ) -> SamplerOutput:
++        if _sc_internal_dummy and (
++            sampling_metadata.all_greedy
++            or sampling_metadata.all_random
++            or sampling_metadata.max_num_logprobs is not None
++        ):
++            raise RuntimeError("Invalid SC internal dummy metadata")
+         logprobs_mode = logprobs_mode_override or self.logprobs_mode
+         # NOTE(woosuk): Use the original logits (before any penalties or
+         # temperature scaling) for the top-k logprobs.
+@@ -115,6 +122,22 @@
+                 raw_logprobs, num_logprobs, token_ids=sampled
+             )
+ 
++        if (
++            __import__("os").environ.get("VERL_SC_ENABLED", "0") == "1"
++            and not sampling_metadata.all_greedy
++            and not _sc_internal_dummy
++        ):
++            if not sampling_metadata.all_random:
++                raise RuntimeError("SC does not support mixed greedy/random batches")
++            if num_logprobs != 4 or logprobs_mode != "processed_logprobs":
++                raise RuntimeError("SC requires logprobs=4 and processed_logprobs")
++            if processed_logprobs is None or predict_bonus_token:
++                raise RuntimeError("SC requires non-speculative processed sampling")
++            from verl.workers.utils.sc_rollout_transport import replace_candidate_slots
++            logprobs_tensors = replace_candidate_slots(
++                processed_logprobs, sampled, logprobs_tensors
++            )
++
+         # Use int32 to reduce the tensor size.
+         sampled = sampled.to(torch.int32)
+ 

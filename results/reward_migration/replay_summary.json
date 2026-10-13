@@ -1,0 +1,27 @@
+{
+  "scope": "Control Step1-5 training trajectories; scalar scoring replay",
+  "row_count": 160,
+  "migration_mismatch_rows": 0,
+  "historical_mismatch_rows": 0,
+  "exception_rows": 0,
+  "correct_rows": 18,
+  "branch_distribution": {
+    "0": 142,
+    "3": 18
+  },
+  "migration_replay_passed": true,
+  "historical_reproduction_passed": true,
+  "source_report_sha256": "7d7345b9cb53c0c371ef0ac0aabb3af204ac88776f422e0f93fa106315e48b88",
+  "verified_new_source_files": {
+    "src/agentic_text2sql/evaluation/__init__.py": "81508db88247b4044f477f9d2fc3a38bf9bfcc5da29aca6e09b2904834a0e018",
+    "src/agentic_text2sql/evaluation/ground_truth.py": "5557e0d081cfb9ce9074dbb1ae5cad6c8eda23f29f759bbb79031abf26cc72ff",
+    "src/agentic_text2sql/evaluation/sql_execution.py": "0f4354266fb1e58682065c62da4634998968bbe536e0c31eeb9af760c8a5a98e",
+    "src/agentic_text2sql/evaluation/tool_efficiency.py": "d9f26dac2413f34cbac81788ca5d03575d07f56e33b9c658c5bda90c8c937109",
+    "src/agentic_text2sql/evaluation/tool_process.py": "58a3159aba67b4b3904e2045d6310fd62f60f1d7d6dfb47f91e77157b3843d35",
+    "src/agentic_text2sql/rewards/__init__.py": "517734d0b7a7b03069b49ef8dbd15223db1f92468556351a2e5e24606d421f66",
+    "src/agentic_text2sql/rewards/correctness_gated.py": "aab4edb14104840aace0634d5b6af184c62a2487005aabec70d632ff24c8050b",
+    "src/agentic_text2sql/rewards/scoring.py": "b9c0425fda0a5dc531f2519b0c0f0410b902152f1eb2e08c86ceecd8ff52f0a2"
+  },
+  "online_reward_manager_verified": false,
+  "scope_limit": "Real branches 0 and 3 only; other branches have synthetic tests."
+}

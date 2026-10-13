@@ -1,0 +1,61 @@
+tools:
+- class_name: agentic_text2sql.agent.spider_db_tool.SpiderDatabaseTool
+  config:
+    type: native
+    action: list_tables
+    database_root: ${oc.env:SPIDER_DATABASE_ROOT}
+    max_rows: 50
+    sample_rows: 3
+    timeout_seconds: 3.0
+  tool_schema:
+    type: function
+    function:
+      name: list_tables
+      description: List all user tables in the attached SQLite database.
+      parameters:
+        type: object
+        properties: {}
+        required: []
+- class_name: agentic_text2sql.agent.spider_db_tool.SpiderDatabaseTool
+  config:
+    type: native
+    action: get_table_schema
+    database_root: ${oc.env:SPIDER_DATABASE_ROOT}
+    max_rows: 50
+    sample_rows: 3
+    timeout_seconds: 3.0
+  tool_schema:
+    type: function
+    function:
+      name: get_table_schema
+      description: Inspect one table, including columns, keys and several sample rows.
+      parameters:
+        type: object
+        properties:
+          table_name:
+            type: string
+            description: Exact table name returned by list_tables.
+        required:
+        - table_name
+- class_name: agentic_text2sql.agent.spider_db_tool.SpiderDatabaseTool
+  config:
+    type: native
+    action: execute_sql
+    database_root: ${oc.env:SPIDER_DATABASE_ROOT}
+    max_rows: 50
+    sample_rows: 3
+    timeout_seconds: 3.0
+  tool_schema:
+    type: function
+    function:
+      name: execute_sql
+      description: Execute one read-only SQLite SELECT query and return its columns
+        and rows.
+      parameters:
+        type: object
+        properties:
+          sql:
+            type: string
+            description: One SQLite SELECT or WITH query.
+        required:
+        - sql

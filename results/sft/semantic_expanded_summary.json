@@ -1,0 +1,105 @@
+{
+  "experiment_id": "semantic_expanded_sft",
+  "evidence_type": "historical metadata; no new training or dataset replay",
+  "dataset_acceptance": {
+    "train_rows": 5000,
+    "validation_rows": 500,
+    "unique_train_sources": 5000,
+    "unique_validation_sources": 500,
+    "source_overlap": 0,
+    "source_coverage": 0.7857142857142857,
+    "semantic_duplicate_count": 4,
+    "semantic_duplicates_are_informational": true,
+    "train_database_count": 119,
+    "validation_database_count": 21,
+    "database_overlap": [],
+    "trajectory_types": {
+      "standard_success": 4488,
+      "schema_error_recovery": 512
+    },
+    "recovery_rate": 0.1024,
+    "token_min": 710,
+    "token_mean": 1350.4663636363637,
+    "token_max": 3756,
+    "checks": {
+      "train_rows_5000": true,
+      "validation_rows_500": true,
+      "train_source_unique": true,
+      "validation_source_unique": true,
+      "source_disjoint": true,
+      "trajectory_id_unique": true,
+      "database_disjoint": true,
+      "source_coverage_at_least_78pct": true,
+      "recovery_rate_valid": true,
+      "max_length_valid": true
+    },
+    "passed": true,
+    "bird_used": false,
+    "old_final_holdout_used": false
+  },
+  "dataset_manifest_parameters": {
+    "seed": 42,
+    "max_length": 4096,
+    "train_size": 5000,
+    "validation_size": 500,
+    "recovery_ratio_requested": 0.1,
+    "recovery_train_count": 512,
+    "token_statistics": {
+      "train": {
+        "min": 710,
+        "mean": 1355.1386,
+        "max": 3756
+      },
+      "validation": {
+        "min": 731,
+        "mean": 1303.744,
+        "max": 2628
+      }
+    },
+    "skipped": {
+      "ValueError: Too many relevant tables": 7,
+      "OperationalError: no such table: Ref_Company_Types": 1,
+      "OperationalError: ORDER BY clause should come after INTERSECT not before": 2,
+      "ValueError: Overlong trajectory: 4686": 1
+    }
+  },
+  "training_summary": {
+    "train_runtime": 1910.7978,
+    "train_samples_per_second": 2.617,
+    "train_steps_per_second": 0.164,
+    "total_flos": 5.340856070229197e+16,
+    "train_loss": 0.09793120803543554,
+    "epoch": 1.0,
+    "train_samples": 5000,
+    "validation_samples": 500
+  },
+  "trainer_state": {
+    "global_step": 313,
+    "epoch": 1.0,
+    "max_steps": 313,
+    "num_train_epochs": 1,
+    "train_batch_size": 1,
+    "logging_steps": 10,
+    "eval_steps": 50,
+    "save_steps": 100
+  },
+  "historical_mask_audit": {
+    "sample_count": 32,
+    "passed_count": 32,
+    "passed": true,
+    "scope": "Historical 32-sample audit; not rerun during migration"
+  },
+  "vocabulary": {
+    "model_config_vocab_size": 151936,
+    "tokenizer_json_unique_ids": 151665,
+    "tokenizer_json_maximum_id_plus_one": 151665
+  },
+  "unverified": [
+    "Exact original training command and initial learning-rate argument",
+    "Training initialization checkpoint: dataset manifest model_path alone is insufficient",
+    "Overlap between SFT and all downstream evaluation datasets",
+    "Source-coverage denominator and exact audit computation",
+    "Dataset construction script migration",
+    "Fresh end-to-end SFT reproduction"
+  ]
+}

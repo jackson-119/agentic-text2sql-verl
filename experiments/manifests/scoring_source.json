@@ -1,0 +1,30 @@
+{
+  "component": "standalone_scalar_v10_scoring",
+  "sources": [
+    {
+      "relative_path": "verl/utils/text2sql_tool_metrics.py",
+      "sha256": "58a3159aba67b4b3904e2045d6310fd62f60f1d7d6dfb47f91e77157b3843d35"
+    },
+    {
+      "relative_path": "examples/text2sql_agent/rewards/spider_process_reward_v3.py",
+      "sha256": "41ee65e1bb34e13274ea968929dd8117d558511bb64579dc92e8736f5d9ebfc1"
+    },
+    {
+      "relative_path": "examples/text2sql_agent/rewards/spider_process_reward_v2.py",
+      "sha256": "150f443a402d11d1b04612cdc985e6faa764af42ecf9024f0ba9c67514465de5"
+    }
+  ],
+  "destinations": {
+    "src/agentic_text2sql/evaluation/tool_process.py": "58a3159aba67b4b3904e2045d6310fd62f60f1d7d6dfb47f91e77157b3843d35",
+    "src/agentic_text2sql/evaluation/tool_efficiency.py": "d9f26dac2413f34cbac81788ca5d03575d07f56e33b9c658c5bda90c8c937109",
+    "src/agentic_text2sql/evaluation/ground_truth.py": "5557e0d081cfb9ce9074dbb1ae5cad6c8eda23f29f759bbb79031abf26cc72ff",
+    "src/agentic_text2sql/rewards/scoring.py": "b9c0425fda0a5dc531f2519b0c0f0410b902152f1eb2e08c86ceecd8ff52f0a2",
+    "tests/test_scoring.py": "8b2e296a476f1d1bfa92fa3936bdf887a673b1cbf4325cbb21b79052854d1f90",
+    "docs/reward_integration.md": "1969cb393c371b47494ef840caf4941b1eea6a3120d252004dc90a53ae31ca96"
+  },
+  "historical_reward_module_imports": false,
+  "historical_full_output_dictionary_preserved": false,
+  "real_trajectory_equivalence_verified": false,
+  "online_reward_manager_verified": false,
+  "turn_credit_supported": false
+}

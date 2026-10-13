@@ -1,0 +1,134 @@
+{
+  "component": "portable_baseline_configuration",
+  "source_config_relative_path": "evaluation/text2sql_agent/v10_control_is_smoke5_Vq2vLv4c/configs/control.yaml",
+  "source_config_sha256": "10478a2085cb4c48e91d8c08a530df2fea0af729c9d7350f120e4e18f2fd14a8",
+  "source_tool_config_sha256": "46f774da24ab94ace709304de236a8b8f0d0fc5ddb08753aff9c927afbf6dd2e",
+  "config_changes": [
+    {
+      "field": "actor_rollout_ref.model.path",
+      "reason": "external model location",
+      "new_value": "${oc.env:TEXT2SQL_MODEL_PATH}",
+      "old_value_sha256": "0182b50ea9117b015b0013840b121871c7d81f225e7df16e8f0c0a1038464273"
+    },
+    {
+      "field": "data.train_files",
+      "reason": "external training data",
+      "new_value": "${oc.env:TEXT2SQL_TRAIN_PARQUET}",
+      "old_value_sha256": "24abaa078ed5a53206198447f9d3052d5d108c0024358cd8f7cafe8149bcb042"
+    },
+    {
+      "field": "data.val_files",
+      "reason": "external development data",
+      "new_value": "${oc.env:TEXT2SQL_DEV_PARQUET}",
+      "old_value_sha256": "5c12ad080f3b05a525f22775c0dc049b9134574ba47e6b344051219ce4721cd1"
+    },
+    {
+      "field": "actor_rollout_ref.rollout.multi_turn.tool_config_path",
+      "reason": "rendered portable tool configuration",
+      "new_value": "${oc.env:TEXT2SQL_TOOL_CONFIG}",
+      "old_value_sha256": "e05801c592b55c0d47d42c468c4448b4aa55c150984ba36a12c67cb22a7ebb07"
+    },
+    {
+      "field": "data.tool_config_path",
+      "reason": "same rendered tool configuration for data pipeline",
+      "new_value": "${oc.env:TEXT2SQL_TOOL_CONFIG}",
+      "old_value_sha256": "e05801c592b55c0d47d42c468c4448b4aa55c150984ba36a12c67cb22a7ebb07"
+    },
+    {
+      "field": "custom_reward_function.path",
+      "reason": "migrated scalar reward entry",
+      "new_value": "${oc.env:TEXT2SQL_REPO_ROOT}/src/agentic_text2sql/rewards/scoring.py",
+      "old_value_sha256": "c4b2b20c4b43e8b74749d5e7508acdfab890e8c3ca3c6065f9ca91479ca5254d"
+    },
+    {
+      "field": "reward.custom_reward_function.path",
+      "reason": "migrated scalar reward entry",
+      "new_value": "${oc.env:TEXT2SQL_REPO_ROOT}/src/agentic_text2sql/rewards/scoring.py",
+      "old_value_sha256": "c4b2b20c4b43e8b74749d5e7508acdfab890e8c3ca3c6065f9ca91479ca5254d"
+    },
+    {
+      "field": "trainer.default_local_dir",
+      "reason": "isolated checkpoint output",
+      "new_value": "${oc.env:TEXT2SQL_RUN_DIR}/checkpoints",
+      "old_value_sha256": "1171d11fcb355cff681e7cf035b1c6bc873c74d698b4c7177ccca1dc9fae4966"
+    },
+    {
+      "field": "trainer.rollout_data_dir",
+      "reason": "isolated training trajectory output",
+      "new_value": "${oc.env:TEXT2SQL_RUN_DIR}/rollouts",
+      "old_value_sha256": "fdaaba085407b0bf1946539628a56b63766cc847aac0a8a6d804ab9b38795761"
+    },
+    {
+      "field": "trainer.validation_data_dir",
+      "reason": "isolated validation output",
+      "new_value": "${oc.env:TEXT2SQL_RUN_DIR}/generated",
+      "old_value_sha256": "4f8cd75c1f7585efedf05ae04c0d6c206b310b91ba244d7efaf42528696e6979"
+    },
+    {
+      "field": "trainer.experiment_name",
+      "reason": "public experiment label",
+      "new_value": "text2sql_grpo_baseline_smoke5",
+      "old_value_sha256": "fa8a1025cc7f07661cd695c8c00083ecde217f4bece3dd10d56d8fea5b9dd690"
+    },
+    {
+      "field": "actor_rollout_ref.rollout.prometheus.file",
+      "reason": "isolated monitoring file",
+      "new_value": "${oc.env:TEXT2SQL_RUN_DIR}/monitoring/prometheus.json",
+      "old_value_sha256": "a8e28b4c91f449970c8410ea92fbdedacc665f2db7358bb2e9c904ffd8b41b63"
+    },
+    {
+      "field": "actor_rollout_ref.rollout.prometheus.served_model_name",
+      "reason": "public monitoring label",
+      "new_value": "agentic-text2sql-baseline",
+      "old_value_sha256": "29923ef1ec64a0e1e6a7d2af923dfd8e10557965b22058f31f1db57a554004ba"
+    },
+    {
+      "field": "skip.rollout.dump_dir",
+      "reason": "isolated debug output",
+      "new_value": "${oc.env:TEXT2SQL_RUN_DIR}/debug/rollout",
+      "old_value_sha256": "a11b3c08a8b6dfa4b65335fbb017a4706c3c39998df0b5b0f49525d67cf4829d"
+    },
+    {
+      "field": "skip.rollout_tq.dump_dir",
+      "reason": "isolated debug output",
+      "new_value": "${oc.env:TEXT2SQL_RUN_DIR}/debug/rollout_tq",
+      "old_value_sha256": "a11b3c08a8b6dfa4b65335fbb017a4706c3c39998df0b5b0f49525d67cf4829d"
+    },
+    {
+      "field": "skip.async_rollout.dump_dir",
+      "reason": "isolated debug output",
+      "new_value": "${oc.env:TEXT2SQL_RUN_DIR}/debug/async_rollout",
+      "old_value_sha256": "a11b3c08a8b6dfa4b65335fbb017a4706c3c39998df0b5b0f49525d67cf4829d"
+    },
+    {
+      "field": "ray_init._temp_dir",
+      "reason": "explicit short Ray temporary path",
+      "new_value": "${oc.env:TEXT2SQL_RAY_TEMP_DIR}",
+      "old_value_sha256": "b5e14405e9368dd141fd747dd2029d285038aa398a98939b94b3252ed86136f1"
+    },
+    {
+      "field": "data.tokenizer",
+      "reason": "preserve original equality with actor model path",
+      "new_value": "${oc.env:TEXT2SQL_MODEL_PATH}",
+      "old_value_sha256": "0182b50ea9117b015b0013840b121871c7d81f225e7df16e8f0c0a1038464273"
+    },
+    {
+      "field": "critic.model.path",
+      "reason": "preserve separate model/tokenizer location",
+      "new_value": "${oc.env:TEXT2SQL_CRITIC_MODEL_PATH}",
+      "old_value_sha256": "d49e7cdecb5bc1b7ed6a504a9ecfa8b81069ddbe0e70b34beb04287145bb188b"
+    }
+  ],
+  "tool_changes": [
+    "class_name",
+    "config.database_root"
+  ],
+  "only_allowlisted_config_fields_changed": true,
+  "additional_model_environment_variables": [
+    "TEXT2SQL_CRITIC_MODEL_PATH"
+  ],
+  "algorithm_settings_intentionally_changed": false,
+  "runtime_path_changes_verified_online": false,
+  "hydra_compose_verified": false,
+  "model_started": false
+}

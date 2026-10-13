@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "experiments": [
+    {
+      "id": "policy_correction_pilot200",
+      "topic": "sampling_policy_correction",
+      "status": "historical_results_verified",
+      "results": "results/policy_correction/summary.json",
+      "report": "docs/policy_correction_results.md",
+      "manifest": "experiments/manifests/policy_correction_source.json",
+      "independent_final_test": false,
+      "training_reproduced_from_this_repository": false
+    },
+    {
+      "id": "semantic_expanded_sft",
+      "topic": "supervised_initialization",
+      "status": "historical_metadata_registered",
+      "results": "results/sft/semantic_expanded_summary.json",
+      "report": "docs/sft_pipeline.md",
+      "manifest": "experiments/manifests/sft_masking_source.json",
+      "independent_final_test": false,
+      "training_reproduced_from_this_repository": false
+    },
+    {
+      "id": "sft_migration_validation",
+      "topic": "sft_engineering_validation",
+      "status": "data_pipeline_verified_model_training_pending",
+      "results": "results/sft/migration_validation.json",
+      "report": "docs/sft_data_construction.md",
+      "manifest": "experiments/manifests/sft_builder_source.json",
+      "related_manifests": [
+        "experiments/manifests/sft_trainer_source.json",
+        "experiments/manifests/sft_masking_source.json"
+      ],
+      "independent_final_test": false,
+      "training_reproduced_from_this_repository": false
+    },
+    {
+      "id": "grpo_entry_migration_validation",
+      "topic": "grpo_engineering_validation",
+      "status": "configuration_and_cpu_worker_verified",
+      "results": "results/grpo/migration_validation.json",
+      "report": "docs/grpo_launcher.md",
+      "manifest": "experiments/manifests/grpo_entry_validation.json",
+      "independent_final_test": false,
+      "training_reproduced_from_this_repository": false
+    },
+    {
+      "id": "cumulative_process_credit",
+      "topic": "temporal_credit_assignment",
+      "status": "core_migrated_historical_reports_registered",
+      "results": "results/cumulative_credit/historical_summary.json",
+      "report": "docs/cumulative_credit.md",
+      "manifest": "experiments/manifests/cumulative_credit_source.json",
+      "independent_final_test": false,
+      "training_reproduced_from_this_repository": false,
+      "online_event_mapping_migrated": false
+    },
+    {
+      "id": "sc_patch_bundle_validation",
+      "topic": "sc_integration_artifacts",
+      "status": "historical_snapshot_patch_application_verified",
+      "report": "docs/sc_patch_bundle.md",
+      "manifest": "experiments/manifests/sc_patch_bundle.json",
+      "validation_scope": "Temporary copies of exact local baseline snapshots; 13 target files",
+      "clean_upstream_compatibility_verified": false,
+      "runtime_tests_rerun": false,
+      "independent_final_test": false,
+      "training_reproduced_from_this_repository": false
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "component": "sft_migration_data_pipeline",
+  "automated_suite": {
+    "module_count": 11,
+    "test_count": 98,
+    "passed": true,
+    "evidence": "Previously executed uniform test runner output",
+    "rerun_by_this_documentation_command": false
+  },
+  "real_tokenizer_report_sha256": "e8dd69f60d95412ba6c65f5e3482c8509262a16fe330520b741a2775e51384b4",
+  "real_tokenizer_report": {
+    "experiment": "sft_real_tokenizer_synthetic_trajectory_check",
+    "tokenizer_class": "Qwen2TokenizerFast",
+    "transformers_version": "4.57.6",
+    "tokenizers_version": "0.22.2",
+    "tokenizer_file_hashes": {
+      "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "tokenizer_config.json": "60bf17d6543b028dbd97ac7f4847418c96502006b80b4b1c57427c241c818224",
+      "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+      "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "chat_template.jinja": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f"
+    },
+    "source_hashes": {
+      "src/agentic_text2sql/sft/builder.py": "f5516c6918df3930f24f26d450d5e9cef878312045f0fb109f8f10fd98d668b0",
+      "src/agentic_text2sql/sft/masking.py": "51a49ea7a15d9e3fd1e062afe751e190b00c3893172e813b73ebdd8c0e0bd71c",
+      "src/agentic_text2sql/sft/trainer.py": "cadd6ecae738dee8b88a33a43b1e19a472a3dacbdb424db9d2f9c5ccf7a09028"
+    },
+    "regex_override_applied": false,
+    "cases": [
+      {
+        "case": "standard_train",
+        "trajectory_type": "standard_success",
+        "token_count": 705,
+        "supervised_tokens": 79,
+        "masked_assistant_turns": 0,
+        "supervised_tokens_per_turn": [
+          17,
+          23,
+          27,
+          12
+        ],
+        "character_offset_reference_matches": true,
+        "assistant_turns": [
+          {
+            "message_index": 2,
+            "trainable": true,
+            "character_start": 1876,
+            "character_end": 1952
+          },
+          {
+            "message_index": 4,
+            "trainable": true,
+            "character_start": 2065,
+            "character_end": 2167
+          },
+          {
+            "message_index": 6,
+            "trainable": true,
+            "character_start": 2630,
+            "character_end": 2749
+          },
+          {
+            "message_index": 8,
+            "trainable": true,
+            "character_start": 2930,
+            "character_end": 2986
+          }
+        ]
+      },
+      {
+        "case": "recovery_train",
+        "trajectory_type": "schema_error_recovery",
+        "token_count": 773,
+        "supervised_tokens": 79,
+        "masked_assistant_turns": 1,
+        "supervised_tokens_per_turn": [
+          17,
+          23,
+          27,
+          12
+        ],
+        "character_offset_reference_matches": true,
+        "assistant_turns": [
+          {
+            "message_index": 2,
+            "trainable": true,
+            "character_start": 1876,
+            "character_end": 1952
+          },
+          {
+            "message_index": 4,
+            "trainable": false,
+            "character_start": 2065,
+            "character_end": 2179
+          },
+          {
+            "message_index": 6,
+            "trainable": true,
+            "character_start": 2373,
+            "character_end": 2475
+          },
+          {
+            "message_index": 8,
+            "trainable": true,
+            "character_start": 2938,
+            "character_end": 3057
+          },
+          {
+            "message_index": 10,
+            "trainable": true,
+            "character_start": 3238,
+            "character_end": 3294
+          }
+        ]
+      },
+      {
+        "case": "standard_validation",
+        "trajectory_type": "standard_success",
+        "token_count": 705,
+        "supervised_tokens": 79,
+        "masked_assistant_turns": 0,
+        "supervised_tokens_per_turn": [
+          17,
+          23,
+          27,
+          12
+        ],
+        "character_offset_reference_matches": true,
+        "assistant_turns": [
+          {
+            "message_index": 2,
+            "trainable": true,
+            "character_start": 1876,
+            "character_end": 1952
+          },
+          {
+            "message_index": 4,
+            "trainable": true,
+            "character_start": 2065,
+            "character_end": 2167
+          },
+          {
+            "message_index": 6,
+            "trainable": true,
+            "character_start": 2630,
+            "character_end": 2749
+          },
+          {
+            "message_index": 8,
+            "trainable": true,
+            "character_start": 2930,
+            "character_end": 2986
+          }
+        ]
+      }
+    ],
+    "padding_check_passed": true,
+    "source_and_tokenizer_files_unchanged": true,
+    "passed": true,
+    "model_weights_loaded": false,
+    "real_spider_data_read": false,
+    "training_started": false,
+    "scope": "Three synthetic trajectories with one actual local tokenizer",
+    "limitations": [
+      "Not historical dataset reproduction",
+      "Not a tokenizer correctness or regex-equivalence audit",
+      "Not model forward/backward or Trainer runtime validation"
+    ]
+  },
+  "observed_loading_warning": {
+    "regex_warning_present": true,
+    "source": "User-provided tokenizer-check console output",
+    "resolved": false,
+    "automatic_fix_applied": false
+  },
+  "real_parquet_integration_passed": true,
+  "model_training_verified": false,
+  "historical_dataset_reproduced": false,
+  "clean_environment_verified": false
+}
